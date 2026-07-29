@@ -126,3 +126,54 @@ document.querySelectorAll(".problem-option").forEach(function (el) {
     }, 220);
   });
 });
+
+(function () {
+  const trigger = document.querySelector(".mega-trigger");
+  const menu = document.querySelector(".mega-menu");
+  if (!trigger || !menu) return;
+
+  function open() {
+    trigger.classList.add("open");
+    menu.classList.add("open");
+    trigger.setAttribute("aria-expanded", "true");
+  }
+
+  function close() {
+    trigger.classList.remove("open");
+    menu.classList.remove("open");
+    trigger.setAttribute("aria-expanded", "false");
+  }
+
+  trigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    menu.classList.contains("open") ? close() : open();
+  });
+
+  // close when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!trigger.contains(e.target) && !menu.contains(e.target)) close();
+  });
+
+  // close on Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") close();
+  });
+})();
+
+const hamburger = document.getElementById("hamburger");
+const mobileNav = document.getElementById("mobileNav");
+const mobProductsToggle = document.getElementById("mobProductsToggle");
+const mobProductsPanel = document.getElementById("mobProductsPanel");
+
+hamburger.addEventListener("click", function () {
+  const isOpen = mobileNav.classList.contains("open");
+  hamburger.classList.toggle("open");
+  hamburger.setAttribute("aria-expanded", String(!isOpen));
+  mobileNav.classList.toggle("open");
+  document.body.style.overflow = isOpen ? "" : "hidden";
+});
+
+mobProductsToggle.addEventListener("click", function () {
+  mobProductsToggle.classList.toggle("open");
+  mobProductsPanel.classList.toggle("open");
+});

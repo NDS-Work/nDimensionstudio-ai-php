@@ -15,6 +15,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="<?= htmlspecialchars($twitterTitle ?? $pageTitle ?? 'nDimensions.ai') ?>">
     <meta property="twitter:description" content="<?= htmlspecialchars($twitterDescription ?? $metaDescription ?? 'nDimensions.ai builds AI growth systems and business automation.') ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="twitter:image" content="<?= htmlspecialchars($twitterImage ?? $ogImage ?? 'https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?crop=entropy&fm=jpg&q=85&w=1200') ?>">
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl ?? url()) ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
