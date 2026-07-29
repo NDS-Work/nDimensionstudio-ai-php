@@ -44,6 +44,8 @@
                 </ul>
             </div>
         </div>
+        <!-- Giant Background Wordmark -->
+<div class="footer-wordmark" aria-hidden="true">nDimensions</div>
         <div class="d-flex flex-column flex-md-row justify-content-between gap-2 mt-5 pt-4 text-muted small">
             <span>© <?= date('Y') ?> nDimensions.ai</span>
             <span>AI Growth, Automation &amp; Creative Systems</span>
