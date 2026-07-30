@@ -227,7 +227,7 @@
                 </h2>
                 <p class="lead mt-4 text-light-emphasis home-final-copy">Start with an AI Growth Audit. We&rsquo;ll identify the system that can create the fastest measurable impact &mdash; and show you how to build it.</p>
                 <div class="d-flex flex-wrap gap-3 mt-5">
-                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="mailto:hello@ndimensions.ai">Book AI Growth Audit <i class="bi bi-arrow-up-right ms-2"></i></a>
+                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right ms-2"></i></a>
                     <a class="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold" href="#products">Explore Our Systems <i class="bi bi-arrow-right ms-2"></i></a>
                 </div>
             </div>

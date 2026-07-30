@@ -14,8 +14,11 @@ function asset($path)
 function url($path = '')
 {
     $path = ltrim($path, '/');
-    $path = preg_replace('/^index\.php(?=($|[?#]))/i', '', $path);
-    $path = preg_replace('/\.php(?=($|[?#]))/i', '', $path);
+
+    if (PHP_SAPI !== 'cli-server') {
+        $path = preg_replace('/^index\.php(?=($|[?#]))/i', '', $path);
+        $path = preg_replace('/\.php(?=($|[?#]))/i', '', $path);
+    }
 
     return BASE_URL . $path;
 }

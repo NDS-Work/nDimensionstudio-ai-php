@@ -30,7 +30,7 @@ require_once __DIR__ . '/includes/header.php';
       </p>
       <div class="gs-actions mt-4">
         <a class="gs-btn-primary" href="#contact">Build Your GrowSTACK ↗</a>
-        <a class="gs-btn-secondary" href="#contact">Book AI Growth Audit ↗</a>
+        <a class="gs-btn-secondary" href="<?= url('contact-us.php') ?>">Book AI Growth Audit ↗</a>
       </div>
     </div>
 

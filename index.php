@@ -37,7 +37,7 @@ require_once __DIR__ . '/includes/header.php';
                         <li><span class="dot dot-purple"></span>Cre8LAB turns strategy into campaign-ready creative.</li>
                     </ul>
                     <div class="hero-actions">
-                        <a class="btn btn-dark" href="#contact">Book AI Growth Audit</a>
+                        <a class="btn btn-dark" href="<?= url('contact-us.php') ?>">Book AI Growth Audit</a>
                         <a class="btn btn-outline-dark" href="#products">Explore Our Systems</a>
                     </div>
                 </div>
@@ -1071,7 +1071,7 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="eyebrow text-light">Ready to build</div>
                         <h2 class="cta section-title mt-3">Stop running growth, operations and creative in pieces.</h2>
                         <p class="section-copy text-light-emphasis">Start with an AI Growth Audit and we’ll show you the fastest measurable path to a working system.</p>
-                        <a class="btn btn-light" href="#contact">Book AI Growth Audit</a>
+                        <a class="btn btn-light" href="<?= url('contact-us.php') ?>">Book AI Growth Audit</a>
                     </div>
                     
                 </div>

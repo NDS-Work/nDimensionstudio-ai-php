@@ -6,7 +6,7 @@
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-3">
-            <a class="btn btn-dark rounded-pill px-4 d-none d-md-inline-flex" href="#contact">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
+            <a class="btn btn-dark rounded-pill px-4 d-none d-md-inline-flex" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
             <button class="navbar-toggler border rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-4"></i>
             </button>
@@ -63,7 +63,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#faq') ?>">Insights</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#operating-model') ?>">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#products') ?>">Explore Our Systems</a></li>
-                <li class="nav-item d-md-none mt-3"><a class="btn btn-dark rounded-pill w-100" href="#contact">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a></li>
+                <li class="nav-item d-md-none mt-3"><a class="btn btn-dark rounded-pill w-100" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a></li>
             </ul>
         </div>
     </nav>

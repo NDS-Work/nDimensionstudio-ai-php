@@ -7,7 +7,7 @@
                 <h2 class="nd-hero-title mt-4">Build the system<br>your business needs<br><span class="fst-italic fw-normal text-secondary">next.</span></h2>
             </div>
             <div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="80">
-                <a class="btn btn-light rounded-pill px-4 mb-3" href="mailto:hello@ndimensions.ai">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
+                <a class="btn btn-light rounded-pill px-4 mb-3" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
                 <a class="d-block text-light-emphasis text-decoration-none" href="mailto:hello@ndimensions.ai">hello@ndimensions.ai <i class="bi bi-arrow-up-right"></i></a>
             </div>
         </div>
