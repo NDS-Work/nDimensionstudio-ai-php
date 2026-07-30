@@ -34,7 +34,110 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </div>
 
-    <!-- RIGHT: Dashboard visual -->
+    <!-- RIGHT: Homepage growth-system visual -->
+    <div class="col-12 col-lg-6 hw-wrapper">
+      <div class="row g-3">
+        <div class="col-12" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+          <div class="hw-card hw-card-search p-3 p-md-4">
+            <div class="hw-window-header d-flex align-items-center mb-3">
+              <div class="hw-window-dots d-flex gap-2">
+                <span class="hw-dot hw-dot-danger"></span>
+                <span class="hw-dot hw-dot-warning"></span>
+                <span class="hw-dot hw-dot-success"></span>
+              </div>
+              <span class="hw-window-title ms-3 hw-font-mono">ai-search-visibility &middot; google + perplexity</span>
+            </div>
+
+            <div class="hw-search-input d-flex align-items-center mb-4">
+              <svg class="hw-search-icon me-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span class="hw-search-text">best b2b workflow automation platform</span>
+            </div>
+
+            <div class="hw-search-metrics d-flex flex-column gap-3">
+              <?php foreach ([
+                ['Google &middot; AI Overview', '82%', '0.2s', 'cited'],
+                ['Perplexity', '65%', '0.35s', 'cited'],
+                ['ChatGPT &middot; Web', '48%', '0.5s', 'mentioned'],
+                ['Google &middot; SERP', '78%', '0.65s', 'position 2'],
+              ] as $metric): ?>
+                <div class="hw-metric-row d-flex align-items-center">
+                  <span class="hw-metric-label"><?= $metric[0] ?></span>
+                  <div class="hw-track flex-grow-1 mx-3">
+                    <div class="hw-bar hw-bar-accent" style="--hw-target-width:<?= $metric[1] ?>;--hw-delay:<?= $metric[2] ?>"></div>
+                  </div>
+                  <span class="hw-metric-status hw-font-mono"><?= $metric[3] ?></span>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+          <div class="hw-card hw-card-dark p-3 p-md-4 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <div class="d-flex align-items-center gap-2">
+                <div class="hw-avatar d-flex align-items-center justify-content-center">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#10b981" aria-hidden="true">
+                    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.483 1.33 5.001L2 22l5.127-1.332a9.96 9.96 0 0 0 4.885 1.282h.004c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.037-5.176-2.922-7.062A9.92 9.92 0 0 0 12.012 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold text-white fs-6">WhatsApp Nurture</h6>
+                  <span class="hw-font-mono hw-text-muted small">drip &middot; behaviour-triggered</span>
+                </div>
+              </div>
+              <span class="hw-live-badge hw-font-mono">&bull; live</span>
+            </div>
+
+            <hr class="hw-divider my-3">
+
+            <div class="hw-chat-list d-flex flex-column gap-2">
+              <div class="hw-chat-bubble hw-bubble-in">Hi Priya &mdash; saw you downloaded the pipeline playbook.</div>
+              <div class="hw-chat-bubble hw-bubble-out ms-auto">Yes, wanted to see the CRM setup.</div>
+              <div class="hw-chat-bubble hw-bubble-in">Perfect. Booking you a 20-min walkthrough &mdash; Tue 3pm?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+          <div class="hw-card hw-card-pipeline p-3 p-md-4 h-100">
+            <div class="d-flex align-items-start justify-content-between mb-3">
+              <div>
+                <span class="hw-font-mono text-muted text-uppercase small">Pipeline</span>
+                <h4 class="fw-bold text-dark mb-0">$1.42M in play</h4>
+              </div>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4d2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+
+            <div class="hw-pipeline-metrics d-flex flex-column gap-2 mt-3">
+              <?php foreach ([
+                ['gray', 'New', '85%', '0.3s', '42'],
+                ['light', 'Qualified', '60%', '0.45s', '28'],
+                ['mid', 'Proposal', '32%', '0.6s', '14'],
+                ['dark', 'Won', '18%', '0.75s', '6'],
+              ] as $stage): ?>
+                <div class="hw-pipeline-row d-flex align-items-center">
+                  <span class="hw-pipeline-label"><span class="hw-status-dot hw-status-dot-<?= $stage[0] ?>"></span><?= $stage[1] ?></span>
+                  <div class="hw-track flex-grow-1 mx-2">
+                    <div class="hw-bar hw-bar-<?= $stage[0] ?>" style="--hw-target-width:<?= $stage[2] ?>;--hw-delay:<?= $stage[3] ?>"></div>
+                  </div>
+                  <span class="hw-pipeline-val"><?= $stage[4] ?></span>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <?php if (false): ?>
+    <!-- Previous compact dashboard retained temporarily for reference. -->
     <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
       <div class="gs-dashboard">
 
@@ -149,6 +252,7 @@ require_once __DIR__ . '/includes/header.php';
         </div><!-- /gs-cards-row -->
       </div><!-- /gs-dashboard -->
     </div>
+    <?php endif; ?>
 
   </div>
 </section>
