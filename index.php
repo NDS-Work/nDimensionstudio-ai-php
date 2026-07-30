@@ -10,7 +10,7 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-    <section class="hero-section" data-aos="fade-up">
+    <section class="hero-section">
         <div class="container">
             <div class="hero-eyebrow eyebrow eyebrow-dot">AI-native growth &amp; automation partner</div>
             <h1 class="hero-headline">

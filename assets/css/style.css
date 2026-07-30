@@ -1306,6 +1306,34 @@ h2.cta.section-title.mt-3 {
 
 .hero-headline>span {
   display: block;
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(0.55em);
+  animation: hero-line-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-headline>span:nth-child(1) {
+  animation-delay: 0.12s;
+}
+
+.hero-headline>span:nth-child(2) {
+  animation-delay: 0.28s;
+}
+
+.hero-headline>span:nth-child(3) {
+  animation-delay: 0.44s;
+}
+
+.hero-headline>span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes hero-line-reveal {
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
 }
 
 .hero-inline {
@@ -2870,7 +2898,8 @@ h2.cta.section-title.mt-3 {
 ═══════════════════════════════════════════ */
 
 .gs-hero {
-  padding: 7rem 0 5rem;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
 }
 
 /* Eyebrow */
@@ -3292,7 +3321,15 @@ h2.cta.section-title.mt-3 {
 /* ── Responsive ── */
 @media (max-width: 767.98px) {
   .gs-hero {
-    padding: 5rem 0 3rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .gs-headline {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    max-width: none;
   }
 
   .gs-cards-row {
@@ -3596,6 +3633,12 @@ h2.cta.section-title.mt-3 {
 @media (max-width: 767.98px) {
   .nd-page-title { font-size: clamp(2.35rem, 11vw, 3.5rem); }
   .nd-hero-title { font-size: clamp(2.75rem, 13vw, 4rem); }
+  .bg-hero-title {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    max-width: none;
+  }
   .bg-workflow-node { gap: 4px !important; padding: 5px 7px; border-radius: 8px; }
   .bg-workflow-node > span { width: 21px; height: 21px; }
   .bg-workflow-node small { font-size: 9px; }
