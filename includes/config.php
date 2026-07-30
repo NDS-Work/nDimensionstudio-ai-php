@@ -1,6 +1,9 @@
 <?php
 if (!defined('BASE_URL')) {
-    define('BASE_URL', '/');
+    $scriptDirectory = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+    $basePath = $scriptDirectory === '/' || $scriptDirectory === '.' ? '' : rtrim($scriptDirectory, '/');
+
+    define('BASE_URL', $basePath . '/');
 }
 
 function asset($path)
