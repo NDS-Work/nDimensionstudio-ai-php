@@ -1,0 +1,21 @@
+Options -MultiViews
+
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Keep the homepage at /ai/ instead of /ai/index.php.
+    RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php(?:[\s?]) [NC]
+    RewriteRule ^index\.php$ ./ [R=301,L,NE]
+
+    # Redirect direct PHP requests to their extensionless public URL.
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]) [NC]
+    RewriteRule ^(.+)\.php$ $1 [R=301,L,NE]
+
+    # Internally serve an existing PHP file for an extensionless request.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>

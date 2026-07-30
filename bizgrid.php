@@ -4,7 +4,7 @@ $pageTitle = 'BizGRID | Custom AI Business Systems';
 $metaDescription = 'BizGRID connects data, dashboards, workflows and AI agents around the way your business actually operates.';
 $ogTitle = 'BizGRID | nDimensions.ai';
 $ogDescription = 'Build the business system your software never gave you with BizGRID.';
-$canonicalUrl = 'https://ndimensions.ai/bizgrid.php';
+$canonicalUrl = 'https://ndimensions.ai/ai/bizgrid';
 require_once __DIR__ . '/includes/head.php';
 require_once __DIR__ . '/includes/header.php';
 

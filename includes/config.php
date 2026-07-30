@@ -13,7 +13,11 @@ function asset($path)
 
 function url($path = '')
 {
-    return BASE_URL . ltrim($path, '/');
+    $path = ltrim($path, '/');
+    $path = preg_replace('/^index\.php(?=($|[?#]))/i', '', $path);
+    $path = preg_replace('/\.php(?=($|[?#]))/i', '', $path);
+
+    return BASE_URL . $path;
 }
 
 function activeClass($page, $current)

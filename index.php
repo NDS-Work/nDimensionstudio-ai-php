@@ -4,7 +4,7 @@ $pageTitle = 'AI Growth, Automation & Creative Systems';
 $metaDescription = 'nDimensions.ai builds AI growth systems, automation and creative production for modern B2B teams.';
 $ogTitle = 'nDimensions.ai | AI Growth, Automation & Creative Systems';
 $ogDescription = 'We connect AI engineering, demand generation and creative production into one operating layer.';
-$canonicalUrl = 'https://ndimensions.ai/';
+$canonicalUrl = 'https://ndimensions.ai/ai/';
 require_once __DIR__ . '/includes/head.php';
 require_once __DIR__ . '/includes/header.php';
 ?>
