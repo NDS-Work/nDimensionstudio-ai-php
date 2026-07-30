@@ -3590,6 +3590,7 @@ h2.cta.section-title.mt-3 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 @media (max-width: 767.98px) {
