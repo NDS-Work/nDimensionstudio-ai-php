@@ -1,115 +1,70 @@
-
 <header class="site-header sticky-top">
-  <nav class="navbar navbar-expand-xl container py-3">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="<?= url() ?>" aria-label="nDimensions.ai home">
-      <span class="brand-mark">n</span>
-      <span class="fw-bold">nDimensions<span class="text-muted">.ai</span></span>
-    </a>
-    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <div class="collapse navbar-collapse justify-content-center" id="siteNav">
-      <ul class="navbar-nav align-items-lg-center gap-lg-1">
+    <nav class="navbar navbar-expand-lg container py-3" aria-label="Primary navigation">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="<?= url() ?>" aria-label="nDimensions.ai home">
+            <span class="brand-mark">n</span>
+            <span class="fw-bold">nDimensions<span class="text-muted">.ai</span></span>
+        </a>
 
-        <!-- Products Mega Menu -->
-        <li class="nav-item mega-parent">
-          <a class="nav-link mega-trigger <?= in_array($activePage ?? '', ['home','growstack','bizgrid']) ? 'active' : '' ?>" href="#" aria-expanded="false">
-            Products
-            <svg class="mega-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <div class="mega-menu">
-            <div class="mega-menu-inner">
-              <a class="mega-card" href="<?= url('growstack.php') ?>">
-                <div class="mega-card-icon mega-icon-grow">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                </div>
-                <div class="mega-card-arrow">↗</div>
-                <div class="mega-card-label">AI GROWTH SYSTEM</div>
-                <div class="mega-card-title">GrowSTACK</div>
-                <div class="mega-card-desc">One connected system for visibility, demand, nurturing and pipeline.</div>
-                <div class="mega-card-link mega-link-grow">Explore GrowSTACK ↗</div>
-              </a>
-              <a class="mega-card" href="<?= url('bizgrid.php') ?>">
-                <div class="mega-card-icon mega-icon-biz">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-                </div>
-                <div class="mega-card-arrow">↗</div>
-                <div class="mega-card-label">CUSTOM AI BUSINESS SYSTEMS</div>
-                <div class="mega-card-title">BizGRID</div>
-                <div class="mega-card-desc">Connect business data, workflows, decisions and internal AI agents.</div>
-                <div class="mega-card-link mega-link-biz">Explore BizGRID ↗</div>
-              </a>
-              <a class="mega-card" href="<?= url('index.php#products') ?>">
-                <div class="mega-card-icon mega-icon-cre">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <div class="mega-card-arrow">↗</div>
-                <div class="mega-card-label">AI-ASSISTED CREATIVE PRODUCTION</div>
-                <div class="mega-card-title">Cre8LAB</div>
-                <div class="mega-card-desc">Turn strategy into campaign-ready creative — visuals, video, variations.</div>
-                <div class="mega-card-link mega-link-cre">Explore Cre8LAB ↗</div>
-              </a>
-            </div>
-          </div>
-        </li>
+        <div class="d-flex align-items-center gap-2 order-lg-3">
+            <a class="btn btn-dark rounded-pill px-4 d-none d-md-inline-flex" href="#contact">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
+            <button class="navbar-toggler border rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+        </div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">AI Agents</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Use Cases</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Industries</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Insights</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Explore Our Systems</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Hamburger -->
-<button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-    <a class="btn btn-dark rounded-pill px-4 ms-3 flex-shrink-0" href="#contact">Book AI Growth Audit ↗</a>
-  </nav>
+        <div class="collapse navbar-collapse order-lg-2" id="siteNav">
+            <ul class="navbar-nav align-items-lg-center gap-lg-1 mx-lg-auto py-4 py-lg-0">
+                <li class="nav-item mega-parent d-none d-lg-block">
+                    <button class="nav-link mega-trigger <?= in_array($activePage ?? '', ['home', 'growstack', 'bizgrid']) ? 'active' : '' ?>" type="button" aria-expanded="false">
+                        Products <i class="bi bi-chevron-down small"></i>
+                    </button>
+                    <div class="mega-menu">
+                        <div class="mega-menu-inner">
+                            <a class="mega-card" href="<?= url('growstack.php') ?>">
+                                <div class="mega-card-icon mega-icon-grow"><i class="bi bi-lightning-charge"></i></div>
+                                <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                                <div class="mega-card-label">AI Growth System</div>
+                                <div class="mega-card-title">GrowSTACK</div>
+                                <div class="mega-card-desc">One connected system for visibility, demand, nurturing and pipeline.</div>
+                                <div class="mega-card-link mega-link-grow">Explore GrowSTACK <i class="bi bi-arrow-up-right"></i></div>
+                            </a>
+                            <a class="mega-card" href="<?= url('bizgrid.php') ?>">
+                                <div class="mega-card-icon mega-icon-biz"><i class="bi bi-grid-3x3-gap"></i></div>
+                                <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                                <div class="mega-card-label">Custom AI Business Systems</div>
+                                <div class="mega-card-title">BizGRID</div>
+                                <div class="mega-card-desc">Connect business data, workflows, decisions and internal AI agents.</div>
+                                <div class="mega-card-link mega-link-biz">Explore BizGRID <i class="bi bi-arrow-up-right"></i></div>
+                            </a>
+                            <a class="mega-card" href="<?= url('index.php#cre8lab') ?>">
+                                <div class="mega-card-icon mega-icon-cre"><i class="bi bi-stars"></i></div>
+                                <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                                <div class="mega-card-label">AI-Assisted Creative Production</div>
+                                <div class="mega-card-title">Cre8LAB</div>
+                                <div class="mega-card-desc">Turn strategy into campaign-ready creative: visuals, video and variations.</div>
+                                <div class="mega-card-link mega-link-cre">Explore Cre8LAB <i class="bi bi-arrow-up-right"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item d-lg-none mb-3">
+                    <p class="eyebrow mb-3">Products</p>
+                    <div class="row g-2">
+                        <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('growstack.php') ?>"><span><strong class="d-block">GrowSTACK</strong><small>AI Growth System</small></span><i class="bi bi-arrow-up-right"></i></a></div>
+                        <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('bizgrid.php') ?>"><span><strong class="d-block">BizGRID</strong><small>Custom AI Business Systems</small></span><i class="bi bi-arrow-up-right"></i></a></div>
+                        <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('index.php#cre8lab') ?>"><span><strong class="d-block">Cre8LAB</strong><small>Creative Production</small></span><i class="bi bi-arrow-up-right"></i></a></div>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#products') ?>">AI Agents</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#problem-selector') ?>">Use Cases</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#proof') ?>">Industries</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#faq') ?>">Insights</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#operating-model') ?>">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#products') ?>">Explore Our Systems</a></li>
+                <li class="nav-item d-md-none mt-3"><a class="btn btn-dark rounded-pill w-100" href="#contact">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
-<div class="mobile-nav" id="mobileNav">
-  <button class="mobile-products-toggle" id="mobProductsToggle">
-    Products
-    <svg class="mob-chevron" width="16" height="16" viewBox="0 0 14 14" fill="none">
-      <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-  <div class="mobile-products-panel" id="mobProductsPanel">
-    <a class="mobile-mega-card" href="<?= url('growstack.php') ?>">
-      <div class="mob-icon mob-icon-grow">⚡</div>
-      <div><div class="mob-card-label">AI Growth System</div><div class="mob-card-title">GrowSTACK</div><div class="mob-card-desc">One connected system for visibility, demand, nurturing and pipeline.</div></div>
-    </a>
-    <a class="mobile-mega-card" href="<?= url('bizgrid.php') ?>">
-      <div class="mob-icon mob-icon-biz">⊞</div>
-      <div><div class="mob-card-label">Custom AI Business Systems</div><div class="mob-card-title">BizGRID</div><div class="mob-card-desc">Connect business data, workflows, decisions and internal AI agents.</div></div>
-    </a>
-    <a class="mobile-mega-card" href="<?= url('index.php#products') ?>">
-      <div class="mob-icon mob-icon-cre">✦</div>
-      <div><div class="mob-card-label">AI-Assisted Creative Production</div><div class="mob-card-title">Cre8LAB</div><div class="mob-card-desc">Turn strategy into campaign-ready creative — visuals, video, variations.</div></div>
-    </a>
-  </div>
-  <a class="mobile-nav-link" href="#">AI Agents <span>→</span></a>
-  <a class="mobile-nav-link" href="#">Use Cases <span>→</span></a>
-  <a class="mobile-nav-link" href="#">Industries <span>→</span></a>
-  <a class="mobile-nav-link" href="#">Insights <span>→</span></a>
-  <a class="mobile-nav-link" href="#">About <span>→</span></a>
-  <a class="mobile-nav-link" href="#">Explore Our Systems <span>→</span></a>
-  <a class="mobile-cta" href="#contact">Book AI Growth Audit ↗</a>
-</div>

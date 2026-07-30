@@ -41,7 +41,7 @@ require_once __DIR__ . '/includes/header.php';
                         <a class="btn btn-outline-dark" href="#products">Explore Our Systems</a>
                     </div>
                 </div>
-  <div class="col-12 col-xl-6 hw-wrapper">
+  <div class="col-12 col-lg-6 hw-wrapper">
   <div class="row g-3">
     
     <!-- Top Card: AI Search Visibility -->
@@ -104,7 +104,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Bottom Left Card: WhatsApp Nurture -->
-    <div class="col-12 col-sm-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+    <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
       <div class="hw-card hw-card-dark p-3 p-md-4 h-100">
         <div class="d-flex align-items-center justify-content-between mb-2">
           <div class="d-flex align-items-center gap-2">
@@ -138,7 +138,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Bottom Right Card: Pipeline -->
-    <div class="col-12 col-sm-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+    <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
       <div class="hw-card hw-card-pipeline p-3 p-md-4 h-100">
         <div class="d-flex align-items-start justify-content-between mb-3">
           <div>
@@ -247,54 +247,94 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-    <section class="section section-dark">
-        <div class="container-x">
+    <section class="section section-dark home-stakes">
+        <div class="container">
             <div class="row g-4 align-items-end mb-5">
                 <div class="col-lg-7" data-aos="fade-right">
-                    <div class="eyebrow text-light">The real problem</div>
-                    <h2 class="section-title mt-3">Your teams are working. Your systems are not.</h2>
+                    <div class="eyebrow text-light-emphasis">The real problem</div>
+                    <h2 class="section-title mt-3 mb-0">
+                        <span class="d-block">Your teams are working.</span>
+                        <span class="d-block fst-italic fw-normal text-secondary">Your systems are not.</span>
+                    </h2>
                 </div>
                 <div class="col-lg-5" data-aos="fade-left">
-                    <p class="section-copy text-light-emphasis">Marketing generates leads. Sales follows up without context. Data sits across CRMs, spreadsheets and dashboards. Creative waits for another brief, another approval and another resize.</p>
+                    <p class="section-copy text-light-emphasis mb-3">Marketing generates leads. Sales follows up without context. Data sits across CRMs, spreadsheets and dashboards. Creative waits for another brief, another approval and another resize.</p>
+                    <p class="section-copy fw-bold text-light mb-0">The problem isn&rsquo;t effort.<br>It&rsquo;s the gaps between the work.</p>
                 </div>
             </div>
-            <div class="stack-grid">
-                <div class="stack-card" data-aos="fade-up">
-                    <div class="stack-index">01</div>
-                    <h3>Channel silos</h3>
-                    <p>Every channel reports separately. No one sees the customer as one.</p>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <article class="stack-card h-100 p-4">
+                        <div class="d-flex justify-content-between align-items-center stack-card-head">
+                            <span class="stack-index">01</span>
+                            <i class="bi bi-boxes stack-card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Channel silos</h3>
+                        <p>Every channel reports separately. No one sees the customer as one.</p>
+                    </article>
                 </div>
-                <div class="stack-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="stack-index">02</div>
-                    <h3>Handoff drag</h3>
-                    <p>Leads lose momentum in the gap between marketing and sales.</p>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <article class="stack-card h-100 p-4">
+                        <div class="d-flex justify-content-between align-items-center stack-card-head">
+                            <span class="stack-index">02</span>
+                            <i class="bi bi-clock stack-card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Handoff drag</h3>
+                        <p>Leads lose momentum in the gap between marketing and sales.</p>
+                    </article>
                 </div>
-                <div class="stack-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="stack-index">03</div>
-                    <h3>Delayed reporting</h3>
-                    <p>Numbers arrive after decisions have already been made.</p>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                    <article class="stack-card h-100 p-4">
+                        <div class="d-flex justify-content-between align-items-center stack-card-head">
+                            <span class="stack-index">03</span>
+                            <i class="bi bi-graph-up stack-card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Delayed reporting</h3>
+                        <p>Numbers arrive after decisions have already been made.</p>
+                    </article>
                 </div>
-                <div class="stack-card" data-aos="fade-up">
-                    <div class="stack-index">04</div>
-                    <h3>Manual workflows</h3>
-                    <p>The business runs on someone remembering the next step.</p>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
+                    <article class="stack-card h-100 p-4">
+                        <div class="d-flex justify-content-between align-items-center stack-card-head">
+                            <span class="stack-index">04</span>
+                            <i class="bi bi-diagram-3 stack-card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Manual workflows</h3>
+                        <p>The business runs on someone remembering to do the next step.</p>
+                    </article>
                 </div>
-                <div class="stack-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="stack-index">05</div>
-                    <h3>Creative bottlenecks</h3>
-                    <p>Another brief. Another approval. Another resize.</p>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="320">
+                    <article class="stack-card h-100 p-4">
+                        <div class="d-flex justify-content-between align-items-center stack-card-head">
+                            <span class="stack-index">05</span>
+                            <i class="bi bi-layers stack-card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Creative bottleneck</h3>
+                        <p>Another brief. Another approval. Another resize.</p>
+                    </article>
                 </div>
-                <div class="stack-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="stack-index">06</div>
-                    <h3>Disconnected AI tools</h3>
-                    <p>Experiments without owners. Prototypes without production.</p>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <article class="stack-card h-100 p-4">
+                        <div class="d-flex justify-content-between align-items-center stack-card-head">
+                            <span class="stack-index">06</span>
+                            <i class="bi bi-exclamation-triangle stack-card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Disconnected AI tools</h3>
+                        <p>Experiments without owners. Prototypes without production.</p>
+                    </article>
                 </div>
+            </div>
+            <div class="stack-connect-panel border p-4 p-md-5 mt-5 d-flex flex-column flex-md-row align-items-md-center gap-4" data-aos="fade-up">
+                <h3 class="h-display fs-3 fw-bold text-light mb-0">One operating layer connecting all<br class="d-none d-md-block"> of it.</h3>
+                <a class="btn btn-outline-light rounded-pill px-4 py-3 ms-md-auto fw-semibold" href="#products">
+                    See how we connect it <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <section class="section section-light" id="products">
-        <div class="container-x">
+        <div class="container">
             <div class="row g-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">One partner · Three connected systems</div>
@@ -378,6 +418,102 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </a>
 </div>
+        </div>
+    </section>
+
+    <section class="section border-top home-grow-product">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7 order-lg-2" data-aos="fade-left">
+                    <div class="home-grow-visual p-4 p-md-5 overflow-hidden">
+                        <div class="home-grow-browser bg-white border overflow-hidden position-relative">
+                            <div class="d-flex align-items-center gap-1 px-3 py-2 border-bottom">
+                                <span class="gs-wdot gs-wdot-red"></span>
+                                <span class="gs-wdot gs-wdot-yellow"></span>
+                                <span class="gs-wdot gs-wdot-green"></span>
+                                <span class="font-mono text-secondary ms-3 home-grow-browser-label">ai-search-visibility &middot; google + perplexity</span>
+                            </div>
+                            <div class="p-3">
+                                <div class="gs-search-box rounded-pill align-items-center">
+                                    <i class="bi bi-search text-secondary" aria-hidden="true"></i>
+                                    <span class="fw-medium">best b2b workflow automation platform</span>
+                                </div>
+                                <div class="gs-metrics home-grow-metrics mt-3">
+                                    <?php foreach ([['Google · AI Overview', 92, 'cited'], ['Perplexity', 78, 'cited'], ['ChatGPT · Web', 64, 'mentioned'], ['Google · SERP', 88, 'position 2']] as $index => $metric): ?>
+                                        <div class="gs-metric-row">
+                                            <span class="gs-metric-name"><?= $metric[0] ?></span>
+                                            <div class="gs-metric-bar">
+                                                <div class="gs-mbar gs-live-progress" style="--gs-progress-target:<?= $metric[1] ?>%;--gs-progress-delay:<?= $index * 90 ?>ms"></div>
+                                            </div>
+                                            <span class="gs-metric-tag font-mono"><?= $metric[2] ?></span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mt-1 position-relative">
+                            <div class="col-md-6">
+                                <div class="gs-sub-card gs-sub-card-dark home-grow-wa h-100 shadow">
+                                    <div class="d-flex align-items-center gap-2 pb-3 border-bottom border-secondary">
+                                        <span class="gs-wa-avatar bg-success text-dark"><i class="bi bi-chat" aria-hidden="true"></i></span>
+                                        <div>
+                                            <div class="gs-wa-title">WhatsApp Nurture</div>
+                                            <div class="gs-wa-sub font-mono">drip &middot; behaviour-triggered</div>
+                                        </div>
+                                        <span class="gs-live-badge font-mono d-flex align-items-center gap-1 ms-auto">
+                                            <span class="nd-dot bg-success"></span>live
+                                        </span>
+                                    </div>
+                                    <div class="d-grid gap-2 mt-3">
+                                        <div class="gs-bubble gs-bubble-in gs-tab-message" style="--gs-progress-delay:180ms">Hi Priya &mdash; saw you downloaded the pipeline playbook.</div>
+                                        <div class="gs-bubble gs-bubble-out gs-tab-message" style="--gs-progress-delay:360ms">Yes, wanted to see the CRM setup.</div>
+                                        <div class="gs-bubble gs-bubble-in gs-tab-message" style="--gs-progress-delay:540ms">Perfect. Booking you a 20-min walkthrough &mdash; Tue 3pm?</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="gs-sub-card gs-sub-card-light home-grow-pipeline h-100 shadow">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="gs-pipeline-label">Pipeline</div>
+                                            <div class="gs-pipeline-value">$1.42M in play</div>
+                                        </div>
+                                        <i class="bi bi-graph-up-arrow text-grow" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="gs-pipeline-rows mt-3">
+                                        <?php foreach ([['New', 42, 'gray', 100], ['Qualified', 28, 'light', 67], ['Proposal', 14, 'mid', 33], ['Won', 6, 'dark', 14]] as $index => $stage): ?>
+                                            <div class="gs-pipe-row">
+                                                <span class="gs-pdot gs-pdot-<?= $stage[2] ?>"></span>
+                                                <span class="gs-pname"><?= $stage[0] ?></span>
+                                                <span class="gs-ptrack">
+                                                    <span class="gs-pbar gs-pbar-<?= $stage[2] === 'dark' ? 'dark2' : $stage[2] ?> gs-live-progress d-block"
+                                                          style="--gs-progress-target:<?= $stage[3] ?>%;--gs-progress-delay:<?= 250 + ($index * 100) ?>ms"></span>
+                                                </span>
+                                                <span class="gs-pval font-mono"><?= $stage[1] ?></span>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-lg-1" data-aos="fade-right">
+                    <p class="home-product-chip d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2 mb-0 font-mono text-uppercase">
+                        <span class="nd-dot bg-grow"></span>GrowSTACK &middot; AI Growth System
+                    </p>
+                    <h2 class="nd-page-title mt-4">Get found.<br>Create demand.<br><span class="fst-italic fw-normal text-secondary">Move pipeline.</span></h2>
+                    <p class="lead text-muted mt-4 home-product-copy">One connected growth system spanning search visibility, content, demand generation, lead nurturing, WhatsApp, CRM and revenue reporting.</p>
+                    <div class="d-flex flex-wrap align-items-center gap-2 mt-4 mb-5">
+                        <?php foreach (['Search', 'Content', 'Demand', 'Nurture', 'CRM', 'Pipeline'] as $index => $step): ?>
+                            <span class="badge rounded-pill border bg-white px-3 py-2 fw-semibold home-product-step"><?= $step ?></span>
+                            <?php if ($index < 5): ?><i class="bi bi-arrow-right text-grow"></i><?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                    <a class="btn rounded-pill px-4 py-3 fw-semibold text-white bg-grow border-0" href="<?= url('growstack.php') ?>">Explore GrowSTACK <i class="bi bi-arrow-up-right ms-2"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -538,56 +674,124 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-   <section class="section section-soft" id="operating-model">
-    <div class="container-x">
-        <div class="row align-items-end mb-4">
-            <div class="col-lg-8" data-aos="fade-right">
-                <div class="eyebrow">The operating model</div>
-                <h2 class="section-title mt-3">One connected team.</h2>
-                <h2 class="section-title section-title-italic">One accountable system.</h2>
+    <section class="section border-top home-cre8-product" id="cre8lab">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <p class="home-cre8-chip d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2 mb-0 font-mono text-uppercase">
+                        <span class="nd-dot bg-cre"></span>Cre8LAB &middot; Creative Production
+                    </p>
+                    <h2 class="nd-page-title mt-4">Turn strategy<br>into creative.<br><span class="fst-italic fw-normal text-secondary">Faster.</span></h2>
+                    <p class="lead text-muted mt-4 home-product-copy">An AI-assisted production system for campaign creatives, product visuals, advertising variations, video and branded content.</p>
+                    <div class="d-flex flex-wrap align-items-center gap-2 mt-4 mb-5">
+                        <?php foreach (['Brief', 'Concept', 'System', 'Variations', 'Campaign'] as $index => $step): ?>
+                            <span class="badge rounded-pill border bg-white px-3 py-2 fw-semibold home-cre8-step"><?= $step ?></span>
+                            <?php if ($index < 4): ?><i class="bi bi-arrow-right text-cre"></i><?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                    <a class="btn rounded-pill px-4 py-3 fw-semibold text-white bg-cre border-0" href="#contact">Explore Cre8LAB <i class="bi bi-arrow-up-right ms-2"></i></a>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="home-cre8-visual p-4 p-md-5 overflow-hidden">
+                        <div class="row g-3">
+                            <div class="col-7">
+                                <div class="home-cre8-art position-relative overflow-hidden">
+                                    <div class="home-cre8-art-bg position-absolute top-0 start-0 w-100 h-100"></div>
+                                    <div class="home-cre8-art-copy position-relative h-100 d-flex flex-column justify-content-end p-4 text-light gs-tab-message" style="--gs-progress-delay:160ms">
+                                        <div class="home-cre8-art-label font-mono text-uppercase">Cre8LAB &middot; Variation 04</div>
+                                        <h3 class="h-display fw-bold mt-2 mb-0">Ship a<br>campaign<br>in a day.</h3>
+                                        <div class="d-flex align-items-center gap-2 mt-4 font-mono home-cre8-art-meta">
+                                            <i class="bi bi-stars" aria-hidden="true"></i>
+                                            <span>12 assets &middot; 4 aspect ratios &middot; brand-locked</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex flex-column gap-3">
+                                <div class="home-cre8-photo overflow-hidden border">
+                                    <img class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&amp;fm=jpg&amp;q=85&amp;w=800" alt="Creative team collaboration">
+                                </div>
+                                <div class="home-cre8-variants border p-3">
+                                    <p class="font-mono text-uppercase mb-2 home-cre8-variants-label">Variants</p>
+                                    <div class="row row-cols-4 g-1">
+                                        <?php foreach ([0.30, 0.39, 0.48, 0.57, 0.66, 0.75, 0.84, 0.93] as $index => $opacity): ?>
+                                            <div class="col">
+                                                <span class="home-cre8-tile d-block w-100" style="--cre8-opacity:<?= $opacity ?>;--cre8-delay:<?= 260 + ($index * 70) ?>ms"></span>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 d-flex justify-content-end align-items-end" data-aos="fade-left">
-                <div class="pill-toggle">
-                    <button class="pill-btn active" id="btn-old" onclick="setOperatingModel('old')">Old model</button>
-                    <button class="pill-btn" id="btn-nd" onclick="setOperatingModel('nd')">nDimensions model</button>
+        </div>
+    </section>
+
+<section class="section section-soft border-top border-bottom home-operating-model" id="operating-model">
+    <div class="container">
+        <div class="row g-4 align-items-end mb-5">
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="eyebrow">The operating model</div>
+                <h2 class="operating-model-title h-display mt-4 mb-0">
+                    <span class="d-block">One connected team.</span>
+                    <span class="d-block fst-italic fw-normal text-secondary">One accountable system.</span>
+                </h2>
+            </div>
+            <div class="col-lg-5 d-flex align-items-end" data-aos="fade-left">
+                <div class="pill-toggle border">
+                    <button class="pill-btn" id="btn-old" type="button" aria-pressed="false" onclick="setOperatingModel('old')">Old model</button>
+                    <button class="pill-btn active" id="btn-nd" type="button" aria-pressed="true" onclick="setOperatingModel('nd')">nDimensions model</button>
                 </div>
             </div>
         </div>
         <div class="row g-4">
             <div class="col-lg-6" data-aos="fade-right">
-                <div class="model-card model-card-dim fade-panel" id="panel-old">
+                <article class="operating-model-card operating-model-card-old border p-4 p-md-5 is-dim" id="panel-old">
                     <div class="stack-index">Then</div>
-                    <h3>The fragmented model</h3>
-                    <ul class="model-list">
-                        <li>Separate vendors for marketing, technology and creative</li>
-                        <li>More tools bolted onto disconnected processes</li>
-                        <li>Leads measured separately from pipeline</li>
-                        <li>Manual reporting, delayed decisions</li>
-                        <li>One-off creative production</li>
-                        <li>AI experiments without ownership</li>
+                    <h3 class="h-display fw-bold mt-2 mb-0">The fragmented model</h3>
+                    <ul class="model-list mt-4">
+                        <?php foreach ([
+                            'Separate vendors for marketing, technology and creative',
+                            'More tools bolted onto disconnected processes',
+                            'Leads measured separately from pipeline',
+                            'Manual reporting, delayed decisions',
+                            'One-off creative production',
+                            'AI experiments without ownership'
+                        ] as $item): ?>
+                            <li><span class="operating-model-circle mt-1"></span><span><?= $item ?></span></li>
+                        <?php endforeach; ?>
                     </ul>
-                </div>
+                </article>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <div class="model-card model-card-bright fade-panel" id="panel-nd">
+                <article class="operating-model-card operating-model-card-new border p-4 p-md-5 text-light" id="panel-nd">
                     <div class="stack-index">Now</div>
-                    <h3>The nDimensions model</h3>
-                    <ul class="model-list">
-                        <li>Engineers, marketers and creatives working together</li>
-                        <li>Existing tools connected around real workflows</li>
-                        <li>Marketing and sales measured through pipeline</li>
-                        <li>Automated business visibility</li>
-                        <li>Repeatable production systems</li>
-                        <li>AI built around measurable outcomes</li>
+                    <h3 class="h-display fw-bold mt-2 mb-0">The nDimensions model</h3>
+                    <ul class="model-list mt-4">
+                        <?php foreach ([
+                            'Engineers, marketers and creatives working together',
+                            'Existing tools connected around real workflows',
+                            'Marketing and sales measured through pipeline',
+                            'Automated business visibility',
+                            'Repeatable production systems',
+                            'AI built around measurable outcomes'
+                        ] as $item): ?>
+                            <li><i class="bi bi-check-circle text-grow mt-1" aria-hidden="true"></i><span><?= $item ?></span></li>
+                        <?php endforeach; ?>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
     </div>
 </section>
 
+    <?php require __DIR__ . '/includes/home-lower-sections.php'; ?>
+    <?php if (false): ?>
     <section class="section" id="how-we-work">
-        <div class="container-x">
+        <div class="container">
             <div class="row g-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">From opportunity to operating system</div>
@@ -630,7 +834,7 @@ require_once __DIR__ . '/includes/header.php';
     </section>
 
     <section class="section section-dark">
-        <div class="container-x">
+        <div class="container">
             <div class="row g-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow text-light">Why nDimensions</div>
@@ -658,7 +862,7 @@ require_once __DIR__ . '/includes/header.php';
     </section>
 
     <section class="section section-light" id="problem-selector">
-        <div class="container-x">
+        <div class="container">
             <div class="row g-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">Where do you want to start</div>
@@ -695,7 +899,7 @@ require_once __DIR__ . '/includes/header.php';
     </section>
 
     <section class="section" id="proof">
-        <div class="container-x">
+        <div class="container">
             <div class="row g-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">Experience behind the systems</div>
@@ -769,7 +973,7 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
     <section class="section faq-section" id="faq">
-  <div class="container-x">
+  <div class="container">
     <div class="row g-4 align-items-end mb-5">
       <div class="col-lg-8" data-aos="fade-right">
         <div class="faq-eyebrow">Common questions</div>
@@ -860,7 +1064,7 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
     <section class="section final-cta-section">
-        <div class="container-x">
+        <div class="container">
             <div class="final-cta" data-aos="fade-up">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-12">
@@ -874,6 +1078,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
         </div>
     </section>
+    <?php endif; ?>
 </main>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

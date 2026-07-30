@@ -3,62 +3,56 @@ document.addEventListener("DOMContentLoaded", function () {
     AOS.init({ duration: 700, once: true, easing: "ease-out-cubic" });
   }
 
-  document
-    .querySelectorAll('[data-bs-toggle="collapse"]')
-    .forEach(function (button) {
-      button.addEventListener("click", function () {
-        const target = document.querySelector(
-          button.getAttribute("data-bs-target"),
-        );
-        if (target) {
-          target.classList.toggle("show");
-        }
-      });
-    });
 });
 function setOperatingModel(which) {
   const btnOld = document.getElementById("btn-old");
   const btnNd = document.getElementById("btn-nd");
   const panelOld = document.getElementById("panel-old");
   const panelNd = document.getElementById("panel-nd");
+  if (!btnOld || !btnNd || !panelOld || !panelNd) return;
+
   if (which === "old") {
     btnOld.classList.add("active");
     btnNd.classList.remove("active");
-    panelOld.classList.remove("hidden");
-    panelNd.classList.add("hidden");
+    btnOld.setAttribute("aria-pressed", "true");
+    btnNd.setAttribute("aria-pressed", "false");
+    panelOld.classList.remove("is-dim");
+    panelNd.classList.add("is-dim");
   } else {
     btnNd.classList.add("active");
     btnOld.classList.remove("active");
-    panelNd.classList.remove("hidden");
-    panelOld.classList.add("hidden");
+    btnNd.setAttribute("aria-pressed", "true");
+    btnOld.setAttribute("aria-pressed", "false");
+    panelNd.classList.remove("is-dim");
+    panelOld.classList.add("is-dim");
   }
 }
 
 const problemData = {
   0: {
     system: "GrowSTACK",
-    desc: "GrowSTACK builds demand at the top of the funnel and connects it to sales with nurture, automation and CRM alignment.",
+    desc: "GrowSTACK builds demand at the top of the funnel and connects it to sales.",
     step: "Buyer + funnel mapping",
   },
   1: {
-    system: "SEO + AI Engine",
-    desc: "We map your brand to the queries buyers are making on Google and AI platforms, then build the content infrastructure to win them.",
-    step: "Search visibility audit",
+    system: "GrowSTACK",
+    desc: "Get Found: SEO, AEO and GEO \u2014 visibility across Google and AI answer engines.",
+    step: "Visibility audit",
   },
   2: {
-    system: "NurtureOS",
-    desc: "Automate follow-up sequences across email and WhatsApp so no lead goes cold, with CRM sync keeping your team in the loop.",
-    step: "CRM + sequence audit",
+    system: "GrowSTACK + BizGRID",
+    desc: "Nurture + CRM automation with human handoff signals.",
+    step: "Lifecycle map",
   },
   3: {
-    system: "ConnectStack",
-    desc: "Integrate WhatsApp with your CRM so every conversation is logged, assigned, and followed up automatically.",
-    step: "Integration mapping",
+    system: "GrowSTACK",
+    desc: "Two-way WhatsApp automation wired into your CRM with behaviour scoring.",
+    step: "Integration blueprint",
   },
   4: {
-    system: "ReportPilot",
-    desc: "We connect your data sources and build live dashboards so reporting goes from days to minutes.",
-    step: "Data source mapping",
+    system: "BizGRID",
+    desc: "Executive dashboards with automated data unification and exception alerts.",
+    step: "Reporting audit",
   },
   5: {
     system: "DataLayer",
@@ -66,20 +60,26 @@ const problemData = {
     step: "Spreadsheet consolidation audit",
   },
   6: {
-    system: "KnowledgeBase AI",
-    desc: "Turn your internal docs, SOPs and tribal knowledge into a searchable AI-powered system your team can actually use.",
+    system: "BizGRID",
+    desc: "Employee-support agents that search SOPs, policies and documents.",
     step: "Knowledge audit",
   },
   7: {
-    system: "CampaignEngine",
-    desc: "Systematize campaign production with modular templates, approval flows, and automated asset delivery.",
-    step: "Campaign process review",
+    system: "Cre8LAB",
+    desc: "AI-assisted production for ad variations, product visuals and short-form video.",
+    step: "Creative sprint",
   },
   8: {
     system: "BizGRID + Cre8LAB",
     desc: "Take the prototype to production with engineering, evals and interfaces.",
     step: "MVP scoping",
   },
+};
+
+problemData[5] = {
+  system: "BizGRID",
+  desc: "Move spreadsheets into a governed data grid with lightweight custom UI.",
+  step: "Process discovery",
 };
 
 document.querySelectorAll(".problem-option").forEach(function (el) {
@@ -160,20 +160,22 @@ document.querySelectorAll(".problem-option").forEach(function (el) {
   });
 })();
 
-const hamburger = document.getElementById("hamburger");
-const mobileNav = document.getElementById("mobileNav");
-const mobProductsToggle = document.getElementById("mobProductsToggle");
-const mobProductsPanel = document.getElementById("mobProductsPanel");
+(function () {
+  document
+    .querySelectorAll(
+      '.gs-layer-tabs [data-bs-toggle="pill"], .bg-layer-tabs [data-bs-toggle="pill"]',
+    )
+    .forEach(function (tabButton) {
+      tabButton.addEventListener("shown.bs.tab", function (event) {
+        const pane = document.querySelector(
+          event.target.getAttribute("data-bs-target"),
+        );
+        const animatedCard = pane && pane.querySelector("[data-aos]");
+        if (!animatedCard) return;
 
-hamburger.addEventListener("click", function () {
-  const isOpen = mobileNav.classList.contains("open");
-  hamburger.classList.toggle("open");
-  hamburger.setAttribute("aria-expanded", String(!isOpen));
-  mobileNav.classList.toggle("open");
-  document.body.style.overflow = isOpen ? "" : "hidden";
-});
-
-mobProductsToggle.addEventListener("click", function () {
-  mobProductsToggle.classList.toggle("open");
-  mobProductsPanel.classList.toggle("open");
-});
+        animatedCard.classList.remove("aos-animate");
+        void animatedCard.offsetWidth;
+        animatedCard.classList.add("aos-animate");
+      });
+    });
+})();

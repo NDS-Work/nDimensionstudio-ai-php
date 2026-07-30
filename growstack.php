@@ -153,37 +153,299 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-    <section class="section bg-dark text-light">
+    <section class="gs-funnel-gaps overflow-hidden text-light pt-5 pb-4" aria-labelledby="gs-gaps-title">
+        <div class="container pt-lg-3">
+            <p class="font-mono small text-secondary text-uppercase d-flex align-items-center gap-2 gs-gaps-tracking mb-0" data-aos="fade-up">
+                <span class="gs-gaps-dot gs-gaps-dot-lg"></span>
+                The gaps in the funnel
+            </p>
+
+            <div class="row gx-lg-5 mt-4 pt-1 align-items-end">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="50">
+                    <h2 class="gs-gaps-title fw-bold text-white mb-0" id="gs-gaps-title">
+                        <span class="d-block">Traffic without intent.</span>
+                        <span class="d-block">Leads without follow-</span>
+                        <span class="d-block">up.</span>
+                        <span class="d-block gs-gaps-title-italic fst-italic fw-medium">CRM without context.</span>
+                    </h2>
+                </div>
+
+                <div class="col-lg-5 mt-4 mt-lg-0 pb-1" data-aos="fade-up" data-aos-delay="120">
+                    <div class="gs-gaps-description fs-5 lh-lg">
+                        <p class="mb-3" style="color: #d4d4d8;">SEO is measured on rankings. Content on output. Advertising on leads. Sales waits for context. Leadership waits for a report that explains what actually created pipeline.</p>
+                        <p class="fw-bold mb-0">The missing piece isn&rsquo;t another channel.<br>It&rsquo;s the system connecting them.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-5 pt-lg-4">
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <article class="gs-gap-card h-100 border p-4">
+                        <p class="font-mono small text-secondary text-uppercase gs-gaps-tracking mb-3">SEO</p>
+                        <h3 class="fs-3 fw-bold text-white mb-0">rankings</h3>
+                        <p class="font-mono small text-secondary d-flex align-items-center gap-2 mt-4 mb-0">
+                            <span class="gs-gaps-dot"></span>measured alone
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="140">
+                    <article class="gs-gap-card h-100 border p-4">
+                        <p class="font-mono small text-secondary text-uppercase gs-gaps-tracking mb-3">Content</p>
+                        <h3 class="fs-3 fw-bold text-white mb-0">volume</h3>
+                        <p class="font-mono small text-secondary d-flex align-items-center gap-2 mt-4 mb-0">
+                            <span class="gs-gaps-dot"></span>output-only
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <article class="gs-gap-card h-100 border p-4">
+                        <p class="font-mono small text-secondary text-uppercase gs-gaps-tracking mb-3">Ads</p>
+                        <h3 class="fs-3 fw-bold text-white mb-0">leads</h3>
+                        <p class="font-mono small text-secondary d-flex align-items-center gap-2 mt-4 mb-0">
+                            <span class="gs-gaps-dot"></span>no attribution
+                        </p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="260">
+                    <article class="gs-gap-card h-100 border p-4">
+                        <p class="font-mono small text-secondary text-uppercase gs-gaps-tracking mb-3">Sales</p>
+                        <h3 class="fs-3 fw-bold text-white mb-0">closes</h3>
+                        <p class="font-mono small text-secondary d-flex align-items-center gap-2 mt-4 mb-0">
+                            <span class="gs-gaps-dot"></span>no context
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <?php
+    $growLayers = [
+        ['Get found', 'Show up on Google &mdash; and inside AI answers.', 'bi-search', ['Technical + on-page SEO', 'AEO and GEO for AI answer engines', 'Buyer-intent research', 'Authority and reputation signals', 'Competitor visibility tracking', 'Google + AI-search visibility'], 'search'],
+        ['Earn attention', 'Content that plants intent, not just impressions.', 'bi-file-earmark-text', ['B2B content strategy', 'Thought leadership', 'Search-led articles', 'Decision-stage landing pages', 'Email and newsletters', 'Content repurposing engine'], 'content'],
+        ['Capture demand', 'Convert intent into named opportunities.', 'bi-bullseye', ['Paid acquisition', 'B2B landing pages', 'Lead magnets', 'Outbound targeting', 'Conversion tracking', 'Meta CAPI + ad-data integrations'], 'capture'],
+        ['Nurture intent', 'Behaviour-triggered follow-up on the channels buyers use.', 'bi-chat-dots', ['Email nurturing', 'WhatsApp automation', 'Lead qualification + scoring', 'Behaviour-based follow-ups', 'Meeting journeys', 'Lead reactivation'], 'nurture'],
+        ['Move & measure pipeline', 'One number the whole team owns: qualified pipeline.', 'bi-graph-up-arrow', ['CRM integration', 'Lead routing', 'Pipeline-stage automation', 'Sales notifications', 'Multi-touch attribution', 'Funnel + revenue dashboards'], 'pipeline'],
+    ];
+    ?>
+
+    <section class="section">
         <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <p class="eyebrow">The GrowSTACK model</p>
+                    <h2 class="nd-page-title mt-4">From first search<br><span class="fst-italic fw-normal text-secondary">to sales-ready opportunity.</span></h2>
+                </div>
+            </div>
+
             <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="nav nav-pills flex-column gap-2 gs-layer-tabs" role="tablist">
+                        <?php foreach ($growLayers as $index => $layer): ?>
+                            <button class="nav-link text-start border p-3 p-md-4 <?= $index === 0 ? 'active' : '' ?>"
+                                    id="gs-layer-tab-<?= $index ?>"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#gs-layer-<?= $index ?>"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="gs-layer-<?= $index ?>"
+                                    aria-selected="<?= $index === 0 ? 'true' : 'false' ?>">
+                                <span class="d-flex align-items-center gap-3">
+                                    <span class="nd-icon-box"><i class="bi <?= $layer[2] ?>"></i></span>
+                                    <span>
+                                        <small class="d-block font-mono text-uppercase opacity-75">Layer 0<?= $index + 1 ?></small>
+                                        <strong class="d-block fs-5 mt-1"><?= $layer[0] ?></strong>
+                                    </span>
+                                </span>
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="tab-content h-100">
+                        <?php foreach ($growLayers as $index => $layer): ?>
+                            <div class="tab-pane fade <?= $index === 0 ? 'show active' : '' ?> h-100"
+                                 id="gs-layer-<?= $index ?>"
+                                 role="tabpanel"
+                                 aria-labelledby="gs-layer-tab-<?= $index ?>">
+                                <div class="card-soft p-4 p-md-5 h-100" data-aos="fade-up">
+                                    <h3 class="display-6 fw-bold mb-4"><?= $layer[1] ?></h3>
+                                    <div class="row g-4">
+                                        <div class="col-md-7">
+                                            <ul class="list-unstyled d-grid gap-3 mb-0">
+                                                <?php foreach ($layer[3] as $item): ?>
+                                                    <li class="d-flex gap-2">
+                                                        <i class="bi bi-check-circle-fill text-grow"></i>
+                                                        <span><?= $item ?></span>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="bg-light border rounded-4 p-3 h-100">
+                                                <?php if ($layer[4] === 'search'): ?>
+                                                    <p class="font-mono small text-uppercase text-secondary mb-3">AI search visibility</p>
+                                                    <div class="bg-white border rounded-3 p-2 small d-flex align-items-center gap-2 mb-3">
+                                                        <i class="bi bi-search text-secondary"></i>
+                                                        <span>best b2b workflow platform</span>
+                                                    </div>
+                                                    <?php foreach ([['Google AI', 88, 'cited'], ['Perplexity', 76, 'cited'], ['ChatGPT', 62, 'mentioned'], ['Search', 48, '#2']] as $metricIndex => $metric): ?>
+                                                        <div class="mb-3">
+                                                            <div class="d-flex justify-content-between small mb-1">
+                                                                <span><?= $metric[0] ?></span><span class="font-mono text-secondary"><?= $metric[2] ?></span>
+                                                            </div>
+                                                            <div class="progress" style="height:6px">
+                                                                <div class="progress-bar bg-grow gs-live-progress"
+                                                                     style="--gs-progress-target:<?= $metric[1] ?>%;--gs-progress-delay:<?= 0.15 + ($metricIndex * 0.12) ?>s"></div>
+                                                            </div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+
+                                                <?php elseif ($layer[4] === 'content'): ?>
+                                                    <p class="font-mono small text-uppercase text-secondary mb-3">Content pipeline</p>
+                                                    <?php foreach ([['Idea', 24, 90], ['Draft', 12, 55], ['Editor', 6, 32], ['Live', 8, 40]] as $metricIndex => $metric): ?>
+                                                        <div class="row align-items-center g-2 mb-3">
+                                                            <div class="col-3 small fw-semibold"><?= $metric[0] ?></div>
+                                                            <div class="col-7">
+                                                                <div class="progress" style="height:7px">
+                                                                    <div class="progress-bar bg-grow gs-live-progress"
+                                                                         style="--gs-progress-target:<?= $metric[2] ?>%;--gs-progress-delay:<?= 0.15 + ($metricIndex * 0.12) ?>s"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-2 text-end font-mono small text-secondary"><?= $metric[1] ?></div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                    <div class="border-top pt-3 mt-2 small text-secondary">
+                                                        <i class="bi bi-arrow-repeat text-grow me-2"></i>Repurposing engine active
+                                                    </div>
+
+                                                <?php elseif ($layer[4] === 'capture'): ?>
+                                                    <p class="font-mono small text-uppercase text-secondary mb-3">Capture &middot; 30-day cohort</p>
+                                                    <div class="row g-2 mb-3">
+                                                        <div class="col-6">
+                                                            <div class="bg-white border rounded-3 p-2 h-100">
+                                                                <small class="font-mono text-secondary">Landing &rarr; Lead</small>
+                                                                <div class="h4 fw-bold mb-0">4.3%</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="bg-white border rounded-3 p-2 h-100">
+                                                                <small class="font-mono text-secondary">Cost / Lead</small>
+                                                                <div class="h4 fw-bold mb-0">$38</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bg-white border rounded-3 p-3">
+                                                        <small class="font-mono text-secondary">Meta CAPI &middot; events</small>
+                                                        <div class="d-flex align-items-end gap-1 mt-3" style="height:72px">
+                                                            <?php foreach ([30, 55, 45, 70, 62, 85, 90, 75, 92] as $barIndex => $height): ?>
+                                                                <span class="gs-event-bar bg-grow flex-grow-1 rounded-top"
+                                                                      style="--gs-event-target:<?= $height ?>%;--gs-progress-delay:<?= 0.1 + ($barIndex * 0.05) ?>s"></span>
+                                                            <?php endforeach; ?>
+                                                        </div>
+                                                    </div>
+
+                                                <?php elseif ($layer[4] === 'nurture'): ?>
+                                                    <div class="bg-dark text-light rounded-4 p-3 h-100">
+                                                        <div class="d-flex align-items-center gap-2 border-bottom border-secondary pb-3 mb-3">
+                                                            <span class="bg-success bg-opacity-25 text-success rounded-circle d-inline-flex align-items-center justify-content-center" style="width:32px;height:32px"><i class="bi bi-whatsapp"></i></span>
+                                                            <span><strong class="d-block small">WhatsApp Nurture</strong><small class="text-secondary">behaviour-triggered</small></span>
+                                                            <small class="text-success ms-auto font-mono">live</small>
+                                                        </div>
+                                                        <div class="gs-tab-message bg-secondary bg-opacity-25 rounded-3 p-2 small mb-2" style="--gs-progress-delay:.12s">Hi Priya &mdash; saw you downloaded the pipeline playbook.</div>
+                                                        <div class="gs-tab-message bg-success rounded-3 p-2 small mb-2 ms-4" style="--gs-progress-delay:.28s">Yes, wanted to see the CRM setup.</div>
+                                                        <div class="gs-tab-message bg-secondary bg-opacity-25 rounded-3 p-2 small" style="--gs-progress-delay:.44s">Perfect. Booking you a 20-min walkthrough &mdash; Tue 3pm?</div>
+                                                    </div>
+
+                                                <?php else: ?>
+                                                    <div class="d-flex justify-content-between align-items-start mb-4">
+                                                        <span><small class="font-mono text-secondary">Pipeline</small><strong class="d-block h4 mb-0">$1.42M in play</strong></span>
+                                                        <i class="bi bi-arrow-up-right text-success fs-4"></i>
+                                                    </div>
+                                                    <?php foreach ([['New', 85, 42], ['Qualified', 65, 28], ['Proposal', 38, 14], ['Won', 18, 6]] as $metricIndex => $metric): ?>
+                                                        <div class="row align-items-center g-2 mb-3">
+                                                            <div class="col-4 small fw-semibold"><?= $metric[0] ?></div>
+                                                            <div class="col-6">
+                                                                <div class="progress" style="height:7px">
+                                                                    <div class="progress-bar bg-grow gs-live-progress"
+                                                                         style="--gs-progress-target:<?= $metric[1] ?>%;--gs-progress-delay:<?= 0.15 + ($metricIndex * 0.12) ?>s"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-2 text-end font-mono small text-secondary"><?= $metric[2] ?></div>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-soft border-top border-bottom">
+        <div class="container">
+            <div class="row g-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <p class="eyebrow text-light">The gaps in the funnel</p>
-                    <h2 class="display-5 fw-bold mt-3">Traffic without intent. Leads without follow-up. CRM without context.</h2>
+                    <p class="eyebrow">Not a collection of services</p>
+                    <h2 class="nd-page-title mt-4">One growth system.<br><span class="fst-italic fw-normal text-secondary">Shared context at every stage.</span></h2>
+                    <p class="lead text-muted mt-4">The content team knows what buyers are searching for. Campaigns know which messages create intent. Nurturing responds to behaviour. Sales receives history, score and next action. Reporting shows what actually created movement &mdash; not just activity.</p>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="card-dark p-4 h-100">
-                                <h3 class="h6 fw-bold">SEO</h3>
-                                <p class="small text-light-emphasis mt-2">Rankings measured alone.</p>
-                            </div>
+                    <div class="card-soft overflow-hidden">
+                        <div class="bg-dark text-light d-flex align-items-center gap-2 px-3 py-2">
+                            <span class="rounded-circle bg-danger" style="width:8px;height:8px"></span>
+                            <span class="rounded-circle bg-warning" style="width:8px;height:8px"></span>
+                            <span class="rounded-circle bg-success" style="width:8px;height:8px"></span>
+                            <span class="font-mono text-secondary ms-1" style="font-size:10px">bizgrid &middot; leadership view</span>
                         </div>
-                        <div class="col-6">
-                            <div class="card-dark p-4 h-100">
-                                <h3 class="h6 fw-bold">Content</h3>
-                                <p class="small text-light-emphasis mt-2">Volume without intent.</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card-dark p-4 h-100">
-                                <h3 class="h6 fw-bold">Ads</h3>
-                                <p class="small text-light-emphasis mt-2">Leads without attribution.</p>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card-dark p-4 h-100">
-                                <h3 class="h6 fw-bold">Sales</h3>
-                                <p class="small text-light-emphasis mt-2">Closes without context.</p>
+
+                        <div class="bg-white p-3 p-md-4">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="bg-light rounded-4 p-3 h-100">
+                                        <p class="font-mono text-secondary mb-1" style="font-size:10px">Pipeline (30d)</p>
+                                        <div class="h3 fw-bold mb-1">$1.42M</div>
+                                        <svg class="w-100 mt-1" height="36" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+                                            <polyline class="gs-dashboard-line" fill="none" stroke="#2563eb" stroke-width="1.8" points="0,22 12,18 24,20 36,12 48,14 60,8 72,10 84,4 100,6"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="bg-light rounded-4 p-3 h-100">
+                                        <p class="font-mono text-secondary mb-1" style="font-size:10px">Ops throughput</p>
+                                        <div class="h3 fw-bold text-biz mb-1">+38%</div>
+                                        <div class="d-flex align-items-end gap-1 mt-1" style="height:36px">
+                                            <?php foreach ([40, 55, 45, 70, 62, 85, 90] as $barIndex => $height): ?>
+                                                <span class="gs-event-bar bg-biz flex-grow-1 rounded-top"
+                                                      style="--gs-event-target:<?= $height ?>%;--gs-progress-delay:<?= 0.18 + ($barIndex * 0.06) ?>s"></span>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="bg-light rounded-4 p-3">
+                                        <p class="font-mono text-secondary mb-2" style="font-size:10px">Live workflows</p>
+                                        <?php foreach ([['Lead &rarr; CRM &rarr; Sales Slack alert', 'ok'], ['Weekly leadership report', 'ok'], ['Invoice OCR &rarr; Finance queue', 'run']] as $workflowIndex => $workflow): ?>
+                                            <div class="gs-dashboard-workflow d-flex align-items-center gap-2 small <?= $workflowIndex ? 'mt-2' : '' ?>"
+                                                 style="--gs-progress-delay:<?= 0.48 + ($workflowIndex * 0.12) ?>s">
+                                                <i class="bi bi-check-circle-fill text-success"></i>
+                                                <span class="text-truncate flex-grow-1"><?= $workflow[0] ?></span>
+                                                <span class="font-mono text-secondary" style="font-size:10px"><?= $workflow[1] ?></span>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -192,24 +454,170 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="section container">
-        <div class="row g-4">
-            <div class="col-lg-6" data-aos="fade-up">
-                <div class="card-soft p-4 p-lg-5 h-100">
-                    <p class="eyebrow">Core components</p>
-                    <h2 class="display-6 fw-bold mt-3">The system connects the work that drives pipeline.</h2>
-                    <ul class="list-check mt-4 ps-0">
-                        <li><i class="bi bi-check-circle-fill"></i><span>Search visibility and AI answer engine strategy.</span></li>
-                        <li><i class="bi bi-check-circle-fill"></i><span>Content pipelines for demand generation.</span></li>
-                        <li><i class="bi bi-check-circle-fill"></i><span>Lead capture, nurture and CRM automation.</span></li>
-                    </ul>
+    <?php
+    $growIntegrations = [
+        ['CRM', ['HubSpot', 'Salesforce', 'Zoho', 'Pipedrive']],
+        ['Comms', ['WhatsApp', 'Email']],
+        ['Advertising', ['Meta', 'Google Ads']],
+        ['Analytics', ['GA4', 'Looker Studio']],
+        ['CMS', ['WordPress', 'Webflow']],
+        ['Commerce', ['Shopify']],
+        ['Data', ['Sheets', 'Databases']],
+    ];
+    ?>
+    <section class="section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <p class="eyebrow">Integrations</p>
+                    <h2 class="nd-page-title mt-4">Connect the stack<br><span class="fst-italic fw-normal text-secondary">you already use.</span></h2>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
-                <div class="card-soft p-4 p-lg-5 h-100">
-                    <p class="eyebrow">Outcome</p>
-                    <h2 class="display-6 fw-bold mt-3">One number the whole team owns: qualified pipeline.</h2>
-                    <p class="text-muted mt-3">This is how marketing, sales and leadership operate from a shared source of truth.</p>
+            <div class="row g-3">
+                <?php foreach ($growIntegrations as $index => $integration): ?>
+                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="<?= $index * 40 ?>">
+                        <div class="card-soft p-3 p-md-4 h-100">
+                            <p class="eyebrow text-grow mb-3"><?= $integration[0] ?></p>
+                            <ul class="list-unstyled small fw-semibold mb-0 d-grid gap-2">
+                                <?php foreach ($integration[1] as $item): ?>
+                                    <li class="d-flex align-items-center gap-2"><span class="nd-dot bg-grow"></span><?= $item ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="marquee-section" data-aos="fade-up">
+        <div class="marquee-mask">
+            <div class="marquee-track" aria-hidden="true">
+                <?php for ($repeat = 0; $repeat < 2; $repeat++): ?>
+                    <?php foreach (['Search', 'Content', 'Demand', 'Nurture', 'CRM', 'Pipeline', 'Revenue'] as $item): ?>
+                        <span class="marquee-item"><span class="marquee-dot"></span><?= $item ?></span>
+                    <?php endforeach; ?>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </section>
+
+    <?php
+    $growOutcomes = ['Stronger search and AI visibility', 'More consistent demand creation', 'Faster response to enquiries', 'Better-qualified sales conversations', 'Fewer leads lost between systems', 'Cleaner CRM ownership', 'Clearer source-to-pipeline reporting', 'A growth system that improves over time'];
+    ?>
+    <section class="section section-dark">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <p class="eyebrow text-light-emphasis">Outcomes</p>
+                    <h2 class="nd-page-title mt-4">What changes when<br><span class="fst-italic fw-normal text-secondary">the stack works together?</span></h2>
+                </div>
+            </div>
+            <div class="row g-3">
+                <?php foreach ($growOutcomes as $index => $outcome): ?>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="<?= ($index % 4) * 40 ?>">
+                        <div class="card-dark rounded-4 p-4 d-flex align-items-start gap-3 h-100">
+                            <span class="font-mono small text-grow">0<?= $index + 1 ?></span>
+                            <h3 class="h4 fw-bold mb-0"><?= $outcome ?></h3>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <?php $growSteps = ['Growth Audit', 'Buyer & Funnel Mapping', 'Stack Architecture', 'Workflow Deployment', 'Growth Operations', 'Continuous Improvement']; ?>
+    <section class="section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <p class="eyebrow">Implementation</p>
+                    <h2 class="nd-page-title mt-4">The path from<br><span class="fst-italic fw-normal text-secondary">audit to running system.</span></h2>
+                </div>
+            </div>
+            <div class="row g-3">
+                <?php foreach ($growSteps as $index => $step): ?>
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="<?= ($index % 3) * 50 ?>">
+                        <div class="card-soft p-4 p-md-4 h-100">
+                            <p class="font-mono small text-uppercase text-secondary mb-4">Step 0<?= $index + 1 ?></p>
+                            <div class="display-6 fw-bold text-grow">0<?= $index + 1 ?></div>
+                            <h3 class="h5 fw-bold mt-3 mb-0"><?= $step ?></h3>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <?php
+    $growFit = ['B2B companies running disconnected growth channels', 'Businesses generating leads but losing them during follow-up', 'Companies investing in content without pipeline attribution', 'Sales teams working with incomplete CRM data', 'Brands building visibility across Google and AI search', 'Founders and CMOs seeking one accountable growth partner'];
+    ?>
+    <section class="section section-soft border-top border-bottom">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <p class="eyebrow">Who it&rsquo;s for</p>
+                    <h2 class="nd-page-title mt-4">GrowSTACK fits<br><span class="fst-italic fw-normal text-secondary">if any of this is true.</span></h2>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <?php foreach ($growFit as $index => $item): ?>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="<?= ($index % 2) * 40 ?>">
+                                <div class="bg-white border rounded-4 p-4 h-100">
+                                    <p class="font-mono small text-secondary mb-2">0<?= $index + 1 ?></p>
+                                    <h3 class="h5 fw-bold mb-0"><?= $item ?></h3>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <?php
+    $growFaqs = [
+        ['Does GrowSTACK replace our existing CRM?', 'No. GrowSTACK connects around your existing CRM. If it is not serving the business, we will say so, but the default is to make what you already own work harder.'],
+        ['Can we start with lead nurturing only?', 'Yes. Most engagements start with the single most painful layer. Nurture-first setups go live in weeks and immediately compound the rest of the funnel.'],
+        ['Does GrowSTACK include SEO, AEO and GEO?', 'Yes. Get Found covers traditional SEO plus visibility inside AI answer engines, the fast-emerging surface where B2B research is starting.'],
+        ['Can it connect WhatsApp with our CRM?', 'Yes. Two-way sync covers conversations, contacts, behaviour and score signals, with human handoff when it matters.'],
+        ['Can you manage the system after launch?', 'Yes. Ongoing operation includes content, campaigns, nurturing, CRM health and reporting.'],
+        ['How do you measure pipeline impact?', 'Multi-touch attribution is modelled on your buyer journey, from first known touch through opportunity and closed-won, reported in one dashboard.'],
+    ];
+    ?>
+    <section class="section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <p class="eyebrow">GrowSTACK &middot; FAQ</p>
+                    <h2 class="nd-page-title mt-4">Questions we hear<br><span class="fst-italic fw-normal text-secondary">from B2B leaders.</span></h2>
+                </div>
+            </div>
+            <div class="accordion accordion-flush" id="growFaq">
+                <?php foreach ($growFaqs as $index => $faq): ?>
+                    <div class="accordion-item bg-transparent" data-aos="fade-up">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed gs-faq-question h-display fs-2 bg-transparent px-3 px-md-4 py-5" type="button" data-bs-toggle="collapse" data-bs-target="#growFaq<?= $index ?>" aria-expanded="false" aria-controls="growFaq<?= $index ?>">
+                                <span class="font-mono small text-secondary me-4">0<?= $index + 1 ?></span><?= $faq[0] ?>
+                            </button>
+                        </h3>
+                        <div id="growFaq<?= $index ?>" class="accordion-collapse collapse" data-bs-parent="#growFaq">
+                            <div class="accordion-body lead text-muted ps-5 pb-4"><?= $faq[1] ?></div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pt-0">
+        <div class="container">
+            <div class="gs-cta-panel text-light p-4 p-md-5 p-lg-5 overflow-hidden" data-aos="fade-up">
+                <p class="eyebrow text-light">Ready to build</p>
+                <h2 class="nd-page-title mt-4 lh-sm">Build demand that<br>doesn&rsquo;t disappear at<br><span class="fst-italic fw-normal text-white-50 lh-sm">the handoff.</span></h2>
+                <div class="d-flex flex-wrap gap-3 mt-5">
+                    <a class="btn btn-light rounded-pill px-4 py-2" href="#contact">Build Your GrowSTACK <i class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn btn-outline-light rounded-pill px-4 py-2" href="<?= url('bizgrid.php') ?>">Explore BizGRID <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
