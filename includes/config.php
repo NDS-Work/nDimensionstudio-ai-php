@@ -78,16 +78,26 @@ function sendEmailViaBrevo($toEmail, $subject, $textContent, $replyToEmail = nul
         return false;
     }
 
+    // Handle multiple recipients separated by commas
+    $recipients = [];
+    $emailList = explode(',', $toEmail);
+    foreach ($emailList as $email) {
+        $trimmedEmail = trim($email);
+        if (filter_var($trimmedEmail, FILTER_VALIDATE_EMAIL)) {
+            $recipients[] = ['email' => $trimmedEmail];
+        }
+    }
+
+    if (empty($recipients)) {
+        return false;
+    }
+
     $data = [
         'sender' => [
             'name' => $senderName,
             'email' => $senderEmail
         ],
-        'to' => [
-            [
-                'email' => $toEmail
-            ]
-        ],
+        'to' => $recipients,
         'subject' => $subject,
         'textContent' => $textContent
     ];
