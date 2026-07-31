@@ -69,17 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'What is slowing the business down:',
                 $values['message'],
             ]);
-            $headers = [
-                'From: nDimensions Website <website@ndimensions.ai>',
-                'Reply-To: ' . $values['email'],
-                'Content-Type: text/plain; charset=UTF-8',
-            ];
-
-            if (@mail('hello@ndimensions.ai', $subject, wordwrap($body, 70), implode("\r\n", $headers))) {
+            if (sendEmailViaBrevo(BREVO_RECIPIENT_EMAIL, $subject, $body, $values['email'], $values['name'])) {
                 $submitted = true;
                 $_SESSION['contact_token'] = bin2hex(random_bytes(24));
             } else {
-                $errors['form'] = 'We could not send the request right now. Please email hello@ndimensions.ai.';
+                $errors['form'] = 'We could not send the request right now. Please email ' . BREVO_RECIPIENT_EMAIL . '.';
             }
         }
     }
