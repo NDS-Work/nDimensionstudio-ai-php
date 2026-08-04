@@ -1422,13 +1422,6 @@ h2.cta.section-title.mt-3 {
   margin-inline: auto;
 }
 
-.hero-section--text-only .hero-headline > span {
-  opacity: 1;
-  clip-path: none;
-  transform: none;
-  animation: none;
-}
-
 .hero-section--text-only .hero-headline > .hero-line-with-icon,
 .hero-section--text-only .hero-headline > .hero-line-with-portrait {
   display: flex;
