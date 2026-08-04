@@ -1,3 +1,34 @@
+const navigationEntry = performance.getEntriesByType?.("navigation")[0];
+const isPageReload =
+  navigationEntry?.type === "reload" ||
+  window.performance?.navigation?.type === 1;
+
+if (isPageReload) {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  const resetReloadScroll = () => {
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = previousScrollBehavior;
+  };
+
+  resetReloadScroll();
+  window.addEventListener(
+    "load",
+    () => {
+      resetReloadScroll();
+      window.requestAnimationFrame(() =>
+        window.requestAnimationFrame(resetReloadScroll),
+      );
+    },
+    { once: true },
+  );
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   if (window.AOS) {
     AOS.init({ duration: 700, once: true, easing: "ease-out-cubic" });

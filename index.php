@@ -14,22 +14,20 @@ require_once __DIR__ . '/includes/header.php';
         <div class="container hero-section__text">
             <div class="hero-eyebrow eyebrow eyebrow-dot">AI-native growth &amp; automation partner</div>
             <h1 class="hero-headline">
-                <span>We build AI</span>
-                <span class="hero-line-with-portrait">
-                    <span>systems</span>
+                <span class="hero-composed-line hero-composed-line--portrait">
+                    <span class="hero-line-copy">We Build AI<br class="hero-mobile-break"> Systems</span>
                     <span class="hero-portrait-wrap" aria-hidden="true">
                         <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?crop=entropy&amp;fm=jpg&amp;q=85&amp;w=800" alt="">
                     </span>
                 </span>
-                <span class="hero-line-with-icon">
-                    <span>B2B growth</span>
+                <span class="hero-composed-line hero-composed-line--badge">
                     <span class="hero-badge" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                         </svg>
                     </span>
+                    <span class="hero-line-copy">B2B growth<br class="hero-mobile-break"> runs on.</span>
                 </span>
-                <span>runs on.</span>
             </h1>
 
             <div class="row g-5 align-items-end hero-body hero-temporarily-hidden">

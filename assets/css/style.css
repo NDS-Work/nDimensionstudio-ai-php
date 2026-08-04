@@ -1413,22 +1413,36 @@ h2.cta.section-title.mt-3 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: calc(100% - 3rem);
+  max-width: 1600px;
 }
 
 .hero-section--text-only .hero-headline {
-  font-size: clamp(6rem, 8.25vw, 10rem);
-  line-height: 0.88;
+  font-size: clamp(4.75rem, 6.25vw, 7.75rem);
+  line-height: 0.92;
   max-width: none;
   margin-inline: auto;
 }
 
-.hero-section--text-only .hero-headline > .hero-line-with-icon,
-.hero-section--text-only .hero-headline > .hero-line-with-portrait {
+.hero-section--text-only .hero-headline > .hero-composed-line {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
   gap: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.hero-section--text-only .hero-headline > .hero-composed-line + .hero-composed-line {
+  margin-top: 0.16em;
+}
+
+.hero-section--text-only .hero-line-copy {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.hero-mobile-break {
+  display: none;
 }
 
 .hero-section--text-only .hero-portrait-wrap {
@@ -2565,20 +2579,57 @@ h2.cta.section-title.mt-3 {
 
   .hero-section--text-only .hero-headline {
     width: 100%;
-    font-size: clamp(3rem, 13.5vw, 4.25rem);
-    line-height: 0.98;
+    font-size: clamp(2.4rem, 12vw, 3.75rem);
+    line-height: 0.96;
     text-align: left;
   }
 
   .hero-section--text-only .hero-section__text {
     align-items: flex-start;
     text-align: left;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .hero-section--text-only .hero-headline > .hero-line-with-icon,
-  .hero-section--text-only .hero-headline > .hero-line-with-portrait {
-    justify-content: flex-start;
+  .hero-section--text-only .hero-headline > .hero-composed-line {
+    display: grid;
+    justify-content: stretch;
     gap: 0.65rem;
+  }
+
+  .hero-section--text-only .hero-composed-line--portrait {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .hero-section--text-only .hero-composed-line--badge {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .hero-section--text-only .hero-composed-line--badge .hero-line-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-section--text-only .hero-composed-line--badge .hero-badge {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .hero-section--text-only .hero-line-copy {
+    white-space: normal;
+  }
+
+  .hero-mobile-break {
+    display: block;
+  }
+
+  .hero-section--text-only .hero-composed-line--portrait .hero-portrait-wrap {
+    align-self: end;
+    margin-bottom: 0.08em;
+  }
+
+  .hero-section--text-only .hero-composed-line--badge .hero-badge {
+    align-self: start;
   }
 
   .hero-section--text-only .hero-headline > span + span {
@@ -2586,13 +2637,13 @@ h2.cta.section-title.mt-3 {
   }
 
   .hero-section--text-only .hero-badge {
-    width: clamp(48px, 12vw, 60px);
-    height: clamp(48px, 12vw, 60px);
+    width: clamp(46px, 12vw, 58px);
+    height: clamp(46px, 12vw, 58px);
   }
 
   .hero-section--text-only .hero-portrait-wrap {
-    width: clamp(88px, 24vw, 116px);
-    height: clamp(44px, 11.5vw, 56px);
+    width: clamp(78px, 23vw, 108px);
+    height: clamp(42px, 11vw, 54px);
   }
 
   .hero-proof {
