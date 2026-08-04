@@ -1,8 +1,7 @@
 <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg container py-3" aria-label="Primary navigation">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="<?= url() ?>" aria-label="nDimensions.ai home">
-            <span class="brand-mark">n</span>
-            <span class="fw-bold">nDimensions<span class="text-muted">.ai</span></span>
+        <a class="navbar-brand d-flex align-items-center" href="<?= url() ?>" aria-label="nDimensions.ai home">
+            <img class="site-logo" src="assets/images/nds-logo.png" alt="nDimensions.ai">
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-3">

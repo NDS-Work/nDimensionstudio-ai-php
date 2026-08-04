@@ -10,25 +10,29 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-    <section class="hero-section">
-        <div class="container">
+    <section class="hero-section hero-section--text-only">
+        <div class="container hero-section__text">
             <div class="hero-eyebrow eyebrow eyebrow-dot">AI-native growth &amp; automation partner</div>
             <h1 class="hero-headline">
-                <span>We build the</span>
-                <span class="hero-inline d-flex">
+                <span>We build AI</span>
+                <span class="hero-line-with-portrait">
                     <span>systems</span>
-                    <span class="hero-portrait-wrap">
-                        <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?crop=entropy&fm=jpg&q=85&w=800" alt="">
+                    <span class="hero-portrait-wrap" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?crop=entropy&amp;fm=jpg&amp;q=85&amp;w=800" alt="">
                     </span>
                 </span>
-                <span class="hero-inline">
+                <span class="hero-line-with-icon">
                     <span>B2B growth</span>
-                    <span class="hero-badge"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-7 h-7 md:w-9 md:h-9 lg:w-12 lg:h-12" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg></span>
+                    <span class="hero-badge" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                        </svg>
+                    </span>
                 </span>
                 <span>runs on.</span>
             </h1>
 
-            <div class="row g-5 align-items-end hero-body">
+            <div class="row g-5 align-items-end hero-body hero-temporarily-hidden">
                 <div class="col-lg-6" data-aos="fade-right">
                     <p class="hero-copy">nDimensions brings AI engineering, digital marketing and creative production into one connected team.</p>
                     <ul class="hero-list">
@@ -348,9 +352,11 @@ require_once __DIR__ . '/includes/header.php';
             <div class="pg-product-grid" data-aos="fade-up">
     <!-- Card 1: GrowSTACK -->
     <a class="pg-card pg-card-grow" href="<?= url('growstack.php') ?>">
+        <!-- Product portrait hidden for the text-only card design.
         <div class="pg-avatar-wrapper">
             <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&fm=jpg&q=85&w=900" alt="Growth operator">
         </div>
+        -->
         <div class="pg-card-body">
             <div class="pg-chip">
                 <span class="pg-chip-dot"></span>
@@ -372,9 +378,11 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- Card 2: BizGRID -->
     <a class="pg-card pg-card-biz" href="<?= url('bizgrid.php') ?>">
+        <!-- Product portrait hidden for the text-only card design.
         <div class="pg-avatar-wrapper">
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&fm=jpg&q=85&w=900" alt="Operations lead">
         </div>
+        -->
         <div class="pg-card-body">
             <div class="pg-chip">
                 <span class="pg-chip-dot"></span>
@@ -396,9 +404,11 @@ require_once __DIR__ . '/includes/header.php';
 
     <!-- Card 3: Cre8LAB -->
     <a class="pg-card pg-card-cre8" href="#contact">
+        <!-- Product portrait hidden for the text-only card design.
         <div class="pg-avatar-wrapper">
             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&fm=jpg&q=85&w=900" alt="Creative director">
         </div>
+        -->
         <div class="pg-card-body">
             <div class="pg-chip">
                 <span class="pg-chip-dot"></span>

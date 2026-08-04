@@ -766,6 +766,21 @@ h6,
   font-weight: 800;
 }
 
+.site-logo {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+@media (max-width: 767.98px) {
+  .site-logo {
+    height: 36px;
+    max-width: 180px;
+  }
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -1382,6 +1397,66 @@ h2.cta.section-title.mt-3 {
 .hero-section {
   padding: 7rem 0 4rem;
   position: relative;
+}
+
+/* Text-only home hero. The remaining hero content stays in the markup for later use. */
+.hero-section--text-only {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.hero-section__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-section--text-only .hero-headline {
+  font-size: clamp(6rem, 8.25vw, 10rem);
+  line-height: 0.88;
+  max-width: none;
+  margin-inline: auto;
+}
+
+.hero-section--text-only .hero-headline > span {
+  opacity: 1;
+  clip-path: none;
+  transform: none;
+  animation: none;
+}
+
+.hero-section--text-only .hero-headline > .hero-line-with-icon,
+.hero-section--text-only .hero-headline > .hero-line-with-portrait {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.hero-section--text-only .hero-portrait-wrap {
+  flex: 0 0 auto;
+  width: clamp(145px, 11vw, 210px);
+  height: clamp(64px, 5.25vw, 94px);
+}
+
+.hero-section--text-only .hero-badge {
+  flex: 0 0 auto;
+  width: clamp(72px, 6.5vw, 112px);
+  height: clamp(72px, 6.5vw, 112px);
+}
+
+.hero-section--text-only .hero-badge svg {
+  width: 46%;
+  height: 46%;
+}
+
+.hero-temporarily-hidden {
+  display: none !important;
 }
 
 .hero-eyebrow {
@@ -2478,6 +2553,12 @@ h2.cta.section-title.mt-3 {
     padding-top: 5.5rem;
   }
 
+  .hero-section--text-only {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+
   .triptych-card {
     min-height: auto;
   }
@@ -2487,6 +2568,38 @@ h2.cta.section-title.mt-3 {
     line-height: 0.95;
     letter-spacing: -0.03em;
     max-width: none;
+  }
+
+  .hero-section--text-only .hero-headline {
+    width: 100%;
+    font-size: clamp(3rem, 13.5vw, 4.25rem);
+    line-height: 0.98;
+    text-align: left;
+  }
+
+  .hero-section--text-only .hero-section__text {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-section--text-only .hero-headline > .hero-line-with-icon,
+  .hero-section--text-only .hero-headline > .hero-line-with-portrait {
+    justify-content: flex-start;
+    gap: 0.65rem;
+  }
+
+  .hero-section--text-only .hero-headline > span + span {
+    margin-top: 0.08em;
+  }
+
+  .hero-section--text-only .hero-badge {
+    width: clamp(48px, 12vw, 60px);
+    height: clamp(48px, 12vw, 60px);
+  }
+
+  .hero-section--text-only .hero-portrait-wrap {
+    width: clamp(88px, 24vw, 116px);
+    height: clamp(44px, 11.5vw, 56px);
   }
 
   .hero-proof {
