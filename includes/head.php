@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/config.php';
-$defaultSocialImage = 'https://ndimensions.ai/ai/assets/images/nds-logo.png';
+$defaultSocialImage = 'https://nds.studio/ai/assets/images/nds-logo.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">
