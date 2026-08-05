@@ -401,7 +401,7 @@ require_once __DIR__ . '/includes/header.php';
     </a>
 
     <!-- Card 3: Cre8LAB -->
-    <a class="pg-card pg-card-cre8" href="#contact">
+    <a class="pg-card pg-card-cre8" href="<?= url('coming-soon.php?product=cre8lab') ?>">
         <!-- Product portrait hidden for the text-only card design.
         <div class="pg-avatar-wrapper">
             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&fm=jpg&q=85&w=900" alt="Creative director">
@@ -697,7 +697,7 @@ require_once __DIR__ . '/includes/header.php';
                             <?php if ($index < 4): ?><i class="bi bi-arrow-right text-cre"></i><?php endif; ?>
                         <?php endforeach; ?>
                     </div>
-                    <a class="btn rounded-pill px-4 py-3 fw-semibold text-white bg-cre border-0" href="#contact">Explore Cre8LAB <i class="bi bi-arrow-up-right ms-2"></i></a>
+                    <a class="btn rounded-pill px-4 py-3 fw-semibold text-white bg-cre border-0" href="<?= url('coming-soon.php?product=cre8lab') ?>">Explore Cre8LAB <i class="bi bi-arrow-up-right ms-2"></i></a>
                 </div>
 
                 <div class="col-lg-7" data-aos="fade-left">

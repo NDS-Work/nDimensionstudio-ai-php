@@ -18,7 +18,7 @@
                 <ul class="list-unstyled d-grid gap-2 mb-0">
                     <li><a class="text-reset text-decoration-none" href="<?= url('growstack.php') ?>">GrowSTACK</a></li>
                     <li><a class="text-reset text-decoration-none" href="<?= url('bizgrid.php') ?>">BizGRID</a></li>
-                    <li><a class="text-reset text-decoration-none" href="<?= url('index.php#cre8lab') ?>">Cre8LAB</a></li>
+                    <li><a class="text-reset text-decoration-none" href="<?= url('coming-soon.php?product=cre8lab') ?>">Cre8LAB</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md-3">

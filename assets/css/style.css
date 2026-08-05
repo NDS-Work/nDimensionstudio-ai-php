@@ -38,6 +38,36 @@ body {
   line-height: 1.7;
 }
 
+/* Minimal reusable coming-soon page */
+.simple-coming-soon {
+  min-height: calc(100svh - 82px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg);
+  text-align: center;
+}
+
+.simple-coming-soon-product {
+  margin: 0 0 1rem;
+  color: var(--coming-soon-accent, var(--cre));
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.simple-coming-soon h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
 /* Contact audit */
 .contact-hero {
   min-height: calc(100vh - 72px);
@@ -131,6 +161,278 @@ body {
 
   .contact-success {
     min-height: 420px;
+  }
+}
+
+/* Cre8LAB coming-soon page */
+.cre8-coming-page {
+  background: var(--bg);
+}
+
+.cre8-coming-hero {
+  min-height: calc(100svh - 82px);
+  display: flex;
+  align-items: center;
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  border-bottom: 1px solid var(--line);
+  isolation: isolate;
+}
+
+.cre8-coming-glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.cre8-coming-glow-one {
+  width: 34rem;
+  height: 34rem;
+  top: -17rem;
+  right: -8rem;
+  background: rgba(147, 51, 234, 0.12);
+}
+
+.cre8-coming-glow-two {
+  width: 24rem;
+  height: 24rem;
+  bottom: -14rem;
+  left: -9rem;
+  background: rgba(255, 87, 34, 0.08);
+}
+
+.cre8-coming-eyebrow {
+  gap: 0.65rem;
+}
+
+.cre8-coming-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--cre);
+  box-shadow: 0 0 0 0.4rem var(--cre-soft);
+}
+
+.cre8-coming-title {
+  max-width: 9.5ch;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7.2vw, 8rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+
+.cre8-coming-title-accent {
+  color: var(--cre);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.cre8-coming-copy {
+  max-width: 42rem;
+  color: var(--ink-2);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.75;
+}
+
+.cre8-coming-primary {
+  border-color: var(--cre);
+  background: var(--cre);
+  color: #fff;
+}
+
+.cre8-coming-primary:hover,
+.cre8-coming-primary:focus-visible {
+  border-color: #7e22ce;
+  background: #7e22ce;
+  color: #fff;
+}
+
+.cre8-coming-board {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2rem;
+  background: var(--dark);
+  color: #fff;
+  box-shadow: 0 40px 90px -45px rgba(10, 10, 10, 0.65);
+}
+
+.cre8-coming-board-head,
+.cre8-coming-board-foot {
+  padding: 1rem 1.25rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.cre8-coming-board-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cre8-coming-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #e9d5ff;
+  text-transform: uppercase;
+}
+
+.cre8-coming-status span {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #c084fc;
+  box-shadow: 0 0 0 0.25rem rgba(192, 132, 252, 0.14);
+}
+
+.cre8-coming-canvas {
+  position: relative;
+  min-height: 31rem;
+  overflow: hidden;
+  background-color: #111;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+
+.cre8-coming-poster {
+  position: absolute;
+  inset: 3.5rem auto auto 2rem;
+  z-index: 2;
+  width: 64%;
+  min-height: 22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.6rem;
+  border-radius: 1.4rem;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.42), transparent 23%),
+    linear-gradient(145deg, #e9d5ff 0%, #c084fc 43%, #7e22ce 100%);
+  color: #14061f;
+  transform: rotate(-3deg);
+  box-shadow: 0 30px 55px -25px rgba(147, 51, 234, 0.8);
+}
+
+.cre8-coming-poster strong {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+
+.cre8-coming-poster-label,
+.cre8-coming-poster-meta {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+.cre8-coming-swatch {
+  position: absolute;
+  z-index: 3;
+  right: 1.6rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  border: 0.4rem solid #111;
+  border-radius: 1.1rem;
+  transform: rotate(7deg);
+}
+
+.swatch-one { top: 4.5rem; background: var(--grow); }
+.swatch-two { top: 9.5rem; background: #60a5fa; }
+.swatch-three { top: 14.5rem; background: #f3e8ff; }
+
+.cre8-coming-output {
+  position: absolute;
+  z-index: 4;
+  right: 1.5rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.88);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+}
+
+.output-one { bottom: 7rem; }
+.output-two { bottom: 4.5rem; }
+.output-three { bottom: 2rem; color: #e9d5ff; }
+
+.cre8-coming-board-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-transform: uppercase;
+}
+
+.cre8-coming-board-foot i {
+  color: var(--cre);
+}
+
+@media (max-width: 991.98px) {
+  .cre8-coming-title {
+    max-width: none;
+  }
+
+  .cre8-coming-board {
+    max-width: 38rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cre8-coming-hero {
+    min-height: auto;
+    padding: 5rem 0 4rem;
+  }
+
+  .cre8-coming-title {
+    font-size: clamp(3.4rem, 16vw, 5rem);
+    line-height: 0.92;
+  }
+
+  .cre8-coming-copy {
+    line-height: 1.6;
+  }
+
+  .cre8-coming-board {
+    border-radius: 1.4rem;
+  }
+
+  .cre8-coming-canvas {
+    min-height: 25rem;
+  }
+
+  .cre8-coming-poster {
+    inset: 3rem auto auto 1.25rem;
+    width: 67%;
+    min-height: 18rem;
+    padding: 1.2rem;
+  }
+
+  .cre8-coming-swatch {
+    right: 0.75rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .swatch-one { top: 4rem; }
+  .swatch-two { top: 8rem; }
+  .swatch-three { top: 12rem; }
+
+  .cre8-coming-output {
+    right: 0.75rem;
+  }
+
+  .cre8-coming-board-foot {
+    overflow-x: auto;
+    justify-content: flex-start;
+    white-space: nowrap;
   }
 }
 

@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse order-lg-2" id="siteNav">
             <ul class="navbar-nav align-items-lg-center gap-lg-1 mx-lg-auto py-4 py-lg-0">
                 <li class="nav-item mega-parent d-none d-lg-block">
-                    <button class="nav-link mega-trigger <?= in_array($activePage ?? '', ['home', 'growstack', 'bizgrid']) ? 'active' : '' ?>" type="button" aria-expanded="false">
+                    <button class="nav-link mega-trigger <?= in_array($activePage ?? '', ['home', 'growstack', 'bizgrid', 'cre8lab']) ? 'active' : '' ?>" type="button" aria-expanded="false">
                         Products <i class="bi bi-chevron-down small"></i>
                     </button>
                     <div class="mega-menu">
@@ -35,7 +35,7 @@
                                 <div class="mega-card-desc">Connect business data, workflows, decisions and internal AI agents.</div>
                                 <div class="mega-card-link mega-link-biz">Explore BizGRID <i class="bi bi-arrow-up-right"></i></div>
                             </a>
-                            <a class="mega-card" href="<?= url('index.php#cre8lab') ?>">
+                            <a class="mega-card" href="<?= url('coming-soon.php?product=cre8lab') ?>">
                                 <div class="mega-card-icon mega-icon-cre"><i class="bi bi-stars"></i></div>
                                 <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                                 <div class="mega-card-label">AI-Assisted Creative Production</div>
@@ -52,7 +52,7 @@
                     <div class="row g-2">
                         <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('growstack.php') ?>"><span><strong class="d-block">GrowSTACK</strong><small>AI Growth System</small></span><i class="bi bi-arrow-up-right"></i></a></div>
                         <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('bizgrid.php') ?>"><span><strong class="d-block">BizGRID</strong><small>Custom AI Business Systems</small></span><i class="bi bi-arrow-up-right"></i></a></div>
-                        <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('index.php#cre8lab') ?>"><span><strong class="d-block">Cre8LAB</strong><small>Creative Production</small></span><i class="bi bi-arrow-up-right"></i></a></div>
+                        <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('coming-soon.php?product=cre8lab') ?>"><span><strong class="d-block">Cre8LAB</strong><small>Creative Production</small></span><i class="bi bi-arrow-up-right"></i></a></div>
                     </div>
                 </li>
 
