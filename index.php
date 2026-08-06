@@ -363,7 +363,7 @@ require_once __DIR__ . '/includes/header.php';
                     </h2>
                 </div>
                 <div class="col-lg-5" data-aos="fade-left">
-                    <p class="section-copy text-light-emphasis mb-3">Marketing generates leads. Sales follows up without context. Data sits across CRMs, spreadsheets and dashboards. Creative waits for another brief, another approval and another resize.</p>
+                    <p class="section-copy text-white mb-3">Marketing generates leads. Sales follows up without context. Data sits across CRMs, spreadsheets and dashboards. Creative waits for another brief, another approval and another resize.</p>
                     <p class="section-copy fw-bold text-light mb-0">The problem isn&rsquo;t effort.<br>It&rsquo;s the gaps between the work.</p>
                 </div>
             </div>

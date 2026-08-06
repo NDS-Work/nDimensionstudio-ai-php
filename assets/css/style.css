@@ -148,10 +148,12 @@ body {
 
 .moving-border-cta.bg-cre {
   --moving-border-surface: var(--cre);
+  --moving-border-beam: #7c3aed;
 }
 
 .moving-border-cta.bg-btn-primary {
   --moving-border-surface: var(--biz);
+  --moving-border-beam: #2563eb;
 }
 
 @keyframes moving-border-spin {
