@@ -10,7 +10,8 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <main>
-    <section class="hero-section hero-section--text-only">
+    <section class="hero-section hero-section--text-only" data-hero-ripple>
+        <canvas class="hero-ripple-canvas" data-hero-ripple-canvas aria-hidden="true"></canvas>
         <div class="container hero-section__text">
             <div class="hero-eyebrow eyebrow eyebrow-dot">AI-native growth &amp; automation partner</div>
             <h1 class="hero-headline">
@@ -29,6 +30,11 @@ require_once __DIR__ . '/includes/header.php';
                     <span class="hero-line-copy">B2B growth<br class="hero-mobile-break"> runs on.</span>
                 </span>
             </h1>
+
+            <div class="hero-primary-actions">
+                <a class="btn btn-outline-dark rounded-pill px-4 py-3 fw-semibold" href="#">Meet nDimensions <i class="bi bi-arrow-up-right ms-2"></i></a>
+                <a class="btn btn-dark rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Start a Conversation <i class="bi bi-arrow-up-right ms-2"></i></a>
+            </div>
 
             <div class="row g-5 align-items-end hero-body hero-temporarily-hidden">
                 <div class="col-lg-6" data-aos="fade-right">
@@ -249,6 +255,103 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<section class="section section-light" id="products">
+        <div class="container">
+            <div class="row g-4 align-items-end mb-5">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="eyebrow">One partner · Three connected systems</div>
+                    <h2 class="section-title mt-3 mb-5">Stop running growth,<br> operations and creative <br><span style="color: #A1A1AA; font-weight: 300; font-style: italic" >in pieces.</span></h2>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <p class="section-copy text-muted">Three productised systems, one accountable team. Delivered through strategy, engineering, integration and operation.</p>
+                </div>
+            </div>
+
+            <div class="pg-product-grid" data-aos="fade-up">
+    <!-- Card 1: GrowSTACK -->
+    <a class="pg-card pg-card-grow" href="<?= url('growstack.php') ?>">
+        <span class="pg-dotted-glow" aria-hidden="true"></span>
+        <!-- Product portrait hidden for the text-only card design.
+        <div class="pg-avatar-wrapper">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&fm=jpg&q=85&w=900" alt="Growth operator">
+        </div>
+        -->
+        <div class="pg-card-body">
+            <div class="pg-chip">
+                <span class="pg-chip-dot"></span>
+                PRODUCT
+            </div>
+            <h3 class="pg-title">GrowSTACK</h3>
+            <p class="pg-lead">AI growth that moves pipeline.</p>
+            <p class="pg-desc">Search, content, campaigns, WhatsApp, CRM, reporting &mdash; one connected system.</p>
+            
+            <div class="pg-meta">
+                <div>
+                    <div class="pg-tiny-label">PIPELINE IN PLAY</div>
+                    <div class="pg-meta-value">$1.42M</div>
+                </div>
+                <div class="pg-arrow">↗</div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Card 2: BizGRID -->
+    <a class="pg-card pg-card-biz" href="<?= url('bizgrid.php') ?>">
+        <span class="pg-dotted-glow" aria-hidden="true"></span>
+        <!-- Product portrait hidden for the text-only card design.
+        <div class="pg-avatar-wrapper">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&fm=jpg&q=85&w=900" alt="Operations lead">
+        </div>
+        -->
+        <div class="pg-card-body">
+            <div class="pg-chip">
+                <span class="pg-chip-dot"></span>
+                PRODUCT
+            </div>
+            <h3 class="pg-title">BizGRID</h3>
+            <p class="pg-lead">Automate the invisible.</p>
+            <p class="pg-desc">Data, dashboards, workflows, documents and AI agents around real operations.</p>
+            
+            <div class="pg-meta">
+                <div>
+                    <div class="pg-tiny-label">OPS THROUGHPUT</div>
+                    <div class="pg-meta-value">+38%</div>
+                </div>
+                <div class="pg-arrow">↗</div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Card 3: Cre8LAB -->
+    <a class="pg-card pg-card-cre8" href="<?= url('coming-soon.php?product=cre8lab') ?>">
+        <span class="pg-dotted-glow" aria-hidden="true"></span>
+        <!-- Product portrait hidden for the text-only card design.
+        <div class="pg-avatar-wrapper">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&fm=jpg&q=85&w=900" alt="Creative director">
+        </div>
+        -->
+        <div class="pg-card-body">
+            <div class="pg-chip">
+                <span class="pg-chip-dot"></span>
+                PRODUCT
+            </div>
+            <h3 class="pg-title">Cre8LAB</h3>
+            <p class="pg-lead">Strategy &rarr; campaign, faster.</p>
+            <p class="pg-desc">AI-assisted production for creative variations, product visuals and video.</p>
+            
+            <div class="pg-meta">
+                <div>
+                    <div class="pg-tiny-label">ASSETS SHIPPED</div>
+                    <div class="pg-meta-value">48/wk</div>
+                </div>
+                <div class="pg-arrow">↗</div>
+            </div>
+        </div>
+    </a>
+</div>
+        </div>
+    </section>
+
     <section class="section section-dark home-stakes">
         <div class="container">
             <div class="row g-4 align-items-end mb-5">
@@ -335,99 +438,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="section section-light" id="products">
-        <div class="container">
-            <div class="row g-4 align-items-end mb-5">
-                <div class="col-lg-8" data-aos="fade-right">
-                    <div class="eyebrow">One partner · Three connected systems</div>
-                    <h2 class="section-title mt-3 mb-5">Stop running growth,<br> operations and creative <br><span style="color: #A1A1AA; font-weight: 300; font-style: italic" >in pieces.</span></h2>
-                </div>
-                <div class="col-lg-4" data-aos="fade-left">
-                    <p class="section-copy text-muted">Three productised systems, one accountable team. Delivered through strategy, engineering, integration and operation.</p>
-                </div>
-            </div>
-
-            <div class="pg-product-grid" data-aos="fade-up">
-    <!-- Card 1: GrowSTACK -->
-    <a class="pg-card pg-card-grow" href="<?= url('growstack.php') ?>">
-        <!-- Product portrait hidden for the text-only card design.
-        <div class="pg-avatar-wrapper">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&fm=jpg&q=85&w=900" alt="Growth operator">
-        </div>
-        -->
-        <div class="pg-card-body">
-            <div class="pg-chip">
-                <span class="pg-chip-dot"></span>
-                PRODUCT
-            </div>
-            <h3 class="pg-title">GrowSTACK</h3>
-            <p class="pg-lead">AI growth that moves pipeline.</p>
-            <p class="pg-desc">Search, content, campaigns, WhatsApp, CRM, reporting &mdash; one connected system.</p>
-            
-            <div class="pg-meta">
-                <div>
-                    <div class="pg-tiny-label">PIPELINE IN PLAY</div>
-                    <div class="pg-meta-value">$1.42M</div>
-                </div>
-                <div class="pg-arrow">↗</div>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card 2: BizGRID -->
-    <a class="pg-card pg-card-biz" href="<?= url('bizgrid.php') ?>">
-        <!-- Product portrait hidden for the text-only card design.
-        <div class="pg-avatar-wrapper">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&fm=jpg&q=85&w=900" alt="Operations lead">
-        </div>
-        -->
-        <div class="pg-card-body">
-            <div class="pg-chip">
-                <span class="pg-chip-dot"></span>
-                PRODUCT
-            </div>
-            <h3 class="pg-title">BizGRID</h3>
-            <p class="pg-lead">Automate the invisible.</p>
-            <p class="pg-desc">Data, dashboards, workflows, documents and AI agents around real operations.</p>
-            
-            <div class="pg-meta">
-                <div>
-                    <div class="pg-tiny-label">OPS THROUGHPUT</div>
-                    <div class="pg-meta-value">+38%</div>
-                </div>
-                <div class="pg-arrow">↗</div>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card 3: Cre8LAB -->
-    <a class="pg-card pg-card-cre8" href="<?= url('coming-soon.php?product=cre8lab') ?>">
-        <!-- Product portrait hidden for the text-only card design.
-        <div class="pg-avatar-wrapper">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&fm=jpg&q=85&w=900" alt="Creative director">
-        </div>
-        -->
-        <div class="pg-card-body">
-            <div class="pg-chip">
-                <span class="pg-chip-dot"></span>
-                PRODUCT
-            </div>
-            <h3 class="pg-title">Cre8LAB</h3>
-            <p class="pg-lead">Strategy &rarr; campaign, faster.</p>
-            <p class="pg-desc">AI-assisted production for creative variations, product visuals and video.</p>
-            
-            <div class="pg-meta">
-                <div>
-                    <div class="pg-tiny-label">ASSETS SHIPPED</div>
-                    <div class="pg-meta-value">48/wk</div>
-                </div>
-                <div class="pg-arrow">↗</div>
-            </div>
-        </div>
-    </a>
-</div>
-        </div>
-    </section>
+    
 
     <section class="section border-top home-grow-product">
         <div class="container">

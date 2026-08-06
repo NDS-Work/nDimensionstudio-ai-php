@@ -19,7 +19,8 @@
                     </button>
                     <div class="mega-menu">
                         <div class="mega-menu-inner">
-                            <a class="mega-card" href="<?= url('growstack.php') ?>">
+                            <a class="mega-card mega-card-grow" href="<?= url('growstack.php') ?>">
+                                <span class="pg-dotted-glow" aria-hidden="true"></span>
                                 <div class="mega-card-icon mega-icon-grow"><i class="bi bi-lightning-charge"></i></div>
                                 <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                                 <div class="mega-card-label">AI Growth System</div>
@@ -27,7 +28,8 @@
                                 <div class="mega-card-desc">One connected system for visibility, demand, nurturing and pipeline.</div>
                                 <div class="mega-card-link mega-link-grow">Explore GrowSTACK <i class="bi bi-arrow-up-right"></i></div>
                             </a>
-                            <a class="mega-card" href="<?= url('bizgrid.php') ?>">
+                            <a class="mega-card mega-card-biz" href="<?= url('bizgrid.php') ?>">
+                                <span class="pg-dotted-glow" aria-hidden="true"></span>
                                 <div class="mega-card-icon mega-icon-biz"><i class="bi bi-grid-3x3-gap"></i></div>
                                 <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                                 <div class="mega-card-label">Custom AI Business Systems</div>
@@ -35,7 +37,8 @@
                                 <div class="mega-card-desc">Connect business data, workflows, decisions and internal AI agents.</div>
                                 <div class="mega-card-link mega-link-biz">Explore BizGRID <i class="bi bi-arrow-up-right"></i></div>
                             </a>
-                            <a class="mega-card" href="<?= url('coming-soon.php?product=cre8lab') ?>">
+                            <a class="mega-card mega-card-cre" href="<?= url('coming-soon.php?product=cre8lab') ?>">
+                                <span class="pg-dotted-glow" aria-hidden="true"></span>
                                 <div class="mega-card-icon mega-icon-cre"><i class="bi bi-stars"></i></div>
                                 <div class="mega-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                                 <div class="mega-card-label">AI-Assisted Creative Production</div>
