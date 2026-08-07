@@ -1,19 +1,19 @@
 <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-lg container py-3" aria-label="Primary navigation">
+    <nav class="navbar navbar-expand-xl container py-3" aria-label="Primary navigation">
         <a class="navbar-brand d-flex align-items-center" href="<?= url() ?>" aria-label="nDimensions.ai home">
             <img class="site-logo" src="assets/images/nds-logo.png" alt="nDimensions.ai">
         </a>
 
-        <div class="d-flex align-items-center gap-2 order-lg-3">
+        <div class="d-flex align-items-center gap-2 order-xl-3">
             <a class="btn btn-dark rounded-pill px-4 d-none d-md-inline-flex" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
             <button class="navbar-toggler border rounded-circle p-2" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-4"></i>
             </button>
         </div>
 
-        <div class="collapse navbar-collapse order-lg-2" id="siteNav">
-            <ul class="navbar-nav align-items-lg-center gap-lg-1 mx-lg-auto py-4 py-lg-0">
-                <li class="nav-item mega-parent d-none d-lg-block">
+        <div class="collapse navbar-collapse order-xl-2" id="siteNav">
+            <ul class="navbar-nav align-items-xl-center gap-xl-1 mx-xl-auto py-4 py-xl-0">
+                <li class="nav-item mega-parent d-none d-xl-block">
                     <button class="nav-link mega-trigger <?= in_array($activePage ?? '', ['home', 'growstack', 'bizgrid', 'cre8lab']) ? 'active' : '' ?>" type="button" aria-expanded="false">
                         Products <i class="bi bi-chevron-down small"></i>
                     </button>
@@ -50,7 +50,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item d-lg-none mb-3">
+                <li class="nav-item d-xl-none mb-3">
                     <p class="eyebrow mb-3">Products</p>
                     <div class="row g-2">
                         <div class="col-md-4"><a class="mobile-mega-card h-100" href="<?= url('growstack.php') ?>"><span><strong class="d-block">GrowSTACK</strong><small>AI Growth System</small></span><i class="bi bi-arrow-up-right"></i></a></div>
@@ -64,7 +64,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#proof') ?>">Industries</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#faq') ?>">Insights</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#operating-model') ?>">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#products') ?>">Explore Our Systems</a></li>
+                <li class="nav-item d-none"><a class="nav-link" href="<?= url('index.php#products') ?>">Explore Our Systems</a></li>
                 <li class="nav-item d-md-none mt-3"><a class="btn btn-dark rounded-pill w-100" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a></li>
             </ul>
         </div>
