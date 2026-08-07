@@ -1,7 +1,7 @@
 <footer class="site-footer section-dark position-relative overflow-hidden" id="contact">
     <div class="nd-dot-grid position-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
     <div class="container position-relative pt-5 pb-4">
-        <div class="row g-5 align-items-end border-bottom border-secondary pb-5">
+        <div class="row g-md-5 align-items-end border-bottom border-secondary pb-5">
             <div class="col-lg-8" data-aos="fade-up">
                 <p class="eyebrow text-light-emphasis">Ready to build</p>
                 <h2 class="nd-hero-title mt-4">Build the system<br>your business needs<br><span class="fst-italic fw-normal text-secondary">next.</span></h2>

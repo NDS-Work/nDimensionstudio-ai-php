@@ -92,7 +92,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="contact-hero section-dark position-relative overflow-hidden">
         <div class="nd-dot-grid position-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
         <div class="container position-relative">
-            <div class="row g-5 align-items-start">
+            <div class="row g-md-5 align-items-start">
                 <div class="col-lg-5" data-aos="fade-right">
                     <p class="eyebrow text-light-emphasis">Book an AI Growth Audit</p>
                     <h1 class="contact-title mt-4 mb-4">Let&rsquo;s find the<br>system your<br><span class="fst-italic fw-normal text-secondary">business needs next.</span></h1>

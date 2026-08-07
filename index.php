@@ -418,7 +418,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section border-top home-grow-product">
         <div class="container">
-            <div class="row g-5 align-items-center">
+            <div class="row g-md-5 align-items-center">
                 <div class="col-lg-7 order-lg-2" data-aos="fade-left">
                     <div class="home-grow-visual p-4 p-md-5 overflow-hidden">
                         <div class="home-grow-browser bg-white border overflow-hidden position-relative">
@@ -514,7 +514,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="bg-feature-section py-5">
   <div class="container">
-    <div class="row align-items-center g-5">
+    <div class="row align-items-center g-md-5">
       
       <!-- Left Column: Visual Canvas Graphic -->
       <div class="col-lg-6" data-aos="fade-right">
@@ -671,7 +671,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section border-top home-cre8-product" id="cre8lab">
         <div class="container">
-            <div class="row g-5 align-items-center">
+            <div class="row g-md-5 align-items-center">
                 <div class="col-lg-5" data-aos="fade-right">
                     <p class="home-cre8-chip d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2 mb-0 font-mono text-uppercase">
                         <span class="nd-dot bg-cre"></span>Cre8LAB &middot; Creative Production

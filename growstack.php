@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <main>
 <section class="gs-hero container" data-aos="fade-up">
-  <div class="row align-items-center g-5">
+  <div class="row align-items-center g-md-5">
 
     <!-- LEFT: Copy -->
     <div class="col-lg-6">
@@ -379,7 +379,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section section-soft border-top border-bottom">
         <div class="container">
-            <div class="row g-5 align-items-center">
+            <div class="row g-md-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <p class="eyebrow">Not a collection of services</p>
                     <h2 class="nd-page-title mt-4">One growth system.<br><span class="fst-italic fw-normal text-secondary">Shared context at every stage.</span></h2>
@@ -540,7 +540,7 @@ require_once __DIR__ . '/includes/header.php';
     ?>
     <section class="section section-soft border-top border-bottom">
         <div class="container">
-            <div class="row g-5 align-items-start">
+            <div class="row g-md-5 align-items-start">
                 <div class="col-lg-5" data-aos="fade-right">
                     <p class="eyebrow">Who it&rsquo;s for</p>
                     <h2 class="nd-page-title mt-4">GrowSTACK fits<br><span class="fst-italic fw-normal text-secondary">if any of this is true.</span></h2>

@@ -32,7 +32,7 @@ $bizUseCases = [
     <section class="section-dark position-relative overflow-hidden py-5">
         <div class="nd-dot-grid position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
         <div class="container position-relative py-lg-5">
-            <div class="row g-5 align-items-center">
+            <div class="row g-md-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <p class="eyebrow text-info">BizGRID &middot; Custom AI Business System</p>
                     <h1 class="bg-hero-title mt-4">
@@ -106,7 +106,7 @@ $bizUseCases = [
 
     <section class="section">
         <div class="container">
-            <div class="row g-5 align-items-end mb-5">
+            <div class="row g-md-5 align-items-end mb-5">
                 <div class="col-lg-7" data-aos="fade-right">
                     <p class="eyebrow">The invisible work</p>
                     <h2 class="nd-page-title mt-4">Your business is held<br><span class="fst-italic fw-normal text-secondary">together by manual handoffs.</span></h2>
@@ -244,7 +244,7 @@ $bizUseCases = [
 
     <section class="section">
         <div class="container">
-            <div class="row g-5 align-items-center">
+            <div class="row g-md-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <p class="eyebrow">Built around the process</p>
                     <h2 class="nd-page-title mt-4">
@@ -392,7 +392,7 @@ $bizUseCases = [
     <?php $bizFit = ['B2B companies operating across disconnected tools', 'Leadership teams depending on manual reports', 'Businesses with spreadsheet-heavy processes', 'Teams repeating the same document + approval tasks', 'Companies wanting internal AI agents', 'Businesses with a valuable AI prototype needing productionisation', 'Operations teams requiring custom workflows + dashboards']; ?>
     <section class="section section-dark">
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-md-5">
                 <div class="col-lg-5" data-aos="fade-right">
                     <p class="eyebrow text-light-emphasis">Who it&rsquo;s for</p>
                     <h2 class="nd-page-title mt-4">BizGRID fits<br><span class="fst-italic fw-normal text-secondary">if any of this is true.</span></h2>
