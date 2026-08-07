@@ -233,7 +233,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <section class="section section-light" id="products">
         <div class="container">
-            <div class="row g-4 align-items-start mb-5">
+            <div class="row g-md-4 align-items-start mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">One partner · Three connected systems</div>
                     <h2 class="section-title mt-3 mb-5">Stop running growth,<br> operations and creative <br><span style="color: #A1A1AA; font-weight: 300; font-style: italic" >in pieces.</span></h2>
@@ -330,7 +330,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section section-dark home-stakes">
         <div class="container">
-            <div class="row g-4 align-items-end mb-5">
+            <div class="row g-md-4 align-items-end mb-5">
                 <div class="col-lg-7" data-aos="fade-right">
                     <div class="eyebrow text-light-emphasis">The real problem</div>
                     <h2 class="section-title mt-3 mb-0">
@@ -727,7 +727,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <section class="section section-soft border-top border-bottom home-operating-model" id="operating-model">
     <div class="container">
-        <div class="row g-4 align-items-end mb-5">
+        <div class="row g-md-4 align-items-end mb-5">
             <div class="col-lg-7" data-aos="fade-right">
                 <div class="eyebrow">The operating model</div>
                 <h2 class="operating-model-title h-display mt-4 mb-0">
@@ -742,7 +742,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-md-4">
             <div class="col-lg-6" data-aos="fade-right">
                 <article class="operating-model-card operating-model-card-old border p-4 p-md-5 is-dim" id="panel-old">
                     <div class="stack-index">Then</div>
@@ -787,7 +787,7 @@ require_once __DIR__ . '/includes/header.php';
     <?php if (false): ?>
     <section class="section" id="how-we-work">
         <div class="container">
-            <div class="row g-4 align-items-end mb-5">
+            <div class="row g-md-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">From opportunity to operating system</div>
                     <h2 class="section-title mt-3">We don’t begin with AI. We begin with the business problem.</h2>
@@ -830,7 +830,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section section-dark">
         <div class="container">
-            <div class="row g-4 align-items-end mb-5">
+            <div class="row g-md-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow text-light">Why nDimensions</div>
                     <h2 class="section-title mt-3">Engineers build it. Operators steer it. Creatives make it land.</h2>
@@ -858,13 +858,13 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section section-light" id="problem-selector">
         <div class="container">
-            <div class="row g-4 align-items-end mb-5">
+            <div class="row g-md-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">Where do you want to start</div>
                     <h2 class="section-title mt-3">Choose the problem slowing the business down.</h2>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-md-4">
                 <div class="col-lg-7">
                    <div class="problem-list" id="problemList">
   <a class="problem-option active" href="#problem-selector" data-index="0">We need more qualified B2B demand</a>
@@ -895,13 +895,13 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section" id="proof">
         <div class="container">
-            <div class="row g-4 align-items-end mb-5">
+            <div class="row g-md-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">Experience behind the systems</div>
                     <h2 class="section-title mt-3">Built on experience. Designed for what comes next.</h2>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-md-4">
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="proof-card">
                         <div class="proof-value">17+</div>
@@ -921,7 +921,7 @@ require_once __DIR__ . '/includes/header.php';
                     </div>
                 </div>
             </div>
-            <div class="row g-4 mt-2">
+            <div class="row g-md-4 mt-2">
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="story-card">
                         <div class="story-tag">Case study · SaaS</div>
@@ -982,7 +982,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section faq-section" id="faq">
   <div class="container">
-    <div class="row g-4 align-items-end mb-5">
+    <div class="row g-md-4 align-items-end mb-5">
       <div class="col-lg-8" data-aos="fade-right">
         <div class="faq-eyebrow">Common questions</div>
         <h2 class="faq-title mt-3">Everything you'd <br><em>ask on a first call.</em></h2>
@@ -1074,7 +1074,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section final-cta-section">
         <div class="container">
             <div class="final-cta" data-aos="fade-up">
-                <div class="row align-items-center g-4">
+                <div class="row align-items-center g-md-4">
                     <div class="col-lg-12">
                         <div class="eyebrow text-light">Ready to build</div>
                         <h2 class="cta section-title mt-3">Stop running growth, operations and creative in pieces.</h2>

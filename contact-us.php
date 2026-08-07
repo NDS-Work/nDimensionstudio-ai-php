@@ -138,7 +138,7 @@ require_once __DIR__ . '/includes/header.php';
                                 <div class="alert alert-danger border-0" role="alert"><?= contactValue($errors['form']) ?></div>
                             <?php endif; ?>
 
-                            <form method="post" action="<?= url('contact-us.php') ?>#audit-form" class="row g-4">
+                            <form method="post" action="<?= url('contact-us.php') ?>#audit-form" class="row g-md-4">
                                 <input type="hidden" name="contact_token" value="<?= contactValue($_SESSION['contact_token']) ?>">
                                 <div class="visually-hidden" aria-hidden="true">
                                     <label for="website">Website</label>

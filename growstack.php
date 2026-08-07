@@ -227,7 +227,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-md-4">
                 <div class="col-lg-4">
                     <div class="nav nav-pills flex-column gap-2 gs-layer-tabs" role="tablist">
                         <?php foreach ($growLayers as $index => $layer): ?>
@@ -260,7 +260,7 @@ require_once __DIR__ . '/includes/header.php';
                                  aria-labelledby="gs-layer-tab-<?= $index ?>">
                                 <div class="card-soft p-4 p-md-5 h-100" data-aos="fade-up">
                                     <h3 class="display-6 fw-bold mb-4"><?= $layer[1] ?></h3>
-                                    <div class="row g-4">
+                                    <div class="row g-md-4">
                                         <div class="col-md-7">
                                             <ul class="list-unstyled d-grid gap-3 mb-0">
                                                 <?php foreach ($layer[3] as $item): ?>

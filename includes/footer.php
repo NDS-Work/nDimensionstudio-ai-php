@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="row g-4 py-5">
+        <div class="row g-md-4 py-5">
             <div class="col-6 col-md-3">
                 <p class="eyebrow text-secondary mb-4">Products</p>
                 <ul class="list-unstyled d-grid gap-2 mb-0">

@@ -116,7 +116,7 @@ $bizUseCases = [
                     <p class="lead fw-semibold mb-0">That works until volume grows, someone leaves, or leadership needs an answer now.</p>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-md-4">
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="card-soft p-4 p-md-5 h-100">
                         <p class="eyebrow text-secondary">Before</p>
@@ -151,7 +151,7 @@ $bizUseCases = [
                     <h2 class="nd-page-title mt-4">One intelligent grid<br><span class="fst-italic fw-normal text-secondary">connecting data, work and decisions.</span></h2>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row g-md-4">
                 <div class="col-lg-4">
                     <div class="nav nav-pills flex-column gap-2 bg-layer-tabs" role="tablist">
                         <?php foreach ($bizLayers as $index => $layer): ?>
@@ -176,7 +176,7 @@ $bizUseCases = [
                             <div class="tab-pane fade <?= $index === 0 ? 'show active' : '' ?> h-100" id="bg-layer-<?= $index ?>" role="tabpanel">
                                 <div class="card-soft p-4 p-md-5 h-100" data-aos="fade-up">
                                     <h3 class="display-6 fw-bold mb-4"><?= $layer[1] ?></h3>
-                                    <div class="row g-4">
+                                    <div class="row g-md-4">
                                         <div class="col-md-7">
                                             <ul class="list-unstyled d-grid gap-3 mb-0">
                                                 <?php foreach ($layer[3] as $item): ?>

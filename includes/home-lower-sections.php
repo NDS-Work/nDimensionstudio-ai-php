@@ -1,6 +1,6 @@
 <section class="section home-how-work" id="how-we-work">
     <div class="container">
-        <div class="row g-4 align-items-end mb-5">
+        <div class="row g-md-4 align-items-end mb-5">
             <div class="col-lg-8" data-aos="fade-up">
                 <div class="eyebrow">From opportunity to operating system</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
@@ -9,7 +9,7 @@
                 </h2>
             </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-md-4">
             <?php foreach ([
                 ['01', 'Diagnose', 'Identify where demand, data, decisions or production are losing momentum.'],
                 ['02', 'Architect', 'Map workflows, data, tools, integrations, approvals and measurable outcomes.'],
@@ -37,7 +37,7 @@
 <section class="section section-dark position-relative overflow-hidden home-team-advantage">
     <div class="nd-dot-grid position-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
     <div class="container position-relative">
-        <div class="row g-4 align-items-end mb-5">
+        <div class="row g-md-4 align-items-end mb-5">
             <div class="col-lg-8" data-aos="fade-up">
                 <div class="eyebrow text-secondary">Why nDimensions</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
@@ -71,7 +71,7 @@
 
 <section class="section section-light home-problem-selector" id="problem-selector">
     <div class="container">
-        <div class="row g-4 align-items-end mb-5">
+        <div class="row g-md-4 align-items-end mb-5">
             <div class="col-lg-8" data-aos="fade-up">
                 <div class="eyebrow">Where do you want to start</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
@@ -80,7 +80,7 @@
                 </h2>
             </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-md-4">
             <div class="col-lg-7">
                 <div class="problem-list" id="problemList">
                     <?php foreach ([
@@ -155,7 +155,7 @@
             </div>
         </div>
 
-        <div class="row g-4 mt-5 home-proof-stories">
+        <div class="row g-md-4 mt-5 home-proof-stories">
             <?php foreach ([
                 ['Case Study &middot; SaaS', 'How a B2B SaaS achieved a connected pipeline by rebuilding lead-to-sales handoff.', 'var(--grow)'],
                 ['Case Study &middot; Manufacturing', 'How an industrial team achieved reliable reporting by rebuilding data operations.', 'var(--biz)'],
