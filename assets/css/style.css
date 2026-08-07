@@ -5076,3 +5076,23 @@ h2.cta.section-title.mt-3 {
     transform: none;
   }
 }
+
+/* Keep AOS entrance transforms inside the mobile viewport. */
+@media (max-width: 767.98px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  [data-aos="fade-left"],
+  [data-aos="fade-right"] {
+    transform: translate3d(0, 24px, 0);
+  }
+
+  [data-aos="fade-left"].aos-animate,
+  [data-aos="fade-right"].aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+}
