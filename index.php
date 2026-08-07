@@ -36,7 +36,7 @@ require_once __DIR__ . '/includes/header.php';
                 <a class="btn btn-dark rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Start a Conversation <i class="bi bi-arrow-up-right ms-2"></i></a>
             </div>
 
-            <div class="row g-5 align-items-end hero-body hero-temporarily-hidden">
+            <div class="row g-md-5 align-items-end hero-body hero-temporarily-hidden">
                 <div class="col-lg-6" data-aos="fade-right">
                     <p class="hero-copy">nDimensions brings AI engineering, digital marketing and creative production into one connected team.</p>
                     <ul class="hero-list">
