@@ -219,45 +219,21 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-<section class="mq-section" data-aos="fade-up">
-  <div class="mq-track">
-    <!-- First Set -->
-    <div class="mq-item">Search Visibility</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Content &amp; Demand</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">WhatsApp &times; CRM</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Pipeline Intelligence</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">AI Agents</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Custom Dashboards</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Creative Systems</div>
-    <span class="mq-dot"></span>
-
-    <!-- Duplicate Set for Seamless Infinite Loop -->
-    <div class="mq-item">Search Visibility</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Content &amp; Demand</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">WhatsApp &times; CRM</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Pipeline Intelligence</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">AI Agents</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Custom Dashboards</div>
-    <span class="mq-dot"></span>
-    <div class="mq-item">Creative Systems</div>
-    <span class="mq-dot"></span>
+<section class="marquee-section" data-aos="fade-up">
+  <div class="marquee-mask">
+    <div class="marquee-track" aria-hidden="true">
+      <?php for ($repeat = 0; $repeat < 2; $repeat++): ?>
+        <?php foreach (['AI Growth', 'Business Automation', 'Creative Production', 'Search Visibility', 'Pipeline Intelligence', 'Custom AI Agents'] as $item): ?>
+          <span class="marquee-item"><span class="marquee-dot"></span><?= $item ?></span>
+        <?php endforeach; ?>
+      <?php endfor; ?>
+    </div>
   </div>
 </section>
 
 <section class="section section-light" id="products">
         <div class="container">
-            <div class="row g-4 align-items-end mb-5">
+            <div class="row g-4 align-items-start mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">One partner · Three connected systems</div>
                     <h2 class="section-title mt-3 mb-5">Stop running growth,<br> operations and creative <br><span style="color: #A1A1AA; font-weight: 300; font-style: italic" >in pieces.</span></h2>
@@ -968,26 +944,39 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="marquee-section" data-aos="fade-up">
-  <div class="marquee-mask">
-    <div class="marquee-track" aria-hidden="true">
-      <!-- First Set -->
-      <span class="marquee-item"><span class="marquee-dot"></span>Search Visibility</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Content &amp; Demand</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>WhatsApp &times; CRM</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Pipeline Intelligence</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>AI Agents</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Custom Dashboards</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Creative Systems</span>
-      <!-- Duplicate Set -->
-      <span class="marquee-item"><span class="marquee-dot"></span>Search Visibility</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Content &amp; Demand</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>WhatsApp &times; CRM</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Pipeline Intelligence</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>AI Agents</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Custom Dashboards</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>Creative Systems</span>
-    </div>
+    <section class="mq-section" data-aos="fade-up">
+  <div class="mq-track">
+    <!-- First Set -->
+    <div class="mq-item">Search Visibility</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Content &amp; Demand</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">WhatsApp &times; CRM</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Pipeline Intelligence</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">AI Agents</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Custom Dashboards</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Creative Systems</div>
+    <span class="mq-dot"></span>
+
+    <!-- Duplicate Set for Seamless Infinite Loop -->
+    <div class="mq-item">Search Visibility</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Content &amp; Demand</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">WhatsApp &times; CRM</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Pipeline Intelligence</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">AI Agents</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Custom Dashboards</div>
+    <span class="mq-dot"></span>
+    <div class="mq-item">Creative Systems</div>
+    <span class="mq-dot"></span>
   </div>
 </section>
 

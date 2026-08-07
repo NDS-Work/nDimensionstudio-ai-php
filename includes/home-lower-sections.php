@@ -120,32 +120,42 @@
     </div>
 </section>
 
-<section class="section home-proof" id="proof">
+<section class="section home-proof home-proof--animated" id="proof" data-stats-section>
     <div class="container">
-        <div class="row g-4 align-items-end mb-5">
-            <div class="col-lg-8" data-aos="fade-up">
+        <div class="home-proof-stage" data-aos="fade-up">
+            <div class="home-proof-stage-heading">
                 <div class="eyebrow">Experience behind the systems</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
                     <span class="d-block">Built on experience.</span>
-                    <span class="d-block fst-italic fw-normal text-secondary">Designed for what comes next.</span>
+                    <span class="d-block fst-italic fw-normal">Designed for what comes next.</span>
                 </h2>
             </div>
-        </div>
-        <div class="row g-4">
+
+            <div class="experience-stats-grid">
             <?php foreach ([
-                ['17+', 'years across technology, digital marketing, branding and creative execution.', 'var(--ink)'],
-                ['300+', 'clients across startups, growing businesses and enterprise teams.', 'var(--grow)'],
-                ['1&times;', 'one integrated team: AI engineers, marketers, strategists, content specialists and creatives.', 'var(--biz)']
+                ['17', '+', 'Years across technology, digital marketing, branding and creative execution.', 'bi-graph-up-arrow'],
+                ['300', '+', 'Clients across startups, growing businesses and enterprise teams.', 'bi-people'],
+                ['1', '&times;', 'Integrated team of engineers, strategists, marketers and creatives.', 'bi-diagram-3']
             ] as $index => $proof): ?>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="<?= $index * 80 ?>">
-                    <article class="home-proof-card border bg-white p-4 p-md-5 h-100">
-                        <div class="proof-value h-display" style="color:<?= $proof[2] ?>"><?= $proof[0] ?></div>
-                        <p class="text-muted mt-4 mb-0"><?= $proof[1] ?></p>
-                    </article>
-                </div>
+                <article class="experience-stat" data-stat-card>
+                    <span class="experience-stat-grid" aria-hidden="true"></span>
+                    <span class="experience-stat-corner" aria-hidden="true"></span>
+                    <?php for ($cell = 0; $cell < 7; $cell++): ?>
+                        <span class="experience-stat-cell experience-stat-cell--<?= $cell + 1 ?>" aria-hidden="true"></span>
+                    <?php endfor; ?>
+                    <div class="experience-stat-top">
+                        <span class="experience-stat-icon" aria-hidden="true"><i class="bi <?= $proof[3] ?>"></i></span>
+                        <div class="experience-stat-value h-display">
+                            <span data-stat-value data-stat-target="<?= $proof[0] ?>"><?= $proof[0] ?></span><?= $proof[1] ?>
+                        </div>
+                    </div>
+                    <p><?= $proof[2] ?></p>
+                </article>
             <?php endforeach; ?>
+            </div>
         </div>
-        <div class="row g-4 mt-5">
+
+        <div class="row g-4 mt-5 home-proof-stories">
             <?php foreach ([
                 ['Case Study &middot; SaaS', 'How a B2B SaaS achieved a connected pipeline by rebuilding lead-to-sales handoff.', 'var(--grow)'],
                 ['Case Study &middot; Manufacturing', 'How an industrial team achieved reliable reporting by rebuilding data operations.', 'var(--biz)'],
@@ -163,27 +173,23 @@
     </div>
 </section>
 
-<section class="marquee-section home-proof-marquee" data-aos="fade-up">
-    <div class="marquee-mask">
-        <div class="marquee-track" aria-hidden="true">
-            <?php for ($repeat = 0; $repeat < 2; $repeat++): ?>
-                <?php foreach (['AI Growth', 'Business Automation', 'Creative Production', 'Search Visibility', 'Pipeline Intelligence', 'Custom AI Agents'] as $item): ?>
-                    <span class="marquee-item"><span class="marquee-dot"></span><?= $item ?></span>
-                <?php endforeach; ?>
-            <?php endfor; ?>
-        </div>
+<section class="mq-section" data-aos="fade-up">
+    <div class="mq-track" aria-hidden="true">
+        <?php for ($repeat = 0; $repeat < 2; $repeat++): ?>
+            <?php foreach (['Search Visibility', 'Content &amp; Demand', 'WhatsApp &times; CRM', 'Pipeline Intelligence', 'AI Agents', 'Custom Dashboards', 'Creative Systems'] as $item): ?>
+                <div class="mq-item"><?= $item ?></div>
+                <span class="mq-dot"></span>
+            <?php endforeach; ?>
+        <?php endfor; ?>
     </div>
 </section>
 
-<section class="section section-soft border-top border-bottom home-faq-section" id="faq">
+<section class="section home-faq-section" id="faq">
     <div class="container">
-        <div class="row g-4 align-items-end mb-5">
+        <div class="row mb-5">
             <div class="col-lg-8" data-aos="fade-up">
-                <div class="eyebrow">Common questions</div>
-                <h2 class="home-section-title h-display mt-4 mb-0">
-                    <span class="d-block">Everything you&rsquo;d</span>
-                    <span class="d-block fst-italic fw-normal text-secondary">ask on a first call.</span>
-                </h2>
+                <p class="eyebrow">nDimensions &middot; FAQ</p>
+                <h2 class="nd-page-title mt-4">Everything you&rsquo;d<br><span class="fst-italic fw-normal text-secondary">ask on a first call.</span></h2>
             </div>
         </div>
         <div class="accordion accordion-flush" id="faqAccordion">
@@ -196,17 +202,16 @@
                 ['How long does implementation take?', 'First working slices typically go live in 4&ndash;8 weeks depending on scope. We favour thin, useful releases over long invisible builds.'],
                 ['Do you continue operating the system after launch?', 'Yes. Ongoing operation is a first-class option &mdash; monitoring workflows, closing gaps, improving prompts and evolving the system as the business changes.']
             ] as $index => $faq): ?>
-                <div class="accordion-item bg-transparent" data-aos="fade-up" data-aos-delay="<?= $index * 60 ?>">
+                <div class="accordion-item bg-transparent" data-aos="fade-up">
                     <h3 class="accordion-header">
-                        <button class="accordion-button collapsed bg-transparent px-0 py-4 home-faq-question" type="button"
+                        <button class="accordion-button collapsed gs-faq-question h-display fs-2 bg-transparent px-3 px-md-4 py-5" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#homeFaq<?= $index ?>"
                                 aria-expanded="false" aria-controls="homeFaq<?= $index ?>">
-                            <span class="font-mono small text-secondary me-4">0<?= $index + 1 ?></span>
-                            <span class="h-display fw-bold"><?= $faq[0] ?></span>
+                            <span class="font-mono small text-secondary me-4">0<?= $index + 1 ?></span><?= $faq[0] ?>
                         </button>
                     </h3>
                     <div id="homeFaq<?= $index ?>" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body lead text-muted ps-5 pe-4 pb-5"><?= $faq[1] ?></div>
+                        <div class="accordion-body lead text-muted ps-5 pb-4"><?= $faq[1] ?></div>
                     </div>
                 </div>
             <?php endforeach; ?>

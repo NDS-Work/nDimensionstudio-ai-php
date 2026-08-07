@@ -37,7 +37,64 @@ document.addEventListener("DOMContentLoaded", function () {
   initHeroRipple();
   initMovingBorderCtas();
   initProductDottedGlows();
+  initExperienceStats();
 });
+
+function initExperienceStats() {
+  const section = document.querySelector("[data-stats-section]");
+  if (!section) return;
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  section.querySelectorAll("[data-stat-card]").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      if (event.pointerType === "touch") return;
+      const bounds = card.getBoundingClientRect();
+      card.style.setProperty("--stats-x", `${event.clientX - bounds.left}px`);
+      card.style.setProperty("--stats-y", `${event.clientY - bounds.top}px`);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.removeProperty("--stats-x");
+      card.style.removeProperty("--stats-y");
+    });
+  });
+
+  const values = section.querySelectorAll("[data-stat-value]");
+  if (reducedMotion || !("IntersectionObserver" in window)) return;
+
+  values.forEach((value) => {
+    value.textContent = "0";
+  });
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+      values.forEach((value, index) => {
+        const target = Number(value.dataset.statTarget || 0);
+        const duration = 1050;
+        const delay = index * 120;
+
+        window.setTimeout(() => {
+          const start = performance.now();
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 4);
+            value.textContent = Math.round(target * eased).toString();
+            if (progress < 1) window.requestAnimationFrame(tick);
+          };
+          window.requestAnimationFrame(tick);
+        }, delay);
+      });
+      observer.disconnect();
+    },
+    { threshold: 0.3 },
+  );
+
+  observer.observe(section.querySelector(".experience-stats-grid") || section);
+}
 
 function initProductDottedGlows() {
   document.querySelectorAll(".pg-card, .mega-card").forEach((card) => {
