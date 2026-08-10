@@ -32,7 +32,7 @@ require_once __DIR__ . '/includes/header.php';
             </h1>
 
             <div class="hero-primary-actions">
-                <a class="btn btn-outline-dark rounded-pill px-4 py-3 fw-semibold" href="#">Meet nDimensions <i class="bi bi-arrow-up-right ms-2"></i></a>
+                <a class="btn btn-outline-dark rounded-pill px-4 py-3 fw-semibold d-none" href="#">Meet nDimensions <i class="bi bi-arrow-up-right ms-2"></i></a>
                 <a class="btn btn-dark rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Start a Conversation <i class="bi bi-arrow-up-right ms-2"></i></a>
             </div>
 
