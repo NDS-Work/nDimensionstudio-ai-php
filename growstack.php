@@ -29,8 +29,8 @@ require_once __DIR__ . '/includes/header.php';
         outcome: qualified pipeline.
       </p>
       <div class="gs-actions mt-4">
-        <a class="gs-btn-primary" href="#contact">Build Your GrowSTACK ↗</a>
-        <a class="gs-btn-secondary" href="<?= url('contact-us.php') ?>">Book AI Growth Audit ↗</a>
+        <a class="gs-btn-primary" href="<?= url('contact-us.php') ?>">Book a Demo ↗</a>
+        <a class="gs-btn-secondary d-none" href="<?= url('contact-us.php') ?>">Book AI Growth Audit ↗</a>
       </div>
     </div>
 
@@ -602,8 +602,8 @@ require_once __DIR__ . '/includes/header.php';
                 <p class="eyebrow text-light">Ready to build</p>
                 <h2 class="nd-page-title mt-4 lh-sm">Build demand that<br>doesn&rsquo;t disappear at<br><span class="fst-italic fw-normal text-white-50 lh-sm">the handoff.</span></h2>
                 <div class="d-flex flex-wrap gap-3 mt-5">
-                    <a class="btn btn-light rounded-pill px-4 py-2" href="#contact">Build Your GrowSTACK <i class="bi bi-arrow-up-right"></i></a>
-                    <a class="btn btn-outline-light rounded-pill px-4 py-2" href="<?= url('bizgrid.php') ?>">Explore BizGRID <i class="bi bi-arrow-right"></i></a>
+                    <a class="btn btn-light rounded-pill px-4 py-2" href="<?= url('contact-us.php') ?>">Consult Now <i class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn btn-outline-light rounded-pill px-4 py-2 d-none" href="<?= url('bizgrid.php') ?>">Explore BizGRID <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>

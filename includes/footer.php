@@ -7,12 +7,12 @@
                 <h2 class="nd-hero-title mt-4">Build the system<br>your business needs<br><span class="fst-italic fw-normal text-secondary">next.</span></h2>
             </div>
             <div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="80">
-                <a class="btn btn-light rounded-pill px-4 mb-3" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right"></i></a>
-                <a class="d-block text-light-emphasis text-decoration-none" href="mailto:hello@ndimensions.ai">hello@ndimensions.ai <i class="bi bi-arrow-up-right"></i></a>
+                <a class="btn btn-light rounded-pill px-4 mb-3" href="<?= url('contact-us.php') ?>">Book a Demo <i class="bi bi-arrow-up-right"></i></a>
+                <a class="d-block text-light-emphasis text-decoration-none" href="mailto:hello@ndimensionstudio.com">hello@ndimensionstudio.com <i class="bi bi-arrow-up-right"></i></a>
             </div>
         </div>
 
-        <div class="row g-md-4 py-5">
+        <div class="row g-md-4 py-5 d-none">
             <div class="col-6 col-md-3">
                 <p class="eyebrow text-secondary mb-4">Products</p>
                 <ul class="list-unstyled d-grid gap-2 mb-0">
@@ -61,7 +61,7 @@
 
         <div class="d-flex flex-column flex-md-row justify-content-between gap-3 border-top border-secondary pt-4 small text-secondary font-mono">
             <span>&copy; <?= date('Y') ?> nDimensions.ai &middot; AI Growth, Automation &amp; Creative Systems.</span>
-            <span class="d-flex gap-4"><a class="text-reset" href="#">Privacy</a><a class="text-reset" href="#">Terms</a><a class="text-reset" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></span>
+            <span class="d-flex gap-4"><a class="text-reset" href="#">Privacy</a><a class="text-reset" href="#">Terms</a><a class="text-reset" href="https://www.linkedin.com/company/ndsstudiollp" target="_blank" rel="noreferrer">LinkedIn</a></span>
         </div>
     </div>
 </footer>

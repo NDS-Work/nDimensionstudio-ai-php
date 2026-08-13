@@ -33,7 +33,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="hero-primary-actions">
                 <a class="btn btn-outline-dark rounded-pill px-4 py-3 fw-semibold d-none" href="#">Meet nDimensions <i class="bi bi-arrow-up-right ms-2"></i></a>
-                <a class="btn btn-dark rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Start a Conversation <i class="bi bi-arrow-up-right ms-2"></i></a>
+                <a class="btn btn-dark rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Book a Demo <i class="bi bi-arrow-up-right ms-2"></i></a>
             </div>
 
             <div class="row g-md-5 align-items-end hero-body hero-temporarily-hidden">
@@ -299,7 +299,7 @@ require_once __DIR__ . '/includes/header.php';
     </a>
 
     <!-- Card 3: Cre8LAB -->
-    <a class="pg-card pg-card-cre8" href="<?= url('coming-soon.php?product=cre8lab') ?>">
+    <div class="pg-card pg-card-cre8 pg-card-static">
         <span class="pg-dotted-glow" aria-hidden="true"></span>
         <!-- Product portrait hidden for the text-only card design.
         <div class="pg-avatar-wrapper">
@@ -320,10 +320,13 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="pg-tiny-label">ASSETS SHIPPED</div>
                     <div class="pg-meta-value">48/wk</div>
                 </div>
-                <div class="pg-arrow">↗</div>
+                <div class="pg-chip mb-0" aria-label="Cre8LAB coming soon">
+                    <span class="pg-chip-dot"></span>
+                    COMING SOON
+                </div>
             </div>
         </div>
-    </a>
+    </div>
 </div>
         </div>
     </section>
@@ -684,7 +687,7 @@ require_once __DIR__ . '/includes/header.php';
                             <?php if ($index < 4): ?><i class="bi bi-arrow-right text-cre"></i><?php endif; ?>
                         <?php endforeach; ?>
                     </div>
-                    <a class="btn rounded-pill px-4 py-3 fw-semibold text-white bg-cre border-0" href="<?= url('coming-soon.php?product=cre8lab') ?>">Explore Cre8LAB <i class="bi bi-arrow-up-right ms-2"></i></a>
+                    <a class="btn rounded-pill px-4 py-3 fw-semibold text-white bg-cre border-0 d-none" href="<?= url('coming-soon.php?product=cre8lab') ?>">Explore Cre8LAB <i class="bi bi-arrow-up-right ms-2"></i></a>
                 </div>
 
                 <div class="col-lg-7" data-aos="fade-left">
@@ -921,7 +924,7 @@ require_once __DIR__ . '/includes/header.php';
                     </div>
                 </div>
             </div>
-            <div class="row g-md-4 mt-2">
+            <div class="row g-md-4 mt-2 d-none">
                 <div class="col-lg-4" data-aos="fade-up">
                     <div class="story-card">
                         <div class="story-tag">Case study · SaaS</div>

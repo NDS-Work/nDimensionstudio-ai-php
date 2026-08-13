@@ -1114,6 +1114,34 @@ h6,
   text-decoration: none;
 }
 
+.mega-card-static,
+.mega-card-static:hover {
+  transform: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+.mega-coming-soon {
+  width: fit-content;
+  margin-top: auto;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  background: #f3eeff;
+  color: #7c3aed;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mobile-mega-card-static {
+  cursor: default;
+}
+
 .mega-card-grow {
   --pg-dot-color: rgba(232, 81, 10, 0.42);
   --pg-dot-glow: rgba(255, 87, 34, 0.35);
@@ -3122,6 +3150,13 @@ h2.cta.section-title.mt-3 {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   color: #0d0d0d;
+}
+
+.pg-card-static,
+.pg-card-static:hover {
+  transform: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  cursor: default;
 }
 
 /* Card Background Gradients Matching Reference */

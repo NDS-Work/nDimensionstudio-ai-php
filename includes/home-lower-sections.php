@@ -113,7 +113,7 @@
                         <div class="eyebrow text-secondary mb-1">Suggested first step</div>
                         <div class="recommendation-title" id="rec-step">Buyer + funnel mapping</div>
                     </div>
-                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold mt-4" href="#contact">Start with an audit <i class="bi bi-arrow-up-right ms-2"></i></a>
+                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold mt-4 d-none" href="#contact">Start with an audit <i class="bi bi-arrow-up-right ms-2"></i></a>
                 </aside>
             </div>
         </div>
@@ -155,7 +155,7 @@
             </div>
         </div>
 
-        <div class="row g-md-4 mt-5 home-proof-stories">
+        <div class="row g-md-4 mt-5 home-proof-stories d-none">
             <?php foreach ([
                 ['Case Study &middot; SaaS', 'How a B2B SaaS achieved a connected pipeline by rebuilding lead-to-sales handoff.', 'var(--grow)'],
                 ['Case Study &middot; Manufacturing', 'How an industrial team achieved reliable reporting by rebuilding data operations.', 'var(--biz)'],
@@ -232,8 +232,7 @@
                 </h2>
                 <p class="lead mt-4 text-light-emphasis home-final-copy">Start with an AI Growth Audit. We&rsquo;ll identify the system that can create the fastest measurable impact &mdash; and show you how to build it.</p>
                 <div class="d-flex flex-wrap gap-3 mt-5">
-                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Book AI Growth Audit <i class="bi bi-arrow-up-right ms-2"></i></a>
-                    <a class="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold" href="#products">Explore Our Systems <i class="bi bi-arrow-right ms-2"></i></a>
+                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Consult Now <i class="bi bi-arrow-up-right ms-2"></i></a>
                 </div>
             </div>
         </div>

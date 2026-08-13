@@ -42,8 +42,8 @@ $bizUseCases = [
                     </h1>
                     <p class="lead text-light-emphasis mt-4 mb-4">BizGRID connects data, dashboards, workflows, documents and AI agents around the way your business actually operates.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a class="btn btn-light rounded-pill px-4 py-2" href="#contact">Map Your BizGRID <i class="bi bi-arrow-up-right"></i></a>
-                        <a class="btn btn-outline-light rounded-pill px-4 py-2" href="#contact">Book Automation Audit <i class="bi bi-arrow-up-right"></i></a>
+                        <a class="btn btn-light rounded-pill px-4 py-2" href="<?= url('contact-us.php') ?>">Book a Demo <i class="bi bi-arrow-up-right"></i></a>
+                        <a class="btn btn-outline-light rounded-pill px-4 py-2 d-none" href="#contact">Book Automation Audit <i class="bi bi-arrow-up-right"></i></a>
                     </div>
                 </div>
 
@@ -456,8 +456,8 @@ $bizUseCases = [
                 <h2 class="nd-page-title mt-4 lh-sm">Don&rsquo;t add<br>another tool.<br><span class="fst-italic fw-normal text-info lh-sm">Connect what you have.</span></h2>
                 <p class="lead mt-4 text-white">Start with one high-friction process and build the grid around it.</p>
                 <div class="d-flex flex-wrap gap-3 mt-4">
-                    <a class="btn btn-light rounded-pill px-4 py-2" href="#contact">Map Your BizGRID <i class="bi bi-arrow-up-right"></i></a>
-                    <a class="btn btn-outline-light rounded-pill px-4 py-2" href="<?= url('growstack.php') ?>">Explore GrowSTACK <i class="bi bi-arrow-right"></i></a>
+                    <a class="btn btn-light rounded-pill px-4 py-2" href="<?= url('contact-us.php') ?>">Consult Now <i class="bi bi-arrow-up-right"></i></a>
+                    <a class="btn btn-outline-light rounded-pill px-4 py-2 d-none" href="<?= url('growstack.php') ?>">Explore GrowSTACK <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
