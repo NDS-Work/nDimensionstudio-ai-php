@@ -19,7 +19,7 @@ $values = [
     'email' => '',
     'company' => '',
     'phone' => '',
-    'system' => 'GrowSTACK',
+    'system' => 'Not sure yet',
     'timeline' => '',
     'message' => '',
 ];
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors['email'] = 'Enter a valid work email.';
         }
         if ($values['message'] === '') {
-            $errors['message'] = 'Tell us briefly what is slowing the business down.';
+            $errors['message'] = 'Tell us briefly about the challenge you are trying to solve.';
         }
 
         $allowedSystems = ['GrowSTACK', 'BizGRID', 'Cre8LAB', 'Not sure yet'];
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'System: ' . $values['system'],
                 'Timeline: ' . ($values['timeline'] ?: 'Not provided'),
                 '',
-                'What is slowing the business down:',
+                'Biggest challenge:',
                 $values['message'],
             ]);
             if (sendEmailViaBrevo(BREVO_RECIPIENT_EMAIL, $subject, $body, $values['email'], $values['name'])) {
@@ -138,31 +138,18 @@ require_once __DIR__ . '/includes/header.php';
                                 <div class="alert alert-danger border-0" role="alert"><?= contactValue($errors['form']) ?></div>
                             <?php endif; ?>
 
-                            <form method="post" action="<?= url('contact-us.php') ?>#audit-form" class="row g-md-4">
+                            <form method="post" action="<?= url('contact-us.php') ?>#audit-form" class="row g-4">
                                 <input type="hidden" name="contact_token" value="<?= contactValue($_SESSION['contact_token']) ?>">
+                                <input type="hidden" name="system" value="Not sure yet">
                                 <div class="visually-hidden" aria-hidden="true">
                                     <label for="website">Website</label>
                                     <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
                                 </div>
 
                                 <div class="col-12">
-                                    <label class="form-label fw-semibold mb-3">Which system feels closest?</label>
-                                    <div class="row g-2">
-                                        <?php foreach ([
-                                            ['GrowSTACK', 'bi-graph-up-arrow'],
-                                            ['BizGRID', 'bi-grid-3x3-gap'],
-                                            ['Cre8LAB', 'bi-stars'],
-                                            ['Not sure yet', 'bi-compass'],
-                                        ] as $index => $choice): ?>
-                                            <div class="col-6 col-md-3">
-                                                <input class="btn-check" type="radio" name="system" id="system-<?= $index ?>" value="<?= $choice[0] ?>" <?= $values['system'] === $choice[0] ? 'checked' : '' ?>>
-                                                <label class="contact-choice btn w-100 h-100 p-3 text-start" for="system-<?= $index ?>">
-                                                    <i class="bi <?= $choice[1] ?> d-block fs-5 mb-2"></i>
-                                                    <span class="small fw-bold"><?= $choice[0] ?></span>
-                                                </label>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
+                                    <label class="form-label fw-semibold" for="contact-message">What&rsquo;s the biggest challenge you&rsquo;re trying to solve right now? *</label>
+                                    <textarea class="form-control form-control-lg <?= isset($errors['message']) ? 'is-invalid' : '' ?>" id="contact-message" name="message" rows="4" placeholder="Tell us what is happening today and what you would like to happen instead." required><?= contactValue($values['message']) ?></textarea>
+                                    <?php if (isset($errors['message'])): ?><div class="invalid-feedback"><?= contactValue($errors['message']) ?></div><?php endif; ?>
                                 </div>
 
                                 <div class="col-md-6">
@@ -191,11 +178,6 @@ require_once __DIR__ . '/includes/header.php';
                                             <option value="<?= $timeline ?>" <?= $values['timeline'] === $timeline ? 'selected' : '' ?>><?= $timeline ?></option>
                                         <?php endforeach; ?>
                                     </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold" for="contact-message">What is slowing the business down? *</label>
-                                    <textarea class="form-control form-control-lg <?= isset($errors['message']) ? 'is-invalid' : '' ?>" id="contact-message" name="message" rows="5" placeholder="A few lines are enough. Tell us what happens today and what should happen instead." required><?= contactValue($values['message']) ?></textarea>
-                                    <?php if (isset($errors['message'])): ?><div class="invalid-feedback"><?= contactValue($errors['message']) ?></div><?php endif; ?>
                                 </div>
                                 <div class="col-12 d-flex flex-column flex-md-row align-items-md-center gap-3">
                                     <button class="btn btn-dark rounded-pill px-4 py-3 fw-semibold" type="submit">Send audit request <i class="bi bi-arrow-up-right ms-2"></i></button>
