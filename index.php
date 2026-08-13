@@ -408,9 +408,9 @@ require_once __DIR__ . '/includes/header.php';
                     </article>
                 </div>
             </div>
-            <div class="stack-connect-panel border p-4 p-md-5 mt-5 d-flex flex-column flex-md-row align-items-md-center gap-4" data-aos="fade-up">
+            <div class="stack-connect-panel border p-4 p-md-5 mt-5 d-flex align-items-center justify-content-center text-center" data-aos="fade-up">
                 <h3 class="h-display fs-3 fw-bold text-light mb-0">One operating layer connecting all<br class="d-none d-md-block"> of it.</h3>
-                <a class="btn btn-outline-light rounded-pill px-4 py-3 ms-md-auto fw-semibold" href="#products">
+                <a class="btn btn-outline-light rounded-pill px-4 py-3 ms-md-auto fw-semibold d-none" href="#products">
                     See how we connect it <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                 </a>
             </div>

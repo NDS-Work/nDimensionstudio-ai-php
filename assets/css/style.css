@@ -1486,6 +1486,39 @@ h6,
   border-color: var(--bg);
 }
 
+/* Keep every command CTA visually consistent across pages. */
+a.btn,
+button.btn[type="submit"],
+a.gs-btn-primary,
+a.gs-btn-secondary {
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px !important;
+  border-radius: 999px;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+a.btn:not(.d-none),
+button.btn[type="submit"]:not(.d-none),
+a.gs-btn-primary:not(.d-none),
+a.gs-btn-secondary:not(.d-none) {
+  display: inline-flex !important;
+}
+
+a.btn i,
+button.btn[type="submit"] i,
+a.gs-btn-primary i,
+a.gs-btn-secondary i {
+  margin-left: 0 !important;
+  font-size: 1em;
+  line-height: 1;
+}
+
 .stat-pill {
   display: inline-flex;
   align-items: center;
