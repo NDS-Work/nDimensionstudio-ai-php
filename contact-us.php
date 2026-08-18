@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$errors) {
             $attribution = attributionData();
+            $utmTouch = $attribution['first_utm_source'] !== '' ? 'first' : 'last';
             $subject = 'AI Growth Audit request from ' . $values['name'];
             $body = implode("\n", [
                 'New AI Growth Audit request',
@@ -69,6 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 '',
                 'Biggest challenge:',
                 $values['message'],
+                '',
+                'Campaign attribution:',
+                'UTM source: ' . ($attribution[$utmTouch . '_utm_source'] ?: 'Not captured'),
+                'UTM medium: ' . ($attribution[$utmTouch . '_utm_medium'] ?: 'Not captured'),
+                'UTM campaign: ' . ($attribution[$utmTouch . '_utm_campaign'] ?: 'Not captured'),
+                'UTM term: ' . ($attribution[$utmTouch . '_utm_term'] ?: 'Not captured'),
+                'UTM content: ' . ($attribution[$utmTouch . '_utm_content'] ?: 'Not captured'),
             ]);
             try {
                 $leadId = createLead(array_merge($values, $attribution, [

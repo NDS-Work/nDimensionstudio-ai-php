@@ -196,15 +196,19 @@ $where = [];
 $params = [];
 
 if ($search !== '') {
-    $where[] = '(name LIKE :search OR email LIKE :search OR company LIKE :search OR challenge LIKE :search)';
-    $params['search'] = '%' . $search . '%';
+    $where[] = '(name LIKE :search_name OR email LIKE :search_email OR company LIKE :search_company OR challenge LIKE :search_challenge)';
+    $searchValue = '%' . $search . '%';
+    $params['search_name'] = $searchValue;
+    $params['search_email'] = $searchValue;
+    $params['search_company'] = $searchValue;
+    $params['search_challenge'] = $searchValue;
 }
 if (in_array($statusFilter, $statuses, true)) {
     $where[] = 'status = :status';
     $params['status'] = $statusFilter;
 }
 if ($sourceFilter !== '') {
-    $where[] = 'first_utm_source = :source';
+    $where[] = 'COALESCE(first_utm_source, last_utm_source) = :source';
     $params['source'] = $sourceFilter;
 }
 $whereSql = $where ? ' WHERE ' . implode(' AND ', $where) : '';
@@ -239,7 +243,7 @@ $offset = ($page - 1) * $perPage;
 $statement = $pdo->prepare('SELECT * FROM leads' . $whereSql . ' ORDER BY created_at DESC LIMIT ' . $perPage . ' OFFSET ' . $offset);
 $statement->execute($params);
 $leads = $statement->fetchAll();
-$sources = $pdo->query("SELECT DISTINCT first_utm_source FROM leads WHERE first_utm_source IS NOT NULL AND first_utm_source <> '' ORDER BY first_utm_source")->fetchAll(PDO::FETCH_COLUMN);
+$sources = $pdo->query("SELECT DISTINCT COALESCE(first_utm_source, last_utm_source) AS utm_source FROM leads WHERE COALESCE(first_utm_source, last_utm_source) IS NOT NULL AND COALESCE(first_utm_source, last_utm_source) <> '' ORDER BY utm_source")->fetchAll(PDO::FETCH_COLUMN);
 $stats = $pdo->query("SELECT COUNT(*) total, SUM(status = 'new') new_count, SUM(status = 'qualified') qualified_count, SUM(status = 'won') won_count FROM leads")->fetch();
 $selectedLead = null;
 if (!empty($_GET['lead'])) {
