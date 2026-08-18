@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $activePage = 'contact';
 $pageTitle = 'Book an AI Growth Audit';
@@ -9,6 +8,7 @@ $ogDescription = 'Start a practical conversation about the system your business 
 $canonicalUrl = 'https://ndimensions.ai/ai/contact-us';
 
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/database.php';
 
 if (empty($_SESSION['contact_token'])) {
     $_SESSION['contact_token'] = bin2hex(random_bytes(24));
@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (!$errors) {
+            $attribution = attributionData();
             $subject = 'AI Growth Audit request from ' . $values['name'];
             $body = implode("\n", [
                 'New AI Growth Audit request',
@@ -69,11 +70,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'Biggest challenge:',
                 $values['message'],
             ]);
-            if (sendEmailViaBrevo(BREVO_RECIPIENT_EMAIL, $subject, $body, $values['email'], $values['name'])) {
+            try {
+                $leadId = createLead(array_merge($values, $attribution, [
+                    'system_interest' => $values['system'],
+                    'challenge' => $values['message'],
+                    'ip_address' => substr((string) ($_SERVER['REMOTE_ADDR'] ?? ''), 0, 45),
+                    'user_agent' => substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 512),
+                ]));
+                $emailSent = sendEmailViaBrevo(BREVO_RECIPIENT_EMAIL, $subject, $body, $values['email'], $values['name']);
+                markLeadEmailSent($leadId, $emailSent);
+                if (!$emailSent) {
+                    error_log('Lead ' . $leadId . ' was saved, but its Brevo notification failed.');
+                }
                 $submitted = true;
                 $_SESSION['contact_token'] = bin2hex(random_bytes(24));
-            } else {
-                $errors['form'] = 'We could not send the request right now. Please email ' . BREVO_RECIPIENT_EMAIL . '.';
+            } catch (Throwable $exception) {
+                error_log('Contact lead save failed: ' . $exception->getMessage());
+                $errors['form'] = 'We could not save your request right now. Please email ' . BREVO_RECIPIENT_EMAIL . '.';
             }
         }
     }

@@ -59,8 +59,7 @@
                 </li>
 
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#products') ?>">AI Agents</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#problem-selector') ?>">Use Cases</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#proof') ?>">Industries</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= url('index.php#industries') ?>">Industries</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#faq') ?>">Insights</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= url('index.php#operating-model') ?>">About</a></li>
                 <li class="nav-item d-none"><a class="nav-link" href="<?= url('index.php#products') ?>">Explore Our Systems</a></li>

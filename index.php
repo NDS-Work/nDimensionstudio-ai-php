@@ -16,7 +16,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="hero-eyebrow eyebrow eyebrow-dot">AI-native growth &amp; automation partner</div>
             <h1 class="hero-headline">
                 <span class="hero-composed-line hero-composed-line--portrait">
-                    <span class="hero-line-copy">We Build AI<br class="hero-mobile-break"> Systems</span>
+                    <span class="hero-line-copy">AI-First Growth<br class="hero-mobile-break"> Agency</span>
                     <span class="hero-portrait-wrap" aria-hidden="true">
                         <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?crop=entropy&amp;fm=jpg&amp;q=85&amp;w=800" alt="">
                     </span>
@@ -27,7 +27,7 @@ require_once __DIR__ . '/includes/header.php';
                             <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                         </svg>
                     </span>
-                    <span class="hero-line-copy">B2B growth<br class="hero-mobile-break"> runs on.</span>
+                    <span class="hero-line-copy">Engineered to<br class="hero-mobile-break"> Scale Your Business</span>
                 </span>
             </h1>
 
@@ -859,7 +859,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="section section-light" id="problem-selector">
+    <!-- <section class="section section-light" id="problem-selector">
         <div class="container">
             <div class="row g-md-4 align-items-end mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
@@ -894,7 +894,7 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="section" id="proof">
         <div class="container">

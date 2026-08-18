@@ -1984,7 +1984,7 @@ h2.cta.section-title.mt-3 {
 }
 
 .hero-section--text-only .hero-headline {
-  font-size: clamp(4.75rem, 6.25vw, 7.75rem);
+  font-size: clamp(4rem, 5vw, 6rem);
   line-height: 1.05;
   max-width: none;
   margin-inline: auto;
@@ -2808,6 +2808,44 @@ h2.cta.section-title.mt-3 {
 
 .home-proof-card {
   min-height: 270px;
+}
+
+.home-industries {
+  background: var(--bg);
+}
+
+.home-industry-card {
+  min-height: 300px;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: #fff;
+  transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.home-industry-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--industry-accent);
+  box-shadow: 0 22px 55px -34px rgba(10, 10, 10, 0.3);
+}
+
+.home-industry-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--industry-soft);
+  color: var(--industry-accent);
+  font-size: 1.25rem;
+}
+
+.home-industry-index {
+  color: var(--ink-3);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.home-industry-card p {
+  max-width: 28rem;
+  line-height: 1.7;
 }
 
 .home-proof--animated {

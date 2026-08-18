@@ -2,6 +2,10 @@ Options -MultiViews
 
 DirectoryIndex index.php
 
+<FilesMatch "(^\.env|\.sql$|\.log$)">
+    Require all denied
+</FilesMatch>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 

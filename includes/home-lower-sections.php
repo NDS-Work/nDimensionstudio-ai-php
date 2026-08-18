@@ -69,6 +69,7 @@
     </div>
 </section>
 
+<?php if (false): // Temporarily hidden until the use-cases section is ready. ?>
 <section class="section section-light home-problem-selector" id="problem-selector">
     <div class="container">
         <div class="row g-md-4 align-items-end mb-5">
@@ -119,53 +120,37 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 
-<section class="section home-proof home-proof--animated" id="proof" data-stats-section>
+<section class="section home-industries border-top border-bottom" id="industries">
     <div class="container">
-        <div class="home-proof-stage" data-aos="fade-up">
-            <div class="home-proof-stage-heading">
-                <div class="eyebrow">Experience behind the systems</div>
+        <div class="row mb-5">
+            <div class="col-lg-9" data-aos="fade-up">
+                <div class="eyebrow">Industries</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
-                    <span class="d-block">Built on experience.</span>
-                    <span class="d-block fst-italic fw-normal">Designed for what comes next.</span>
+                    <span class="d-block">Built for complex businesses.</span>
+                    <span class="d-block fst-italic fw-normal text-secondary">Designed around real workflows.</span>
                 </h2>
-            </div>
-
-            <div class="experience-stats-grid">
-            <?php foreach ([
-                ['17', '+', 'Years across technology, digital marketing, branding and creative execution.', 'bi-graph-up-arrow'],
-                ['300', '+', 'Clients across startups, growing businesses and enterprise teams.', 'bi-people'],
-                ['1', '&times;', 'Integrated team of engineers, strategists, marketers and creatives.', 'bi-diagram-3']
-            ] as $index => $proof): ?>
-                <article class="experience-stat" data-stat-card>
-                    <span class="experience-stat-grid" aria-hidden="true"></span>
-                    <span class="experience-stat-corner" aria-hidden="true"></span>
-                    <?php for ($cell = 0; $cell < 7; $cell++): ?>
-                        <span class="experience-stat-cell experience-stat-cell--<?= $cell + 1 ?>" aria-hidden="true"></span>
-                    <?php endfor; ?>
-                    <div class="experience-stat-top">
-                        <span class="experience-stat-icon" aria-hidden="true"><i class="bi <?= $proof[3] ?>"></i></span>
-                        <div class="experience-stat-value h-display">
-                            <span data-stat-value data-stat-target="<?= $proof[0] ?>"><?= $proof[0] ?></span><?= $proof[1] ?>
-                        </div>
-                    </div>
-                    <p><?= $proof[2] ?></p>
-                </article>
-            <?php endforeach; ?>
             </div>
         </div>
 
-        <div class="row g-md-4 mt-5 home-proof-stories d-none">
+        <div class="row g-3">
             <?php foreach ([
-                ['Case Study &middot; SaaS', 'How a B2B SaaS achieved a connected pipeline by rebuilding lead-to-sales handoff.', 'var(--grow)'],
-                ['Case Study &middot; Manufacturing', 'How an industrial team achieved reliable reporting by rebuilding data operations.', 'var(--biz)'],
-                ['Case Study &middot; Services', 'How a services brand achieved consistent output by rebuilding creative production.', 'var(--cre)']
-            ] as $index => $story): ?>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="<?= $index * 80 ?>">
-                    <article class="home-story-card p-4 p-md-5 h-100">
-                        <div class="story-tag" style="color:<?= $story[2] ?>"><?= $story[0] ?></div>
-                        <h3 class="h-display h4 fw-bold mt-4 mb-0"><?= $story[1] ?></h3>
-                        <span class="d-inline-flex align-items-center gap-2 small fw-semibold mt-4">Read the story <i class="bi bi-arrow-up-right"></i></span>
+                ['SaaS &amp; Technology', 'Build demand, automate onboarding and convert product interest into pipeline.', 'bi-cloud', 'var(--grow)', 'var(--grow-soft)'],
+                ['Energy &amp; Utilities', 'Connect field operations, customer workflows and business data through AI.', 'bi-lightning-charge', 'var(--biz)', 'var(--biz-soft)'],
+                ['Manufacturing &amp; Industrial', 'Automate sales, reporting, approvals and operational processes.', 'bi-gear-wide-connected', '#475569', '#e2e8f0'],
+                ['Healthcare', 'Improve patient journeys, appointment workflows and operational efficiency.', 'bi-heart-pulse', '#059669', '#d1fae5'],
+                ['Financial Services', 'Streamline customer acquisition, documentation, approvals and reporting.', 'bi-bank', '#7c3aed', 'var(--cre-soft)'],
+                ['Retail &amp; E-commerce', 'Personalize marketing, improve conversions and automate customer engagement.', 'bi-bag', '#db2777', '#fce7f3'],
+            ] as $index => $industry): ?>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="<?= ($index % 3) * 70 ?>">
+                    <article class="home-industry-card h-100 p-4 p-md-5" style="--industry-accent:<?= $industry[3] ?>;--industry-soft:<?= $industry[4] ?>">
+                        <div class="d-flex align-items-center justify-content-between mb-5">
+                            <span class="home-industry-icon d-inline-flex align-items-center justify-content-center" aria-hidden="true"><i class="bi <?= $industry[2] ?>"></i></span>
+                            <span class="home-industry-index font-mono">IND / 0<?= $index + 1 ?></span>
+                        </div>
+                        <h3 class="h-display fs-3 fw-bold mb-3"><?= $industry[0] ?></h3>
+                        <p class="text-muted mb-0"><?= $industry[1] ?></p>
                     </article>
                 </div>
             <?php endforeach; ?>

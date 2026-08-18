@@ -24,8 +24,23 @@ if (file_exists($envPath)) {
     }
 }
 
+// Some local XAMPP installs expose a session directory PHP cannot write to.
+if (session_status() === PHP_SESSION_NONE) {
+    $configuredSessionPath = session_save_path();
+    if ($configuredSessionPath === '' || !is_dir($configuredSessionPath) || !is_writable($configuredSessionPath)) {
+        $fallbackSessionPath = dirname(__DIR__) . '/storage/sessions';
+        if (!is_dir($fallbackSessionPath)) {
+            mkdir($fallbackSessionPath, 0700, true);
+        }
+        session_save_path($fallbackSessionPath);
+    }
+}
+
 if (!defined('BASE_URL')) {
     $scriptDirectory = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+    if (basename($scriptDirectory) === 'admin') {
+        $scriptDirectory = str_replace('\\', '/', dirname($scriptDirectory));
+    }
     $basePath = $scriptDirectory === '/' || $scriptDirectory === '.' ? '' : rtrim($scriptDirectory, '/');
 
     define('BASE_URL', $basePath . '/');
@@ -40,10 +55,8 @@ function url($path = '')
 {
     $path = ltrim($path, '/');
 
-    if (PHP_SAPI !== 'cli-server') {
-        $path = preg_replace('/^index\.php(?=($|[?#]))/i', '', $path);
-        $path = preg_replace('/\.php(?=($|[?#]))/i', '', $path);
-    }
+    $path = preg_replace('/^index\.php(?=($|[?#]))/i', '', $path);
+    $path = preg_replace('/\.php(?=($|[?#]))/i', '', $path);
 
     return BASE_URL . $path;
 }
@@ -63,6 +76,76 @@ define('BREVO_API_KEY', getenv('BREVO_API_KEY') ?: 'xkeysib-YOUR-BREVO-API-KEY')
 define('BREVO_SENDER_EMAIL', getenv('BREVO_SENDER_EMAIL') ?: 'website@ndimensions.ai');
 define('BREVO_SENDER_NAME', getenv('BREVO_SENDER_NAME') ?: 'nDimensions Website');
 define('BREVO_RECIPIENT_EMAIL', getenv('BREVO_RECIPIENT_EMAIL') ?: 'hello@ndimensions.ai');
+
+// MySQL settings. Override these values in .env on production.
+define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
+define('DB_NAME', getenv('DB_NAME') ?: 'ndsai');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : '');
+
+function captureAttribution()
+{
+    if (PHP_SAPI === 'cli' || strpos($_SERVER['SCRIPT_NAME'] ?? '', '/admin/') !== false) {
+        return;
+    }
+
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+
+    $keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+    $touch = [];
+    $hasCampaignData = false;
+
+    foreach ($keys as $key) {
+        $value = trim((string) ($_GET[$key] ?? ''));
+        $value = substr($value, 0, 255);
+        $touch[$key] = $value;
+        if ($value !== '') {
+            $hasCampaignData = true;
+        }
+    }
+
+    $touch['landing_page'] = substr((string) ($_SERVER['REQUEST_URI'] ?? ''), 0, 2048);
+    $touch['referrer'] = substr((string) ($_SERVER['HTTP_REFERER'] ?? ''), 0, 2048);
+    $touch['captured_at'] = date('c');
+
+    $firstTouch = $_SESSION['nds_attribution_first'] ?? [];
+    $firstHasCampaignData = false;
+    foreach ($keys as $key) {
+        if (!empty($firstTouch[$key])) {
+            $firstHasCampaignData = true;
+            break;
+        }
+    }
+
+    // Treat the first identifiable campaign as acquisition when the session
+    // initially began as a direct visit.
+    if (empty($firstTouch) || (!$firstHasCampaignData && $hasCampaignData)) {
+        $_SESSION['nds_attribution_first'] = $touch;
+    }
+
+    if (empty($_SESSION['nds_attribution_last']) || $hasCampaignData) {
+        $_SESSION['nds_attribution_last'] = $touch;
+    }
+}
+
+function attributionData()
+{
+    $first = $_SESSION['nds_attribution_first'] ?? [];
+    $last = $_SESSION['nds_attribution_last'] ?? $first;
+    $data = [];
+
+    foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'landing_page', 'referrer'] as $key) {
+        $data['first_' . $key] = (string) ($first[$key] ?? '');
+        $data['last_' . $key] = (string) ($last[$key] ?? '');
+    }
+
+    return $data;
+}
+
+captureAttribution();
 
 /**
  * Sends a transactional email using Brevo's HTTP API.
