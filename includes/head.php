@@ -13,6 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PV94M6MB');</script>
 <!-- End Google Tag Manager -->
+ <meta name="google-site-verification" content="_cv32O4Os22TNjJ5_hEHqTq8bqgD6_c3ja16gR1QGj0" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($pageTitle ?? 'nDimensions.ai | AI Growth, Automation & Creative Systems') ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDescription ?? 'nDimensions.ai designs AI growth systems, automation, and creative production for modern B2B teams.') ?>">
