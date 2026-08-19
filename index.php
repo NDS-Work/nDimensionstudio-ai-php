@@ -236,10 +236,10 @@ require_once __DIR__ . '/includes/header.php';
             <div class="row g-md-4 align-items-start mb-5">
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="eyebrow">One partner · Three connected systems</div>
-                    <h2 class="section-title mt-3 mb-5">Stop running growth,<br> operations and creative <br><span style="color: #A1A1AA; font-weight: 300; font-style: italic" >in pieces.</span></h2>
+                    <h2 class="section-title mt-3 mb-5">AI Systems built <br><span style="color: #A1A1AA; font-weight: 300; font-style: italic" >around your business.</span></h2>
                 </div>
                 <div class="col-lg-4" data-aos="fade-left">
-                    <p class="section-copy text-muted">Three productised systems, one accountable team. Delivered through strategy, engineering, integration and operation.</p>
+                    <p class="section-copy text-muted"><b>One Connected System. More Business Momentum.</b><br>We connect the people, tools and workflows that drive your business; then make them faster and smarter with AI.</p>
                 </div>
             </div>
 
@@ -258,16 +258,16 @@ require_once __DIR__ . '/includes/header.php';
                 PRODUCT
             </div>
             <h3 class="pg-title">GrowSTACK</h3>
-            <p class="pg-lead">AI growth that moves pipeline.</p>
-            <p class="pg-desc">Search, content, campaigns, WhatsApp, CRM, reporting &mdash; one connected system.</p>
+            <p class="pg-lead">AI Marketing & Revenue Automation</p>
+            <!-- <p class="pg-desc">Search, content, campaigns, WhatsApp, CRM, reporting &mdash; one connected system.</p> -->
             
-            <div class="pg-meta">
+            <!-- <div class="pg-meta">
                 <div>
                     <div class="pg-tiny-label">PIPELINE IN PLAY</div>
                     <div class="pg-meta-value">$1.42M</div>
                 </div>
                 <div class="pg-arrow">↗</div>
-            </div>
+            </div> -->
         </div>
     </a>
 
@@ -285,8 +285,8 @@ require_once __DIR__ . '/includes/header.php';
                 PRODUCT
             </div>
             <h3 class="pg-title">BizGRID</h3>
-            <p class="pg-lead">Automate the invisible.</p>
-            <p class="pg-desc">Data, dashboards, workflows, documents and AI agents around real operations.</p>
+            <p class="pg-lead">AI Workflow & Operations Automation</p>
+            <!-- <p class="pg-desc">Data, dashboards, workflows, documents and AI agents around real operations.</p>
             
             <div class="pg-meta">
                 <div>
@@ -294,7 +294,7 @@ require_once __DIR__ . '/includes/header.php';
                     <div class="pg-meta-value">+38%</div>
                 </div>
                 <div class="pg-arrow">↗</div>
-            </div>
+            </div> -->
         </div>
     </a>
 
@@ -312,14 +312,14 @@ require_once __DIR__ . '/includes/header.php';
                 PRODUCT
             </div>
             <h3 class="pg-title">Cre8LAB</h3>
-            <p class="pg-lead">Strategy &rarr; campaign, faster.</p>
-            <p class="pg-desc">AI-assisted production for creative variations, product visuals and video.</p>
+            <p class="pg-lead">AI Creative & Content Production</p>
+            <!-- <p class="pg-desc">AI-assisted production for creative variations, product visuals and video.</p> -->
             
             <div class="pg-meta">
-                <div>
+                <!-- <div>
                     <div class="pg-tiny-label">ASSETS SHIPPED</div>
                     <div class="pg-meta-value">48/wk</div>
-                </div>
+                </div> -->
                 <div class="pg-chip mb-0" aria-label="Cre8LAB coming soon">
                     <span class="pg-chip-dot"></span>
                     COMING SOON
@@ -342,8 +342,8 @@ require_once __DIR__ . '/includes/header.php';
                     </h2>
                 </div>
                 <div class="col-lg-5" data-aos="fade-left">
-                    <p class="section-copy text-white mb-3">Marketing generates leads. Sales follows up without context. Data sits across CRMs, spreadsheets and dashboards. Creative waits for another brief, another approval and another resize.</p>
-                    <p class="section-copy fw-bold text-light mb-0">The problem isn&rsquo;t effort.<br>It&rsquo;s the gaps between the work.</p>
+                    <p class="section-copy text-white mb-3">A lead comes in, but follow-up is late. Customer details are spread across WhatsApp, Excel and CRM. Reports take hours. Marketing waits for another approval.</p>
+                    
                 </div>
             </div>
             <div class="row g-3">
@@ -353,8 +353,8 @@ require_once __DIR__ . '/includes/header.php';
                             <span class="stack-index">01</span>
                             <i class="bi bi-boxes stack-card-icon" aria-hidden="true"></i>
                         </div>
-                        <h3>Channel silos</h3>
-                        <p>Every channel reports separately. No one sees the customer as one.</p>
+                        <h3>Low Visibility</h3>
+                        <p>Potential customers search, but competitors appear before you.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
@@ -363,8 +363,8 @@ require_once __DIR__ . '/includes/header.php';
                             <span class="stack-index">02</span>
                             <i class="bi bi-clock stack-card-icon" aria-hidden="true"></i>
                         </div>
-                        <h3>Handoff drag</h3>
-                        <p>Leads lose momentum in the gap between marketing and sales.</p>
+                        <h3>Unclear Returns</h3>
+                        <p>You invest in marketing without knowing what generates revenue.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
@@ -373,8 +373,8 @@ require_once __DIR__ . '/includes/header.php';
                             <span class="stack-index">03</span>
                             <i class="bi bi-graph-up stack-card-icon" aria-hidden="true"></i>
                         </div>
-                        <h3>Delayed reporting</h3>
-                        <p>Numbers arrive after decisions have already been made.</p>
+                        <h3>Missed Opportunities</h3>
+                        <p>Slow responses and inconsistent follow-ups cost potential business.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
@@ -383,8 +383,8 @@ require_once __DIR__ . '/includes/header.php';
                             <span class="stack-index">04</span>
                             <i class="bi bi-diagram-3 stack-card-icon" aria-hidden="true"></i>
                         </div>
-                        <h3>Manual workflows</h3>
-                        <p>The business runs on someone remembering to do the next step.</p>
+                        <h3>Manual Operations</h3>
+                        <p>Your team spends hours on tasks that could happen automatically.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="320">
@@ -393,8 +393,8 @@ require_once __DIR__ . '/includes/header.php';
                             <span class="stack-index">05</span>
                             <i class="bi bi-layers stack-card-icon" aria-hidden="true"></i>
                         </div>
-                        <h3>Creative bottleneck</h3>
-                        <p>Another brief. Another approval. Another resize.</p>
+                        <h3>Scattered Data</h3>
+                        <p>Delayed reports make business decisions harder.</p>
                     </article>
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
@@ -403,17 +403,17 @@ require_once __DIR__ . '/includes/header.php';
                             <span class="stack-index">06</span>
                             <i class="bi bi-exclamation-triangle stack-card-icon" aria-hidden="true"></i>
                         </div>
-                        <h3>Disconnected AI tools</h3>
-                        <p>Experiments without owners. Prototypes without production.</p>
+                        <h3>Disconnected AI</h3>
+                        <p>AI tools are tested, but never become part of everyday business.</p>
                     </article>
                 </div>
             </div>
-            <div class="stack-connect-panel border p-4 p-md-5 mt-5 d-flex align-items-center justify-content-center text-center" data-aos="fade-up">
+            <!-- <div class="stack-connect-panel border p-4 p-md-5 mt-5 d-flex align-items-center justify-content-center text-center" data-aos="fade-up">
                 <h3 class="h-display fs-3 fw-bold text-light mb-0">One operating layer connecting all<br class="d-none d-md-block"> of it.</h3>
                 <a class="btn btn-outline-light rounded-pill px-4 py-3 ms-md-auto fw-semibold d-none" href="#products">
                     See how we connect it <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                 </a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -499,10 +499,10 @@ require_once __DIR__ . '/includes/header.php';
                 </div>
                 <div class="col-lg-5 order-lg-1" data-aos="fade-right">
                     <p class="home-product-chip d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2 mb-0 font-mono text-uppercase">
-                        <span class="nd-dot bg-grow"></span>GrowSTACK &middot; AI Growth System
+                        <span class="nd-dot bg-grow"></span>GROWSTACK &middot; AI MARKETING & REVENUE AUTOMATION
                     </p>
-                    <h2 class="nd-page-title mt-4">Get found.<br>Create demand.<br><span class="fst-italic fw-normal text-secondary">Move pipeline.</span></h2>
-                    <p class="lead text-muted mt-4 home-product-copy">One connected growth system spanning search visibility, content, demand generation, lead nurturing, WhatsApp, CRM and revenue reporting.</p>
+                    <h2 class="nd-page-title mt-4">Get Found.<br>Win Leads.<br><span class="fst-italic fw-normal text-secondary">Grow Revenue.</span></h2>
+                    <p class="lead text-muted mt-4 home-product-copy">One connected AI system to improve visibility, run campaigns, capture enquiries, nurture leads through timely automated follow-ups, and track every opportunity from first click to revenue.</p>
                     <div class="d-flex flex-wrap align-items-center gap-2 mt-4 mb-5">
                         <?php foreach (['Search', 'Content', 'Demand', 'Nurture', 'CRM', 'Pipeline'] as $index => $step): ?>
                             <span class="badge rounded-pill border bg-white px-3 py-2 fw-semibold home-product-step"><?= $step ?></span>
@@ -635,7 +635,7 @@ require_once __DIR__ . '/includes/header.php';
           <!-- Category Chip -->
           <div class="bg-category-chip mb-3">
             <span class="bg-chip-dot"></span>
-            <span>BIZGRID &middot; CUSTOM AI BUSINESS SYSTEMS</span>
+            <span>BIZGRID &middot; AI WORKFLOW & OPERATIONS AUTOMATION</span>
           </div>
 
           <!-- Headline -->
@@ -677,7 +677,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="row g-md-5 align-items-center">
                 <div class="col-lg-5" data-aos="fade-right">
                     <p class="home-cre8-chip d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2 mb-0 font-mono text-uppercase">
-                        <span class="nd-dot bg-cre"></span>Cre8LAB &middot; Creative Production
+                        <span class="nd-dot bg-cre"></span>CRE8LAB &middot; AI CREATIVE & CONTENT PRODUCTION
                     </p>
                     <h2 class="nd-page-title mt-4">Turn strategy<br>into creative.<br><span class="fst-italic fw-normal text-secondary">Faster.</span></h2>
                     <p class="lead text-muted mt-4 home-product-copy">An AI-assisted production system for campaign creatives, product visuals, advertising variations, video and branded content.</p>
@@ -732,7 +732,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="container">
         <div class="row g-md-4 align-items-end mb-5">
             <div class="col-lg-7" data-aos="fade-right">
-                <div class="eyebrow">The operating model</div>
+                <div class="eyebrow">The nDimensions Model</div>
                 <h2 class="operating-model-title h-display mt-4 mb-0">
                     <span class="d-block">One connected team.</span>
                     <span class="d-block fst-italic fw-normal text-secondary">One accountable system.</span>
@@ -749,15 +749,15 @@ require_once __DIR__ . '/includes/header.php';
             <div class="col-lg-6" data-aos="fade-right">
                 <article class="operating-model-card operating-model-card-old border p-4 p-md-5 is-dim" id="panel-old">
                     <div class="stack-index">Then</div>
-                    <h3 class="h-display fw-bold mt-2 mb-0">The fragmented model</h3>
+                    <h3 class="h-display fw-bold mt-2 mb-0">The Traditional Model</h3>
                     <ul class="model-list mt-4">
                         <?php foreach ([
-                            'Separate vendors for marketing, technology and creative',
-                            'More tools bolted onto disconnected processes',
-                            'Leads measured separately from pipeline',
-                            'Manual reporting, delayed decisions',
-                            'One-off creative production',
-                            'AI experiments without ownership'
+                            'Growth, operations and creative work in separate silos',
+                            'Business data is scattered across software, spreadsheets and conversations',
+                            'Routine work depends on manual updates, reminders, approvals and handoffs',
+                            'Leadership waits for reports without a complete view of the business',
+                            'Campaign and creative production slows down at every briefs & approvals',
+                            'AI tools are tested without integration, ownership or measurable outcomes'
                         ] as $item): ?>
                             <li><span class="operating-model-circle mt-1"></span><span><?= $item ?></span></li>
                         <?php endforeach; ?>
@@ -770,12 +770,12 @@ require_once __DIR__ . '/includes/header.php';
                     <h3 class="h-display fw-bold mt-2 mb-0">The nDimensions model</h3>
                     <ul class="model-list mt-4">
                         <?php foreach ([
-                            'Engineers, marketers and creatives working together',
-                            'Existing tools connected around real workflows',
-                            'Marketing and sales measured through pipeline',
-                            'Automated business visibility',
-                            'Repeatable production systems',
-                            'AI built around measurable outcomes'
+                            'One team connects growth, operations and creative execution',
+                            'Business data is connected across the tools your teams already use',
+                            'Automated workflows handle repetitive work and route decisions to the right people',
+                            'Live dashboards give leadership a clear view of performance, pipeline and operations',
+                            'AI-assisted production delivers consistent content & creative variations faster',
+                            'AI systems have clear ownership and are built around measurable business outcomes'
                         ] as $item): ?>
                             <li><i class="bi bi-check-circle text-grow mt-1" aria-hidden="true"></i><span><?= $item ?></span></li>
                         <?php endforeach; ?>

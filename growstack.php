@@ -17,16 +17,14 @@ require_once __DIR__ . '/includes/header.php';
     <div class="col-lg-6">
       <p class="gs-eyebrow">
         <span class="gs-eyebrow-dot"></span>
-        GrowSTACK · AI Growth System
+        GROWSTACK · AI MARKETING, LEAD NURTURING & REVENUE AUTOMATION
       </p>
       <h1 class="gs-headline mt-3">
-        Your growth stack<br>should work like
-        <span class="gs-headline-italic">one system.</span>
+        Turn Marketing Activity Into 
+        <span class="gs-headline-italic">Measurable Revenue.</span>
       </h1>
       <p class="gs-subtext mt-4">
-        Search, content, campaigns, lead capture, WhatsApp,<br>
-        nurturing, CRM and reporting — connected around one<br>
-        outcome: qualified pipeline.
+        GrowSTACK connects search, content, campaigns, lead capture, WhatsApp, nurturing, CRM and reporting around one outcome: more qualified sales opportunities.
       </p>
       <div class="gs-actions mt-4">
         <a class="gs-btn-primary" href="<?= url('contact-us.php') ?>">Book a Demo ↗</a>
@@ -143,23 +141,24 @@ require_once __DIR__ . '/includes/header.php';
         <div class="container pt-lg-3">
             <p class="font-mono small text-secondary text-uppercase d-flex align-items-center gap-2 gs-gaps-tracking mb-0" data-aos="fade-up">
                 <span class="gs-gaps-dot gs-gaps-dot-lg"></span>
-                The gaps in the funnel
+                THE REVENUE ATTRIBUTION GAP
             </p>
 
             <div class="row gx-lg-5 mt-4 pt-1 align-items-end">
                 <div class="col-lg-7" data-aos="fade-up" data-aos-delay="50">
                     <h2 class="gs-gaps-title fw-bold text-white mb-0" id="gs-gaps-title">
-                        <span class="d-block">Traffic without intent.</span>
-                        <span class="d-block">Leads without follow-</span>
-                        <span class="d-block">up.</span>
-                        <span class="d-block gs-gaps-title-italic fst-italic fw-medium">CRM without context.</span>
+                        <span class="d-block">Which Marketing Channel is</span>
+                        <!-- <span class="d-block">Leads without follow-</span> -->
+                        <!-- <span class="d-block">up.</span> -->
+                        <span class="d-block gs-gaps-title-italic fst-italic fw-medium">Driving Revenue?
+</span>
                     </h2>
                 </div>
 
                 <div class="col-lg-5 mt-4 mt-lg-0 pb-1" data-aos="fade-up" data-aos-delay="120">
                     <div class="gs-gaps-description fs-5 lh-lg">
-                        <p class="mb-3" style="color: #d4d4d8;">SEO is measured on rankings. Content on output. Advertising on leads. Sales waits for context. Leadership waits for a report that explains what actually created pipeline.</p>
-                        <p class="fw-bold mb-0">The missing piece isn&rsquo;t another channel.<br>It&rsquo;s the system connecting them.</p>
+                        <p class="mb-3" style="color: #d4d4d8;">SEO shows rankings. Ads show leads. CRM shows deals. But when these systems are disconnected, you cannot see which keyword, campaign, message or follow-up created the sale.</p>
+                        <p class="fw-bold mb-0">GrowSTACK connects every customer touchpoint from first search to closed revenue.</p>
                     </div>
                 </div>
             </div>
@@ -210,7 +209,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <?php
     $growLayers = [
-        ['Get found', 'Show up on Google &mdash; and inside AI answers.', 'bi-search', ['Technical + on-page SEO', 'AEO and GEO for AI answer engines', 'Buyer-intent research', 'Authority and reputation signals', 'Competitor visibility tracking', 'Google + AI-search visibility'], 'search'],
+        ['Get Found', 'From Search Intent to Sales Conversation.', 'bi-search', ['Technical and on-page SEO', 'AI search visibility through AEO and GEO', 'Buyer-intent keyword research', 'Competitor visibility tracking', 'Authority and reputation signals',], 'search'],
         ['Earn attention', 'Content that plants intent, not just impressions.', 'bi-file-earmark-text', ['B2B content strategy', 'Thought leadership', 'Search-led articles', 'Decision-stage landing pages', 'Email and newsletters', 'Content repurposing engine'], 'content'],
         ['Capture demand', 'Convert intent into named opportunities.', 'bi-bullseye', ['Paid acquisition', 'B2B landing pages', 'Lead magnets', 'Outbound targeting', 'Conversion tracking', 'Meta CAPI + ad-data integrations'], 'capture'],
         ['Nurture intent', 'Behaviour-triggered follow-up on the channels buyers use.', 'bi-chat-dots', ['Email nurturing', 'WhatsApp automation', 'Lead qualification + scoring', 'Behaviour-based follow-ups', 'Meeting journeys', 'Lead reactivation'], 'nurture'],

@@ -6,6 +6,13 @@ $defaultSocialImage = 'https://nds.studio/ai/assets/images/nds-ai-favicon.png';
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PV94M6MB');</script>
+<!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($pageTitle ?? 'nDimensions.ai | AI Growth, Automation & Creative Systems') ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDescription ?? 'nDimensions.ai designs AI growth systems, automation, and creative production for modern B2B teams.') ?>">
@@ -29,3 +36,7 @@ $defaultSocialImage = 'https://nds.studio/ai/assets/images/nds-ai-favicon.png';
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV94M6MB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->

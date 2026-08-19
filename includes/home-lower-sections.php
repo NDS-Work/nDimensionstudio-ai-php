@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row g-md-4 align-items-end mb-5">
             <div class="col-lg-8" data-aos="fade-up">
-                <div class="eyebrow">From opportunity to operating system</div>
+                <div class="eyebrow">FROM BUSINESS PROBLEM TO WORKING SYSTEM</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
-                    <span class="d-block">We don&rsquo;t begin with AI.</span>
-                    <span class="d-block fst-italic fw-normal text-secondary">We begin with the business problem.</span>
+                    <span class="d-block">We Begin with the Business Problem</span>
+                    <span class="d-block fst-italic fw-normal text-secondary">with the Right AI System</span>
                 </h2>
             </div>
         </div>
@@ -41,9 +41,9 @@
             <div class="col-lg-8" data-aos="fade-up">
                 <div class="eyebrow text-secondary">Why nDimensions</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
-                    <span class="d-block">Engineers build it.</span>
-                    <span class="d-block">Operators steer it.</span>
-                    <span class="d-block fst-italic fw-normal text-secondary">Creatives make it land.</span>
+                    <span class="d-block">Intelligent Automation</span>
+                    <!-- <span class="d-block">Operators steer it.</span> -->
+                    <span class="d-block fst-italic fw-normal text-secondary"> Built for Your Business.</span>
                 </h2>
             </div>
         </div>
@@ -62,10 +62,10 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <p class="lead text-secondary mt-5 mb-0" data-aos="fade-up" data-aos-delay="240">
+        <!-- <p class="lead text-secondary mt-5 mb-0" data-aos="fade-up" data-aos-delay="240">
             No handoffs between disconnected partners.<br>
             No account layer translating the problem between teams.
-        </p>
+        </p> -->
     </div>
 </section>
 
@@ -128,8 +128,8 @@
             <div class="col-lg-9" data-aos="fade-up">
                 <div class="eyebrow">Industries</div>
                 <h2 class="home-section-title h-display mt-4 mb-0">
-                    <span class="d-block">Built for complex businesses.</span>
-                    <span class="d-block fst-italic fw-normal text-secondary">Designed around real workflows.</span>
+                    <span class="d-block">AI Automation</span>
+                    <span class="d-block fst-italic fw-normal text-secondary">For Every Industry</span>
                 </h2>
             </div>
         </div>
@@ -166,6 +166,49 @@
                 <span class="mq-dot"></span>
             <?php endforeach; ?>
         <?php endfor; ?>
+    </div>
+</section>
+
+<section class="section home-proof-section" id="proof">
+    <div class="container">
+        <div class="row g-md-4 align-items-end mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="eyebrow">PROVEN BUSINESS IMPACT</div>
+                <h2 class="home-section-title h-display mt-4 mb-0">
+                    <span class="d-block">AI Automation.</span>
+                    <span class="d-block fst-italic fw-normal text-secondary">Measurable Outcomes.</span>
+                </h2>
+            </div>
+        </div>
+        <div class="row g-md-4">
+            <div class="col-lg-4" data-aos="fade-up">
+                <article class="proof-card h-100 p-4 p-md-5">
+                    <p class="eyebrow text-grow mt-0 mb-4">B2B SaaS</p>
+                    <div class="proof-value">$1.42M</div>
+                    <p class="mt-2 mb-4">Pipeline influenced within six months</p>
+                    <div class="border-top pt-4">
+                        <div class="display-5 h-display fw-bold text-grow">42%</div>
+                        <p class="mb-0">Growth in sales pipeline</p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <article class="proof-card h-100 p-4 p-md-5">
+                    <p class="eyebrow text-biz mt-0 mb-4">Energy &amp; Utilities</p>
+                    <div class="proof-value text-biz">56%</div>
+                    <p class="fw-semibold mt-2 mb-4">Improvement in tracking efficiency</p>
+                    <p class="text-muted border-top pt-4 mb-0">Better operational visibility helped reduce revenue leakage and improve profitability.</p>
+                </article>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <article class="proof-card h-100 p-4 p-md-5">
+                    <p class="eyebrow mt-0 mb-4">Manufacturing &amp; Industrial</p>
+                    <div class="proof-value">72%</div>
+                    <p class="fw-semibold mt-2 mb-4">Improvement in operational efficiency</p>
+                    <p class="text-muted border-top pt-4 mb-0">Automated production tracking, reporting and approvals reduced delays and improved decision-making.</p>
+                </article>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -207,17 +250,17 @@
 <section class="section final-cta-section">
     <div class="container">
         <div class="home-final-cta position-relative overflow-hidden text-light" data-aos="fade-up">
-            <div class="nd-dot-grid position-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
+            <div class="nd-dot-grid posiDesigtion-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
             <div class="position-relative">
-                <div class="eyebrow text-secondary">Ready to build</div>
+                <div class="eyebrow text-secondary">AI GROWTH AUDIT</div>
                 <h2 class="home-final-title h-display mt-4 mb-0">
-                    <span class="d-block">Stop running growth,</span>
-                    <span class="d-block">operations and creative</span>
-                    <span class="d-block fst-italic fw-normal text-secondary">in pieces.</span>
+                    <span class="d-block">Discover Where AI</span>
+                    <span class="d-block">Can Move Your </span>
+                    <span class="d-block fst-italic fw-normal text-secondary">Business Forward.</span>
                 </h2>
                 <p class="lead mt-4 text-light-emphasis home-final-copy">Start with an AI Growth Audit. We&rsquo;ll identify the system that can create the fastest measurable impact &mdash; and show you how to build it.</p>
                 <div class="d-flex flex-wrap gap-3 mt-5">
-                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Consult Now <i class="bi bi-arrow-up-right ms-2"></i></a>
+                    <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="<?= url('contact-us.php') ?>">Book Your AI Growth Audit<i class="bi bi-arrow-up-right ms-2"></i></a>
                 </div>
             </div>
         </div>

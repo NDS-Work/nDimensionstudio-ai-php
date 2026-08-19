@@ -1114,6 +1114,134 @@ h6,
   text-decoration: none;
 }
 
+/* Admin workspace */
+.admin-page {
+  background: #f4f4f1 !important;
+  color: var(--ink);
+}
+
+.admin-topbar {
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.admin-login-logo {
+  width: 190px;
+  height: auto;
+}
+
+.admin-header-logo {
+  width: 170px;
+  height: auto;
+  filter: invert(1) grayscale(1) brightness(2);
+}
+
+.admin-section-badge {
+  background: rgba(255, 87, 34, 0.16);
+  color: #ff8a65;
+  border: 1px solid rgba(255, 87, 34, 0.35);
+}
+
+.admin-page .card,
+.admin-page .modal-content,
+.admin-page .admin-detail-box,
+.admin-page .admin-lead-actions {
+  border-radius: 8px;
+}
+
+.admin-page .card {
+  border: 1px solid rgba(10, 10, 10, 0.07) !important;
+}
+
+.admin-detail-box,
+.admin-lead-actions {
+  padding: 16px;
+  background: #f7f7f4;
+  border: 1px solid var(--line);
+}
+
+.admin-page a.btn,
+.admin-page button.btn {
+  min-height: 42px;
+  padding: 0 18px !important;
+}
+
+.admin-page .btn-sm {
+  min-height: 38px;
+  font-size: 13px;
+}
+
+.admin-page .admin-icon-btn {
+  width: 40px;
+  min-width: 40px;
+  padding: 0 !important;
+}
+
+.admin-page .btn-dark,
+.admin-page .btn-dark:focus,
+.admin-page .btn-dark:active,
+.admin-page .btn-dark.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff !important;
+}
+
+.admin-page .btn-dark:hover {
+  background: var(--grow);
+  border-color: var(--grow);
+  color: #fff !important;
+}
+
+.admin-page .btn-outline-light,
+.admin-page .btn-outline-light:focus {
+  color: #fff;
+}
+
+.admin-page .btn-outline-dark,
+.admin-page .btn-outline-dark:focus {
+  background: transparent;
+  border-color: #8b8b84;
+  color: var(--ink);
+}
+
+.admin-page .btn-outline-dark:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.admin-page .btn-outline-light:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+
+.admin-page .btn-outline-secondary:hover {
+  background: #5f6368;
+  border-color: #5f6368;
+  color: #fff;
+}
+
+.admin-page .btn-outline-danger:hover,
+.admin-page .btn-danger {
+  color: #fff;
+}
+
+.admin-page .table > :not(caption) > * > * {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.admin-page .page-link {
+  color: var(--ink);
+}
+
+.admin-page .page-item.active .page-link {
+  background: var(--grow);
+  border-color: var(--grow);
+  color: #fff;
+}
+
 .mega-card-static,
 .mega-card-static:hover {
   transform: none;

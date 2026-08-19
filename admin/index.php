@@ -72,6 +72,7 @@ function leadUtmTooltip(array $lead)
 $statuses = ['new', 'contacted', 'qualified', 'proposal', 'won', 'lost'];
 $adminCount = (int) $pdo->query('SELECT COUNT(*) FROM admin_users')->fetchColumn();
 $error = '';
+$openPasswordModal = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = (string) ($_POST['action'] ?? '');
@@ -118,6 +119,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_destroy();
         header('Location: ' . url('admin/'));
         exit;
+    } elseif ($action === 'change_password' && adminAuthenticated()) {
+        $currentPassword = (string) ($_POST['current_password'] ?? '');
+        $newPassword = (string) ($_POST['new_password'] ?? '');
+        $confirmation = (string) ($_POST['new_password_confirmation'] ?? '');
+        $statement = $pdo->prepare('SELECT password_hash FROM admin_users WHERE id = :id');
+        $statement->execute(['id' => (int) $_SESSION['admin_user_id']]);
+        $passwordHash = (string) $statement->fetchColumn();
+
+        if (!$passwordHash || !password_verify($currentPassword, $passwordHash)) {
+            $error = 'Your current password is incorrect.';
+            $openPasswordModal = true;
+        } elseif (strlen($newPassword) < 10) {
+            $error = 'The new password must contain at least 10 characters.';
+            $openPasswordModal = true;
+        } elseif ($newPassword !== $confirmation) {
+            $error = 'The new passwords do not match.';
+            $openPasswordModal = true;
+        } else {
+            $statement = $pdo->prepare('UPDATE admin_users SET password_hash = :password_hash WHERE id = :id');
+            $statement->execute([
+                'password_hash' => password_hash($newPassword, PASSWORD_DEFAULT),
+                'id' => (int) $_SESSION['admin_user_id'],
+            ]);
+            session_regenerate_id(true);
+            header('Location: ' . url('admin/') . '?password_changed=1');
+            exit;
+        }
     } elseif ($action === 'delete_lead' && adminAuthenticated()) {
         $leadId = (int) ($_POST['lead_id'] ?? 0);
         if ($leadId > 0) {
@@ -153,11 +181,11 @@ if ($adminCount === 0 || !adminAuthenticated()):
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
 </head>
-<body class="bg-body-tertiary">
+<body class="admin-page bg-body-tertiary">
     <main class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
         <div class="card border-0 shadow-sm w-100" style="max-width:460px">
             <div class="card-body p-4 p-md-5">
-                <a class="text-dark text-decoration-none fw-bold" href="<?= url() ?>">nDimensions.ai</a>
+                <a class="d-inline-block" href="<?= url() ?>"><img class="admin-login-logo" src="<?= asset('images/nds-logo.png') ?>" alt="nDimensions"></a>
                 <p class="font-mono small text-uppercase text-secondary mt-4 mb-2"><?= $adminCount === 0 ? 'First-time setup' : 'Lead management' ?></p>
                 <h1 class="h2 fw-bold mb-4"><?= $adminCount === 0 ? 'Create administrator' : 'Welcome back' ?></h1>
                 <?php if ($error): ?><div class="alert alert-danger"><?= adminEscape($error) ?></div><?php endif; ?>
@@ -265,12 +293,13 @@ $queryForExport['export'] = 'csv';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=<?= filemtime(__DIR__ . '/../assets/css/style.css') ?>">
 </head>
-<body class="bg-body-tertiary">
-    <header class="bg-dark text-white border-bottom border-secondary-subtle">
+<body class="admin-page bg-body-tertiary">
+    <header class="admin-topbar text-white">
         <div class="container-fluid px-3 px-md-4 py-3 d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-3"><strong>nDimensions.ai</strong><span class="badge text-bg-light">Leads</span></div>
+            <div class="d-flex align-items-center gap-3"><a href="<?= url('admin/') ?>"><img class="admin-header-logo" src="<?= asset('images/nds-logo.png') ?>" alt="nDimensions"></a><span class="badge admin-section-badge">Leads</span></div>
             <div class="d-flex align-items-center gap-3">
                 <span class="small text-white-50 d-none d-md-inline"><?= adminEscape($_SESSION['admin_username']) ?></span>
+                <button class="btn btn-outline-light btn-sm rounded-pill px-3" type="button" data-bs-toggle="modal" data-bs-target="#change-password-modal"><i class="bi bi-key me-1"></i><span class="d-none d-md-inline">Change password</span></button>
                 <form method="post" class="m-0">
                     <input type="hidden" name="admin_csrf" value="<?= adminEscape(adminCsrfToken()) ?>">
                     <input type="hidden" name="action" value="logout">
@@ -282,6 +311,8 @@ $queryForExport['export'] = 'csv';
 
     <main class="container-fluid px-3 px-md-4 py-4 py-md-5">
         <?php if (isset($_GET['deleted'])): ?><div class="alert alert-success alert-dismissible fade show" role="alert">Lead deleted successfully.<button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button></div><?php endif; ?>
+        <?php if (isset($_GET['password_changed'])): ?><div class="alert alert-success alert-dismissible fade show" role="alert">Password changed successfully.<button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button></div><?php endif; ?>
+        <?php if ($error): ?><div class="alert alert-danger alert-dismissible fade show" role="alert"><?= adminEscape($error) ?><button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button></div><?php endif; ?>
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-4">
             <div><p class="font-mono small text-uppercase text-secondary mb-2">Lead management</p><h1 class="h2 fw-bold mb-0">Contact enquiries</h1></div>
             <a class="btn btn-outline-dark rounded-pill px-4" href="?<?= adminEscape(http_build_query($queryForExport)) ?>"><i class="bi bi-download me-2"></i>Export CSV</a>
@@ -305,7 +336,7 @@ $queryForExport['export'] = 'csv';
         </div>
 
         <div class="row g-4 align-items-start">
-            <div class="<?= $selectedLead ? 'col-lg-8' : 'col-12' ?>">
+            <div class="col-12">
                 <div class="card border-0 shadow-sm overflow-hidden">
                     <div class="table-responsive">
                         <table class="table table-hover align-middle mb-0">
@@ -324,7 +355,7 @@ $queryForExport['export'] = 'csv';
                                     </td>
                                     <td><span class="badge rounded-pill <?= leadStatusClass($lead['status']) ?>"><?= ucfirst(adminEscape($lead['status'])) ?></span></td>
                                     <td class="small text-secondary text-nowrap"><?= adminEscape(date('d M Y', strtotime($lead['created_at']))) ?></td>
-                                    <td class="pe-4"><a class="btn btn-sm btn-outline-dark" href="?lead=<?= (int) $lead['id'] ?>" aria-label="View <?= adminEscape($lead['name']) ?>"><i class="bi bi-arrow-right"></i></a></td>
+                                    <td class="pe-4"><a class="btn btn-sm btn-outline-dark admin-icon-btn" href="?lead=<?= (int) $lead['id'] ?>" aria-label="View <?= adminEscape($lead['name']) ?>"><i class="bi bi-arrow-up-right"></i></a></td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>
@@ -335,49 +366,62 @@ $queryForExport['export'] = 'csv';
             </div>
 
             <?php if ($selectedLead): ?>
-                <aside class="col-lg-4">
-                    <div class="card border-0 shadow-sm position-sticky" style="top:1rem">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between gap-3 mb-4"><div><span class="small text-secondary">Lead #<?= (int) $selectedLead['id'] ?></span><h2 class="h4 fw-bold mt-1 mb-0"><?= adminEscape($selectedLead['name']) ?></h2></div><a class="btn-close" href="<?= url('admin/') ?>" aria-label="Close"></a></div>
-                            <?php if (isset($_GET['saved'])): ?><div class="alert alert-success py-2">Lead updated.</div><?php endif; ?>
-                            <dl class="row small mb-4">
-                                <dt class="col-4 text-secondary fw-normal">Email</dt><dd class="col-8"><a href="mailto:<?= adminEscape($selectedLead['email']) ?>"><?= adminEscape($selectedLead['email']) ?></a></dd>
-                                <dt class="col-4 text-secondary fw-normal">Phone</dt><dd class="col-8"><?= adminEscape($selectedLead['phone'] ?: 'Not provided') ?></dd>
-                                <dt class="col-4 text-secondary fw-normal">Company</dt><dd class="col-8"><?= adminEscape($selectedLead['company'] ?: 'Not provided') ?></dd>
-                                <dt class="col-4 text-secondary fw-normal">Timeline</dt><dd class="col-8"><?= adminEscape($selectedLead['timeline'] ?: 'Not provided') ?></dd>
-                                <dt class="col-4 text-secondary fw-normal">Email alert</dt><dd class="col-8"><?= $selectedLead['email_sent'] ? 'Sent' : 'Not sent' ?></dd>
-                            </dl>
-                            <p class="small text-secondary mb-1">Challenge</p><p class="mb-4"><?= nl2br(adminEscape($selectedLead['challenge'])) ?></p>
-                            <div class="accordion mb-4" id="lead-attribution">
-                                <?php foreach (['first' => 'First-touch attribution', 'last' => 'Latest-touch attribution'] as $touchKey => $touchLabel): ?>
-                                    <div class="accordion-item">
-                                        <h3 class="accordion-header"><button class="accordion-button <?= $touchKey === 'last' ? 'collapsed' : '' ?> py-3 small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $touchKey ?>-touch" aria-expanded="<?= $touchKey === 'first' ? 'true' : 'false' ?>"><?= $touchLabel ?></button></h3>
-                                        <div class="accordion-collapse collapse <?= $touchKey === 'first' ? 'show' : '' ?>" id="<?= $touchKey ?>-touch" data-bs-parent="#lead-attribution">
-                                            <div class="accordion-body small">
-                                                <?php foreach ([
-                                                    'Source' => 'utm_source', 'Medium' => 'utm_medium', 'Campaign' => 'utm_campaign',
-                                                    'Term' => 'utm_term', 'Content' => 'utm_content', 'Google click ID' => 'gclid',
-                                                    'Meta click ID' => 'fbclid', 'Landing page' => 'landing_page', 'Referrer' => 'referrer'
-                                                ] as $label => $field): ?>
-                                                    <div class="text-secondary mt-2"><?= $label ?></div>
-                                                    <div class="text-break"><?= adminEscape($selectedLead[$touchKey . '_' . $field] ?: ($field === 'utm_source' ? 'Direct' : 'Not captured')) ?></div>
-                                                <?php endforeach; ?>
-                                            </div>
+                <div class="modal fade" id="lead-detail-modal" tabindex="-1" aria-labelledby="lead-detail-title" aria-hidden="true" data-close-url="<?= url('admin/') ?>">
+                    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content border-0">
+                            <div class="modal-header px-4 px-md-5 py-4">
+                                <div><span class="font-mono small text-uppercase text-secondary">Lead #<?= (int) $selectedLead['id'] ?></span><h2 class="modal-title h3 fw-bold mt-1 mb-0" id="lead-detail-title"><?= adminEscape($selectedLead['name']) ?></h2></div>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-4 px-md-5 py-4">
+                                <?php if (isset($_GET['saved'])): ?><div class="alert alert-success py-2">Lead updated successfully.</div><?php endif; ?>
+                                <div class="row g-4 g-lg-5">
+                                    <div class="col-lg-7">
+                                        <div class="row g-3 mb-4">
+                                            <?php foreach ([
+                                                ['Email', $selectedLead['email'], 'mailto:' . $selectedLead['email']],
+                                                ['Phone', $selectedLead['phone'] ?: 'Not provided', $selectedLead['phone'] ? 'tel:' . $selectedLead['phone'] : ''],
+                                                ['Company', $selectedLead['company'] ?: 'Not provided', ''],
+                                                ['Timeline', $selectedLead['timeline'] ?: 'Not provided', ''],
+                                            ] as $detail): ?>
+                                                <div class="col-md-6"><div class="admin-detail-box h-100"><div class="small text-secondary mb-1"><?= adminEscape($detail[0]) ?></div><?php if ($detail[2]): ?><a class="fw-semibold text-dark text-decoration-none text-break" href="<?= adminEscape($detail[2]) ?>"><?= adminEscape($detail[1]) ?></a><?php else: ?><div class="fw-semibold"><?= adminEscape($detail[1]) ?></div><?php endif; ?></div></div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <div class="admin-detail-box mb-4"><div class="small text-secondary mb-2">Biggest challenge</div><div><?= nl2br(adminEscape($selectedLead['challenge'])) ?></div></div>
+                                        <div class="accordion" id="lead-attribution">
+                                            <?php foreach (['first' => 'First-touch attribution', 'last' => 'Latest-touch attribution'] as $touchKey => $touchLabel): ?>
+                                                <div class="accordion-item">
+                                                    <h3 class="accordion-header"><button class="accordion-button <?= $touchKey === 'last' ? 'collapsed' : '' ?> py-3 small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#<?= $touchKey ?>-touch" aria-expanded="<?= $touchKey === 'first' ? 'true' : 'false' ?>"><?= $touchLabel ?></button></h3>
+                                                    <div class="accordion-collapse collapse <?= $touchKey === 'first' ? 'show' : '' ?>" id="<?= $touchKey ?>-touch" data-bs-parent="#lead-attribution">
+                                                        <div class="accordion-body"><div class="row g-3">
+                                                            <?php foreach (['Source' => 'utm_source', 'Medium' => 'utm_medium', 'Campaign' => 'utm_campaign', 'Term' => 'utm_term', 'Content' => 'utm_content', 'Google click ID' => 'gclid', 'Meta click ID' => 'fbclid', 'Landing page' => 'landing_page', 'Referrer' => 'referrer'] as $label => $field): ?>
+                                                                <div class="col-md-6"><div class="small text-secondary"><?= $label ?></div><div class="small text-break"><?= adminEscape($selectedLead[$touchKey . '_' . $field] ?: ($field === 'utm_source' ? 'Direct' : 'Not captured')) ?></div></div>
+                                                            <?php endforeach; ?>
+                                                        </div></div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
+                                    <div class="col-lg-5">
+                                        <div class="admin-lead-actions p-4">
+                                            <div class="d-flex justify-content-between align-items-center mb-4"><span class="fw-bold">Manage lead</span><span class="badge rounded-pill <?= leadStatusClass($selectedLead['status']) ?>"><?= ucfirst(adminEscape($selectedLead['status'])) ?></span></div>
+                                            <form method="post" class="d-grid gap-3">
+                                                <input type="hidden" name="admin_csrf" value="<?= adminEscape(adminCsrfToken()) ?>"><input type="hidden" name="action" value="update_lead"><input type="hidden" name="lead_id" value="<?= (int) $selectedLead['id'] ?>">
+                                                <div><label class="form-label small fw-semibold" for="lead-status">Status</label><select class="form-select" id="lead-status" name="status"><?php foreach ($statuses as $status): ?><option value="<?= $status ?>" <?= $selectedLead['status'] === $status ? 'selected' : '' ?>><?= ucfirst($status) ?></option><?php endforeach; ?></select></div>
+                                                <div><label class="form-label small fw-semibold" for="lead-notes">Internal notes</label><textarea class="form-control" id="lead-notes" name="notes" rows="7"><?= adminEscape($selectedLead['notes']) ?></textarea></div>
+                                                <button class="btn btn-dark rounded-pill" type="submit">Save changes</button>
+                                            </form>
+                                            <hr class="my-4">
+                                            <div class="small text-secondary mb-3">Submitted <?= adminEscape(date('d M Y, g:i a', strtotime($selectedLead['created_at']))) ?> · Email alert <?= $selectedLead['email_sent'] ? 'sent' : 'not sent' ?></div>
+                                            <button class="btn btn-outline-danger rounded-pill w-100" id="delete-lead-trigger" type="button"><i class="bi bi-trash3 me-2"></i>Delete lead</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <form method="post" class="d-grid gap-3">
-                                <input type="hidden" name="admin_csrf" value="<?= adminEscape(adminCsrfToken()) ?>"><input type="hidden" name="action" value="update_lead"><input type="hidden" name="lead_id" value="<?= (int) $selectedLead['id'] ?>">
-                                <div><label class="form-label small fw-semibold" for="lead-status">Status</label><select class="form-select" id="lead-status" name="status"><?php foreach ($statuses as $status): ?><option value="<?= $status ?>" <?= $selectedLead['status'] === $status ? 'selected' : '' ?>><?= ucfirst($status) ?></option><?php endforeach; ?></select></div>
-                                <div><label class="form-label small fw-semibold" for="lead-notes">Internal notes</label><textarea class="form-control" id="lead-notes" name="notes" rows="5"><?= adminEscape($selectedLead['notes']) ?></textarea></div>
-                                <button class="btn btn-dark rounded-pill" type="submit">Save lead</button>
-                            </form>
-                            <hr class="my-4">
-                            <button class="btn btn-outline-danger rounded-pill w-100" type="button" data-bs-toggle="modal" data-bs-target="#delete-lead-modal"><i class="bi bi-trash3 me-2"></i>Delete lead</button>
                         </div>
                     </div>
-                </aside>
+                </div>
 
                 <div class="modal fade" id="delete-lead-modal" tabindex="-1" aria-labelledby="delete-lead-title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -399,11 +443,56 @@ $queryForExport['export'] = 'csv';
             <?php endif; ?>
         </div>
     </main>
+
+    <div class="modal fade" id="change-password-modal" tabindex="-1" aria-labelledby="change-password-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0 px-4 pt-4"><div><p class="font-mono small text-uppercase text-secondary mb-1">Account security</p><h2 class="modal-title h4 fw-bold" id="change-password-title">Change password</h2></div><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <form method="post">
+                    <div class="modal-body px-4 d-grid gap-3">
+                        <?php if ($openPasswordModal && $error): ?><div class="alert alert-danger py-2 mb-0"><?= adminEscape($error) ?></div><?php endif; ?>
+                        <input type="hidden" name="admin_csrf" value="<?= adminEscape(adminCsrfToken()) ?>">
+                        <input type="hidden" name="action" value="change_password">
+                        <div><label class="form-label small fw-semibold" for="current-password">Current password</label><input class="form-control" id="current-password" name="current_password" type="password" autocomplete="current-password" required></div>
+                        <div><label class="form-label small fw-semibold" for="new-password">New password</label><input class="form-control" id="new-password" name="new_password" type="password" autocomplete="new-password" minlength="10" required><div class="form-text">Use at least 10 characters.</div></div>
+                        <div><label class="form-label small fw-semibold" for="new-password-confirmation">Confirm new password</label><input class="form-control" id="new-password-confirmation" name="new_password_confirmation" type="password" autocomplete="new-password" minlength="10" required></div>
+                    </div>
+                    <div class="modal-footer border-0 px-4 pb-4"><button class="btn btn-outline-secondary rounded-pill" type="button" data-bs-dismiss="modal">Cancel</button><button class="btn btn-dark rounded-pill" type="submit">Update password</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (element) {
             new bootstrap.Tooltip(element);
         });
+
+        <?php if ($openPasswordModal): ?>
+            new bootstrap.Modal(document.getElementById('change-password-modal')).show();
+        <?php endif; ?>
+
+        <?php if ($selectedLead): ?>
+            var leadModalElement = document.getElementById('lead-detail-modal');
+            var leadModal = new bootstrap.Modal(leadModalElement);
+            var switchingToDelete = false;
+            leadModal.show();
+
+            leadModalElement.addEventListener('hidden.bs.modal', function () {
+                if (switchingToDelete) {
+                    switchingToDelete = false;
+                    new bootstrap.Modal(document.getElementById('delete-lead-modal')).show();
+                    return;
+                }
+                window.location.href = leadModalElement.dataset.closeUrl;
+            });
+
+            document.getElementById('delete-lead-trigger').addEventListener('click', function () {
+                switchingToDelete = true;
+                leadModal.hide();
+            });
+        <?php endif; ?>
     </script>
 </body>
 </html>
