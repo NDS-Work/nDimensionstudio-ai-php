@@ -210,10 +210,10 @@ require_once __DIR__ . '/includes/header.php';
     <?php
     $growLayers = [
         ['Get Found', 'From Search Intent to Sales Conversation.', 'bi-search', ['Technical and on-page SEO', 'AI search visibility through AEO and GEO', 'Buyer-intent keyword research', 'Competitor visibility tracking', 'Authority and reputation signals',], 'search'],
-        ['Earn attention', 'Content that plants intent, not just impressions.', 'bi-file-earmark-text', ['B2B content strategy', 'Thought leadership', 'Search-led articles', 'Decision-stage landing pages', 'Email and newsletters', 'Content repurposing engine'], 'content'],
-        ['Capture demand', 'Convert intent into named opportunities.', 'bi-bullseye', ['Paid acquisition', 'B2B landing pages', 'Lead magnets', 'Outbound targeting', 'Conversion tracking', 'Meta CAPI + ad-data integrations'], 'capture'],
-        ['Nurture intent', 'Behaviour-triggered follow-up on the channels buyers use.', 'bi-chat-dots', ['Email nurturing', 'WhatsApp automation', 'Lead qualification + scoring', 'Behaviour-based follow-ups', 'Meeting journeys', 'Lead reactivation'], 'nurture'],
-        ['Move & measure pipeline', 'One number the whole team owns: qualified pipeline.', 'bi-graph-up-arrow', ['CRM integration', 'Lead routing', 'Pipeline-stage automation', 'Sales notifications', 'Multi-touch attribution', 'Funnel + revenue dashboards'], 'pipeline'],
+        ['Build Trust', 'From Buyer Questions to Brand Confidence.', 'bi-file-earmark-text', ['Buyer-intent content strategy', 'Search-optimised articles and landing pages', 'Thought leadership and founder content', 'Case studies and proof-driven content', 'Content refresh and performance optimisation',], 'content'],
+        ['Capture Demand', 'From Attention to Qualified Enquiries.', 'bi-bullseye', ['Google, Meta and LinkedIn campaigns', 'Instant forms and conversion landing pages', 'Meta Pixel and Conversions API', 'B2B audience and offer strategy', 'Campaign tracking and optimisation',], 'capture'],
+        ['Nurture Leads', 'From First Response to Sales Readiness.', 'bi-chat-dots', ['Automated lead nurturing workflows', 'WhatsApp and email follow-ups', 'Behaviour-triggered personalised messages', 'Lead qualification and scoring', 'Sales alerts and human handoff',], 'nurture'],
+        ['Track Revenue', 'From Marketing Activity to Measurable Pipeline.', 'bi-graph-up-arrow', ['CRM integration and lead routing', 'Source-to-revenue attribution', 'Live pipeline dashboards', 'Sales-stage and conversion visibility', 'Revenue and campaign reporting',], 'pipeline'],
     ];
     ?>
 
@@ -380,9 +380,9 @@ require_once __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="row g-md-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <p class="eyebrow">Not a collection of services</p>
-                    <h2 class="nd-page-title mt-4">One growth system.<br><span class="fst-italic fw-normal text-secondary">Shared context at every stage.</span></h2>
-                    <p class="lead text-muted mt-4">The content team knows what buyers are searching for. Campaigns know which messages create intent. Nurturing responds to behaviour. Sales receives history, score and next action. Reporting shows what actually created movement &mdash; not just activity.</p>
+                    <p class="eyebrow">ONE CONNECTED GROWTH SYSTEM</p>
+                    <h2 class="nd-page-title mt-4">One Customer Journey.<br><span class="fst-italic fw-normal text-secondary">Automated From Search to Sales-Ready.</span></h2>
+                    <p class="lead text-muted mt-4">Search reveals what buyers want. Content and campaigns turn that interest into enquiries. Automated nurturing keeps leads moving. Sales receives the complete history, lead score and next action. One dashboard shows what is creating pipeline and revenue.</p>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="card-soft overflow-hidden">
@@ -441,13 +441,21 @@ require_once __DIR__ . '/includes/header.php';
 
     <?php
     $growIntegrations = [
-        ['CRM', ['HubSpot', 'Salesforce', 'Zoho', 'Pipedrive']],
-        ['Comms', ['WhatsApp', 'Email']],
-        ['Advertising', ['Meta', 'Google Ads']],
-        ['Analytics', ['GA4', 'Looker Studio']],
-        ['CMS', ['WordPress', 'Webflow']],
-        ['Commerce', ['Shopify']],
-        ['Data', ['Sheets', 'Databases']],
+        ['HubSpot', 'hubspot.svg', ''],
+        ['Salesforce', '', 'bi-cloud-fill'],
+        ['Zoho', 'zoho.svg', ''],
+        ['Pipedrive', '', 'bi-funnel-fill'],
+        ['WhatsApp', 'whatsapp.svg', ''],
+        ['Email', '', 'bi-envelope-fill'],
+        ['Meta', 'meta.svg', ''],
+        ['Google Ads', 'googleads.svg', ''],
+        ['GA4', 'googleanalytics.svg', ''],
+        ['Looker Studio', 'looker.svg', ''],
+        ['WordPress', 'wordpress.svg', ''],
+        ['Webflow', 'webflow.svg', ''],
+        ['Shopify', 'shopify.svg', ''],
+        ['Sheets', 'googlesheets.svg', ''],
+        ['Databases', '', 'bi-database-fill'],
     ];
     ?>
     <section class="section">
@@ -458,44 +466,39 @@ require_once __DIR__ . '/includes/header.php';
                     <h2 class="nd-page-title mt-4">Connect the stack<br><span class="fst-italic fw-normal text-secondary">you already use.</span></h2>
                 </div>
             </div>
-            <div class="row g-3">
-                <?php foreach ($growIntegrations as $index => $integration): ?>
-                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="<?= $index * 40 ?>">
-                        <div class="card-soft p-3 p-md-4 h-100">
-                            <p class="eyebrow text-grow mb-3"><?= $integration[0] ?></p>
-                            <ul class="list-unstyled small fw-semibold mb-0 d-grid gap-2">
-                                <?php foreach ($integration[1] as $item): ?>
-                                    <li class="d-flex align-items-center gap-2"><span class="nd-dot bg-grow"></span><?= $item ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
         </div>
-    </section>
-
-    <section class="marquee-section" data-aos="fade-up">
-        <div class="marquee-mask">
-            <div class="marquee-track" aria-hidden="true">
+        <div class="mq-section integration-logo-strip mt-5" data-aos="fade-up">
+            <div class="mq-track integration-logo-track" aria-hidden="true">
                 <?php for ($repeat = 0; $repeat < 2; $repeat++): ?>
-                    <?php foreach (['Search', 'Content', 'Demand', 'Nurture', 'CRM', 'Pipeline', 'Revenue'] as $item): ?>
-                        <span class="marquee-item"><span class="marquee-dot"></span><?= $item ?></span>
+                    <?php foreach ($growIntegrations as $integration): ?>
+                        <div class="integration-logo-item">
+                            <span class="integration-logo-mark">
+                                <?php if ($integration[1]): ?>
+                                    <img src="<?= asset('images/integrations/' . $integration[1]) ?>" alt="" aria-hidden="true">
+                                <?php else: ?>
+                                    <i class="bi <?= $integration[2] ?>" aria-hidden="true"></i>
+                                <?php endif; ?>
+                            </span>
+                            <span><?= $integration[0] ?></span>
+                        </div>
+                        <span class="mq-dot" aria-hidden="true"></span>
                     <?php endforeach; ?>
                 <?php endfor; ?>
             </div>
         </div>
     </section>
 
+    
+
     <?php
-    $growOutcomes = ['Stronger search and AI visibility', 'More consistent demand creation', 'Faster response to enquiries', 'Better-qualified sales conversations', 'Fewer leads lost between systems', 'Cleaner CRM ownership', 'Clearer source-to-pipeline reporting', 'A growth system that improves over time'];
+    $growOutcomes = ['Stronger Google and AI visibility', 'More qualified enquiries', ' Faster lead response', 'Better sales conversations', 'Fewer leads lost in follow-up', 'Cleaner, more useful CRM data', 'Clear marketing-to-revenue reporting', 'Continuous performance improvement'];
     ?>
     <section class="section section-dark">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <p class="eyebrow text-light-emphasis">Outcomes</p>
-                    <h2 class="nd-page-title mt-4">What changes when<br><span class="fst-italic fw-normal text-secondary">the stack works together?</span></h2>
+                    <p class="eyebrow text-light-emphasis">BUSINESS OUTCOMES</p>
+                    <h2 class="nd-page-title mt-4">From Integrated Channels<br><span class="fst-italic fw-normal text-secondary"> to Revenue Growth.</span></h2>
                 </div>
             </div>
             <div class="row g-3">
@@ -556,6 +559,18 @@ require_once __DIR__ . '/includes/header.php';
                         <?php endforeach; ?>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="marquee-section" data-aos="fade-up">
+        <div class="marquee-mask">
+            <div class="marquee-track" aria-hidden="true">
+                <?php for ($repeat = 0; $repeat < 2; $repeat++): ?>
+                    <?php foreach (['Search', 'Content', 'Demand', 'Nurture', 'CRM', 'Pipeline', 'Revenue'] as $item): ?>
+                        <span class="marquee-item"><span class="marquee-dot"></span><?= $item ?></span>
+                    <?php endforeach; ?>
+                <?php endfor; ?>
             </div>
         </div>
     </section>
